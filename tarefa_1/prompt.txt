@@ -1,0 +1,18 @@
+Prompt usado
+
+"Goal"
+Quero que você faça um tutorial de introdução a grafos enfatizando a prática, ou seja, no estilo hand's on. Para isso você deve usar o arquivo Atlas.pdf que foi fornecido 
+como principal fonte teórica de informação.
+
+
+"Return Format"
+Esse tutorial deverá ser um notebook com a mesma estrutura usada no arquivo NetworkElementsI.ipynb anexado e deverá ser escrito em portugês.
+
+"Warnings"
+Não será admitido outro formato e a ausencia de instruções práticas. Use como teoria apenas o arquivo Atlas.pdf anexado utilizando cada parte que considerar importante.
+
+"Context"
+Sou estudante do curso de Engenharia da Computação, e neste semestre na disciplina de Algoritmo e Estrutura de Dados 2 estou estudando Grafos com teoria e aplicações,
+e ao longo do estudo vi a nessecidade de um tutorial prático que podesse me lembrar dos principais conceitos estudados vistos, ele deve me ajudar a por em pratica os conceitos
+aprendidos e revisar a parte essencial da teoria, como um guia prático o qual eu possa recorrer ao longo do semestre de forma rápida.
+ 
