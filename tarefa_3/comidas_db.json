@@ -1,0 +1,803 @@
+{
+    "pastel com caldo de cana": {
+        "carboidrato": [
+            "farinha de trigo",
+            "cana-de-açúcar"
+        ],
+        "proteína": [
+            "carne bovina",
+            "queijo"
+        ],
+        "gordura": [
+            "óleo"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "sal"
+        ]
+    },
+    "carneiro no buraco": {
+        "carboidrato": [],
+        "proteína": [
+            "carne de carneiro"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho",
+            "pimenta-do-reino"
+        ]
+    },
+    "moqueca maranhense": {
+        "carboidrato": [],
+        "proteína": [
+            "frutos do mar"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [
+            "ovo"
+        ],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "cheiro-verde"
+        ]
+    },
+    "guariroba": {
+        "carboidrato": [],
+        "proteína": [],
+        "gordura": [],
+        "vegetal": [
+            "palmito de guariroba"
+        ],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": []
+    },
+    "tacacá": {
+        "carboidrato": [],
+        "proteína": [
+            "camarão seco"
+        ],
+        "gordura": [],
+        "vegetal": [
+            "jambu"
+        ],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "tucupi"
+        ]
+    },
+    "sarapatel": {
+        "carboidrato": [],
+        "proteína": [
+            "vísceras de porco"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho",
+            "pimenta"
+        ]
+    },
+    "arroz de leite": {
+        "carboidrato": [
+            "arroz",
+            "açúcar"
+        ],
+        "proteína": [
+            "ovos"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [
+            "leite"
+        ],
+        "tempero": []
+    },
+    "pudim de leite condensado": {
+        "carboidrato": [
+            "açúcar"
+        ],
+        "proteína": [
+            "ovos"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [
+            "leite condensado",
+            "leite"
+        ],
+        "tempero": []
+    },
+    "churrasco": {
+        "carboidrato": [],
+        "proteína": [
+            "carne bovina"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "sal grosso"
+        ]
+    },
+    "pão de queijo": {
+        "carboidrato": [
+            "polvilho doce"
+        ],
+        "proteína": [
+            "ovos"
+        ],
+        "gordura": [
+            "óleo"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [
+            "queijo minas"
+        ],
+        "tempero": [
+            "sal"
+        ]
+    },
+    "moqueca de banana da terra": {
+        "carboidrato": [],
+        "proteína": [],
+        "gordura": [
+            "azeite de dendê"
+        ],
+        "vegetal": [],
+        "fruta": [
+            "banana-da-terra"
+        ],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho",
+            "pimenta"
+        ]
+    },
+    "pato no tucupi": {
+        "carboidrato": [],
+        "proteína": [
+            "pato"
+        ],
+        "gordura": [],
+        "vegetal": [
+            "jambu"
+        ],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "tucupi"
+        ]
+    },
+    "coxinha": {
+        "carboidrato": [
+            "farinha de trigo"
+        ],
+        "proteína": [
+            "frango"
+        ],
+        "gordura": [
+            "óleo"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [
+            "requeijão"
+        ],
+        "tempero": [
+            "cebola",
+            "alho"
+        ]
+    },
+    "moqueca capixaba": {
+        "carboidrato": [],
+        "proteína": [
+            "peixe"
+        ],
+        "gordura": [
+            "azeite de oliva"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "tomate"
+        ]
+    },
+    "pirarucu de casaca": {
+        "carboidrato": [
+            "farinha de mandioca"
+        ],
+        "proteína": [
+            "pirarucu",
+            "ovos"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [
+            "banana"
+        ],
+        "laticínio": [],
+        "tempero": [
+            "sal"
+        ]
+    },
+    "rabada": {
+        "carboidrato": [],
+        "proteína": [
+            "rabo de boi"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho",
+            "tomate"
+        ]
+    },
+    "tainha na taquara": {
+        "carboidrato": [],
+        "proteína": [
+            "tainha"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "sal"
+        ]
+    },
+    "bolo mole": {
+        "carboidrato": [
+            "farinha de trigo",
+            "açúcar"
+        ],
+        "proteína": [
+            "ovos"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [
+            "leite"
+        ],
+        "tempero": []
+    },
+    "caldo de piranha": {
+        "carboidrato": [],
+        "proteína": [
+            "piranha"
+        ],
+        "gordura": [],
+        "vegetal": [
+            "tomate"
+        ],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho",
+            "pimenta"
+        ]
+    },
+    "arroz-doce": {
+        "carboidrato": [
+            "arroz",
+            "açúcar"
+        ],
+        "proteína": [],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [
+            "leite"
+        ],
+        "tempero": [
+            "canela"
+        ]
+    },
+    "tutu de feijão": {
+        "carboidrato": [
+            "farinha de mandioca"
+        ],
+        "proteína": [
+            "feijão"
+        ],
+        "gordura": [
+            "bacon"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho"
+        ]
+    },
+    "pamonha": {
+        "carboidrato": [
+            "milho verde"
+        ],
+        "proteína": [],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [
+            "coco"
+        ],
+        "laticínio": [
+            "queijo coalho"
+        ],
+        "tempero": [
+            "sal",
+            "canela"
+        ]
+    },
+    "filé de tucunaré": {
+        "carboidrato": [],
+        "proteína": [
+            "tucunaré"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "alcaparras",
+            "sal"
+        ]
+    },
+    "vatapá": {
+        "carboidrato": [
+            "farinha de mandioca",
+            "fubá"
+        ],
+        "proteína": [
+            "amendoim"
+        ],
+        "gordura": [
+            "castanha de caju",
+            "azeite de dendê"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "gengibre",
+            "pimenta",
+            "cravo",
+            "cebola",
+            "alho",
+            "tomate"
+        ]
+    },
+    "xinxim de galinha": {
+        "carboidrato": [],
+        "proteína": [
+            "frango",
+            "camarão",
+            "amendoim",
+            "castanha de caju"
+        ],
+        "gordura": [
+            "azeite de dendê"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho",
+            "pimenta"
+        ]
+    },
+    "pé de moleque": {
+        "carboidrato": [
+            "rapadura"
+        ],
+        "proteína": [
+            "amendoim"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": []
+    },
+    "acarajé": {
+        "carboidrato": [],
+        "proteína": [
+            "feijão-fradinho"
+        ],
+        "gordura": [
+            "azeite de dendê"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola"
+        ]
+    },
+    "arroz com pequi": {
+        "carboidrato": [
+            "arroz"
+        ],
+        "proteína": [
+            "frango"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [
+            "pequi"
+        ],
+        "laticínio": [],
+        "tempero": [
+            "cebola"
+        ]
+    },
+    "bolo de rolo": {
+        "carboidrato": [
+            "farinha de trigo",
+            "açúcar"
+        ],
+        "proteína": [
+            "ovos"
+        ],
+        "gordura": [
+            "manteiga"
+        ],
+        "vegetal": [],
+        "fruta": [
+            "goiabada"
+        ],
+        "laticínio": [],
+        "tempero": []
+    },
+    "furrundu": {
+        "carboidrato": [
+            "rapadura"
+        ],
+        "proteína": [],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [
+            "limão cidra"
+        ],
+        "laticínio": [],
+        "tempero": []
+    },
+    "sanduíche de mortadela": {
+        "carboidrato": [
+            "pão francês"
+        ],
+        "proteína": [
+            "mortadela"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": []
+    },
+    "jabá com jerimum": {
+        "carboidrato": [],
+        "proteína": [
+            "carne-de-sol"
+        ],
+        "gordura": [],
+        "vegetal": [
+            "jerimum"
+        ],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho"
+        ]
+    },
+    "bolinho de chuva": {
+        "carboidrato": [
+            "farinha de trigo",
+            "açúcar"
+        ],
+        "proteína": [
+            "ovos"
+        ],
+        "gordura": [
+            "óleo"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [
+            "leite"
+        ],
+        "tempero": [
+            "canela"
+        ]
+    },
+    "arroz carreteiro": {
+        "carboidrato": [
+            "arroz"
+        ],
+        "proteína": [
+            "carne-seca"
+        ],
+        "gordura": [
+            "bacon",
+            "banha de porco"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho"
+        ]
+    },
+    "cuscuz de tapioca": {
+        "carboidrato": [
+            "tapioca"
+        ],
+        "proteína": [],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [
+            "coco"
+        ],
+        "laticínio": [
+            "leite condensado"
+        ],
+        "tempero": []
+    },
+    "açaí do pará": {
+        "carboidrato": [
+            "farinha de mandioca",
+            "tapioca"
+        ],
+        "proteína": [],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [
+            "açaí"
+        ],
+        "laticínio": [],
+        "tempero": []
+    },
+    "leitão à pururuca": {
+        "carboidrato": [],
+        "proteína": [
+            "porco"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "sal"
+        ]
+    },
+    "maniçoba": {
+        "carboidrato": [],
+        "proteína": [
+            "carne de porco",
+            "linguiça",
+            "charque"
+        ],
+        "gordura": [],
+        "vegetal": [
+            "folhas de mandioca"
+        ],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": []
+    },
+    "cartola": {
+        "carboidrato": [
+            "açúcar"
+        ],
+        "proteína": [],
+        "gordura": [
+            "manteiga"
+        ],
+        "vegetal": [],
+        "fruta": [
+            "banana-da-terra"
+        ],
+        "laticínio": [
+            "queijo coalho"
+        ],
+        "tempero": [
+            "canela"
+        ]
+    },
+    "feijão tropeiro": {
+        "carboidrato": [
+            "farinha de mandioca"
+        ],
+        "proteína": [
+            "feijão",
+            "linguiça",
+            "ovo",
+            "torresmo"
+        ],
+        "gordura": [
+            "manteiga de garrafa"
+        ],
+        "vegetal": [
+            "couve"
+        ],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "alho",
+            "cebola"
+        ]
+    },
+    "buchada de bode": {
+        "carboidrato": [],
+        "proteína": [
+            "vísceras de bode"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho",
+            "pimenta",
+            "coentro"
+        ]
+    },
+    "biscoito de polvilho": {
+        "carboidrato": [
+            "polvilho doce"
+        ],
+        "proteína": [
+            "ovos"
+        ],
+        "gordura": [
+            "óleo"
+        ],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": []
+    },
+    "camarão no bafo": {
+        "carboidrato": [],
+        "proteína": [
+            "camarão"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "sal",
+            "pimenta-do-reino"
+        ]
+    },
+    "frango com quiabo": {
+        "carboidrato": [],
+        "proteína": [
+            "frango"
+        ],
+        "gordura": [],
+        "vegetal": [
+            "quiabo",
+            "tomate"
+        ],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "cebola",
+            "alho"
+        ]
+    },
+    "açaí do maranhão": {
+        "carboidrato": [
+            "farinha d'água"
+        ],
+        "proteína": [
+            "camarão-seco"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [
+            "açaí"
+        ],
+        "laticínio": [],
+        "tempero": []
+    },
+    "peixe-serra assado": {
+        "carboidrato": [],
+        "proteína": [
+            "peixe-serra"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "sal"
+        ]
+    },
+    "doce de espécie": {
+        "carboidrato": [
+            "açúcar",
+            "farinha de trigo"
+        ],
+        "proteína": [],
+        "gordura": [
+            "óleo"
+        ],
+        "vegetal": [],
+        "fruta": [
+            "coco"
+        ],
+        "laticínio": [],
+        "tempero": []
+    },
+    "fava": {
+        "carboidrato": [],
+        "proteína": [
+            "fava"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "sal"
+        ]
+    },
+    "carne de jacaré": {
+        "carboidrato": [],
+        "proteína": [
+            "jacaré"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": [
+            "sal",
+            "pimenta-do-reino"
+        ]
+    },
+    "paçoquinha": {
+        "carboidrato": [
+            "açúcar"
+        ],
+        "proteína": [
+            "amendoim"
+        ],
+        "gordura": [],
+        "vegetal": [],
+        "fruta": [],
+        "laticínio": [],
+        "tempero": []
+    }
+}
