@@ -1,4 +1,4 @@
-## Análise Temporal de Redes de Coautoria Acadêmica
+## Análise de Assortatividade em Grafos de Ingredientes da Culinária Brasileira
 
 by <br/>
 [Daniel Bruno Trindade da Silva](https://github.com/daniel-trindade)
