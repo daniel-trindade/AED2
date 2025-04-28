@@ -28,6 +28,9 @@ for receita, categorias in data.items():
         else:
             G.add_edge(ing1, ing2, peso=1)
 
+assortatividade = nx.attribute_assortativity_coefficient(G, 'tipo')
+print(f"Assortatividade por tipo de ingrediente: {assortatividade:.4f}")
+
 # Agora vamos plotar
 plt.figure(figsize=(22, 22))  # Deixar o gráfico grande
 
