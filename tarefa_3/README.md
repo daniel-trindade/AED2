@@ -12,6 +12,13 @@ O objetivo principal é explorar conceitos fundamentais de grafos — como repre
 
 A análise final inclui o cálculo do coeficiente de assortatividade, que mede a tendência de ingredientes do mesmo tipo se combinarem entre si ou de tipos diferentes se associarem. A partir dessa medida, é possível discutir padrões estruturais da culinária brasileira, além de reforçar a importância dos grafos como ferramenta de modelagem e análise em diferentes domínios do conhecimento.
 
+***
+
+### Vídeo Explicativo
+https://drive.google.com/file/d/1QnUDV__9s5bd9I2OS_JgEz8TaUbFQIfT/view?usp=sharing
+
+
+***
 ### Metodologia
 O trabalho foi desenvolvido em três etapas principais: coleta de dados, construção do grafo e análise da assortatividade.
 
@@ -52,6 +59,7 @@ Com relação a assortatividade do grafo, foi encontrado o valor de -0,0825, ind
 
 Com relação a assortatividade o grafo apresentou um coeficiente de -0,0825, indicando uma leve heterofilia. Isso significa que há uma pequena tendência para combinar ingredientes de tipos diferentes (como proteínas com carboidratos, ou frutas com laticínios). Como o valor é muito próximo de zero, essa preferência não é forte, sugerindo que a culinária brasileira analisada a partir do banco criado possui uma diversidade equilibrada, mesclando tanto ingredientes similares quanto contrastantes em suas receitas.
 
+***
 
 ### Conclusão:
 
