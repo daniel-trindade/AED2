@@ -18,9 +18,12 @@ Para a realização deste estudo, foi selecionado como ponto de partida o Hospit
 
 Com o objetivo de simular trajetos realistas e representativos do cotidiano do atendimento pré-hospitalar, foram definidos como destinos os cinco bairros de Natal com o maior número de acidentes de trânsito registrados. Essa seleção foi baseada nos dados do [Anuário Estatístico de Acidentes de Trânsito de 2018](https://www2.natal.rn.gov.br/sttu2/paginas/File/estatisticas/Anuario_Estatistico_de_Acidentes_de_Transito_2018.pdf), produzido pela prefeitura da cidade de Natal, o qual foi a fonte de informação mais atual que podemos obter de forma segura.
 
-Os Bairros com maior indice de acidentes foram:
+Os Bairros com maior indice de acidentes em 2018 foram:
 1. Lagoa Nova - 871 acidentes (16,00%)
 2. Tirol - 392 acidentes (7,20%)
 3. Capim Macio - 376 acidentes (6,91%)
 4. Alecrim - 350 acidentes (6,43%)
 5. Potengi - 318 acidentes (5,84%)
+
+#### 2.3 Código
+Para que possamos realizar a comparação do desempenho dos algoritmos, foram implementados 3 códigos, cada um deles com a biblioteca alvo de estudo: O primeiro, [cmc_OSMnx.py](/tarefa_4/cmc_OSMnx.py) foi contruido utilizando a biblioteca OSMnx que é capaz de aessar e manipular diretamente os dados do OpenStreetMap. O segundo 

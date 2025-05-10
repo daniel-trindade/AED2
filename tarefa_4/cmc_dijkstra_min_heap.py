@@ -1,8 +1,14 @@
 import requests
 import math
+import heapq
 import matplotlib.pyplot as plt
 from collections import defaultdict
 import time
+from codecarbon import EmissionsTracker
+
+# Iniciar o rastreador de emissões
+tracker = EmissionsTracker()
+tracker.start()
 
 # Coordenadas dos bairros
 hospital = (-5.8098114, -35.2028957)  # Hospital Walfredo Gurgel
@@ -112,77 +118,68 @@ def get_default_speed(highway_type):
     }
     return speed_dict.get(highway_type, 40)  # Padrão para vias não especificadas
 
-# Encontrar o nó com menor distância que ainda não foi visitado
-def encontrar_no_menor_distancia(distances, visitados):
-    # Inicializa com valor infinito e None
-    menor_distancia = float('infinity')
-    no_menor_distancia = None
-    
-    # Procura linearmente entre todos os nós
-    for no, distancia in distances.items():
-        if distancia < menor_distancia and no not in visitados:
-            menor_distancia = distancia
-            no_menor_distancia = no
-    
-    # Se não encontrou nenhum nó com distância finita e não visitado
-    if menor_distancia == float('infinity'):
-        return None
-        
-    return no_menor_distancia
-
-# Implementação do algoritmo de Dijkstra sem usar min-heap
-def dijkstra_tradicional(graph, start_node, end_node):
+# Implementação do algoritmo de Dijkstra usando min-heap explicitamente
+def dijkstra_min_heap(graph, start_node, end_node):
     # Inicialização
     distances = {node: float('infinity') for node in graph}
     distances[start_node] = 0
     predecessors = {node: None for node in graph}
-    visitados = set()
     
-    # Verificar caso trivial: início e fim são o mesmo nó
-    if start_node == end_node:
-        return [start_node], 0
+    # Min-heap (fila de prioridade) para nós a serem explorados
+    # Formato: (distância, node_id)
+    min_heap = [(0, start_node)]
     
-    # Enquanto houver nós não visitados com distância finita
-    continuar = True
-    while continuar:
-        # Encontrar o nó não visitado com a menor distância
-        atual = encontrar_no_menor_distancia(distances, visitados)
+    # Conjunto para rastrear nós processados
+    processed = set()
+    
+    while min_heap:
+        # Extrair nó com menor distância do min-heap (operação O(log n))
+        current_distance, current_node = heapq.heappop(min_heap)
         
-        # Se não há mais nós acessíveis ou chegamos ao destino
-        if atual is None:
+        # Se já alcançamos o nó de destino, terminamos
+        if current_node == end_node:
             break
+        
+        # Se o nó já foi processado, pule
+        if current_node in processed:
+            continue
+        
+        # Marcar o nó como processado
+        processed.add(current_node)
+        
+        # Relaxamento: Atualizar distâncias para todos os vizinhos
+        for neighbor, edge_weight, _ in graph[current_node]:
+            # Se o vizinho já foi processado completamente, pule
+            if neighbor in processed:
+                continue
+                
+            # Calcular nova distância potencial
+            new_distance = current_distance + edge_weight
             
-        # Se chegamos ao destino, podemos parar
-        if atual == end_node:
-            break
-        
-        # Marcar o nó atual como visitado
-        visitados.add(atual)
-        
-        # Atualizar distâncias dos vizinhos
-        for vizinho, peso, _ in graph[atual]:
-            if vizinho not in visitados:
-                distancia_via_atual = distances[atual] + peso
-                if distancia_via_atual < distances[vizinho]:
-                    distances[vizinho] = distancia_via_atual
-                    predecessors[vizinho] = atual
+            # Se encontramos um caminho mais curto
+            if new_distance < distances[neighbor]:
+                # Atualizar distância
+                distances[neighbor] = new_distance
+                # Atualizar predecessor
+                predecessors[neighbor] = current_node
+                # Adicionar ao min-heap (não removemos entradas antigas, apenas adicionamos a nova)
+                heapq.heappush(min_heap, (new_distance, neighbor))
     
-    # Verificar se um caminho foi encontrado
-    if end_node not in visitados and predecessors[end_node] is None:
-        print(f"Não foi possível encontrar um caminho para {end_node}")
-        return [], float('infinity')  # Não há caminho para o destino
-        
-    # Reconstruir o caminho
+    # Reconstruir o caminho do final para o início
     path = []
-    atual = end_node
-    while atual is not None:
-        path.append(atual)
-        atual = predecessors[atual]
+    current = end_node
     
-    # Reverter o caminho para começar no nó inicial
+    # Se não há caminho para o destino
+    if predecessors[end_node] is None and end_node != start_node:
+        return [], float('infinity')
+    
+    # Construir o caminho seguindo os predecessores
+    while current is not None:
+        path.append(current)
+        current = predecessors[current]
+    
+    # Reverter o caminho para que comece no nó inicial
     path.reverse()
-    
-    print(f"Caminho encontrado com {len(path)} nós, distância: {distances[end_node]:.2f} metros")
     
     return path, distances[end_node]
 
@@ -222,41 +219,18 @@ def encontrar_no_mais_proximo(node_coords, lat, lon):
 def plotar_grafo_e_rotas(graph, node_coords, rotas, cores):
     plt.figure(figsize=(15, 15))
     
-    # Plotar arestas do grafo (fundo)
-    print("Plotando arestas do grafo...")
-    edges_plotted = 0
+    # Plotar arestas
     for node in graph:
-        if node in node_coords:  # Garantir que o nó tem coordenadas
-            x1, y1 = node_coords[node][1], node_coords[node][0]  # lon, lat
-            for neighbor, _, _ in graph[node]:
-                if neighbor in node_coords:  # Garantir que o vizinho tem coordenadas
-                    x2, y2 = node_coords[neighbor][1], node_coords[neighbor][0]  # lon, lat
-                    plt.plot([x1, x2], [y1, y2], 'k-', linewidth=0.2, alpha=0.5)
-                    edges_plotted += 1
-    print(f"Plotadas {edges_plotted} arestas do grafo")
+        x1, y1 = node_coords[node][1], node_coords[node][0]  # lon, lat
+        for neighbor, _, _ in graph[node]:
+            x2, y2 = node_coords[neighbor][1], node_coords[neighbor][0]  # lon, lat
+            plt.plot([x1, x2], [y1, y2], 'k-', linewidth=0.2, alpha=0.3)
     
     # Plotar rotas
-    print("Plotando rotas...")
-    rotas_validas = 0
     for i, (rota, cor) in enumerate(zip(rotas, cores)):
-        # Verificar se a rota é válida (não vazia)
-        if len(rota) > 1:
-            x_coords = []
-            y_coords = []
-            for node in rota:
-                if node in node_coords:  # Garantir que o nó tem coordenadas
-                    x_coords.append(node_coords[node][1])  # lon
-                    y_coords.append(node_coords[node][0])  # lat
-            
-            if len(x_coords) > 1:  # Só plotar se tiver pelo menos dois pontos
-                bairro_nome = list(destinos.keys())[i]
-                plt.plot(x_coords, y_coords, color=cor, linewidth=2.5, label=bairro_nome)
-                print(f"Rota para {bairro_nome} plotada com {len(x_coords)} pontos")
-                rotas_validas += 1
-        else:
-            print(f"Rota para {list(destinos.keys())[i]} é inválida (vazia)")
-    
-    print(f"Plotadas {rotas_validas} rotas válidas")
+        x_coords = [node_coords[node][1] for node in rota]  # lon
+        y_coords = [node_coords[node][0] for node in rota]  # lat
+        plt.plot(x_coords, y_coords, color=cor, linewidth=2, label=list(destinos.keys())[i])
     
     # Plotar o hospital
     plt.plot(hospital[1], hospital[0], 'ro', markersize=10, label='Hospital')
@@ -302,34 +276,25 @@ print("\nCalculando rotas, distâncias e tempos estimados:")
 for i, (bairro, coords) in enumerate(destinos.items()):
     # Encontrar o nó mais próximo ao destino
     no_destino = encontrar_no_mais_proximo(node_coords, coords[0], coords[1])
-    print(f"Nó mais próximo para {bairro}: {no_destino}")
     
-    # Verificar se ambos os nós (origem e destino) existem no grafo
-    if no_hospital not in graph:
-        print(f"ERRO: Nó do hospital {no_hospital} não está no grafo!")
-        continue
-    if no_destino not in graph:
-        print(f"ERRO: Nó do destino {no_destino} para {bairro} não está no grafo!")
-        continue
-    
-    # Calcular a rota usando Dijkstra tradicional (sem min-heap)
+    # Calcular a rota usando Dijkstra min-heap
     print(f"Calculando rota para {bairro}...")
     inicio = time.time()
-    path, distancia = dijkstra_tradicional(graph, no_hospital, no_destino)
+    path, distancia = dijkstra_min_heap(graph, no_hospital, no_destino)
     fim = time.time()
     
-    # Verificar se uma rota válida foi encontrada
-    if len(path) > 0:
-        # Estimar tempo de deslocamento
-        tempo_min = estimar_tempo(graph, path)
-        print(f"{bairro}: {distancia:.2f} metros, tempo estimado = {tempo_min:.2f} minutos")
-        print(f"Tempo de cálculo: {(fim - inicio):.2f} segundos, Nós na rota: {len(path)}")
-    else:
-        print(f"AVISO: Não foi possível encontrar uma rota para {bairro}")
+    # Estimar tempo de deslocamento
+    tempo_min = estimar_tempo(graph, path)
     
-    # Adicionar rota à lista (mesmo que vazia)
+    print(f"{bairro}: {distancia:.2f} metros, tempo estimado = {tempo_min:.2f} minutos")
+    print(f"Tempo de cálculo: {(fim - inicio):.2f} segundos, Nós na rota: {len(path)}")
+    
     rotas.append(path)
 
 # Plotar todas as rotas no mesmo mapa
 print("\nPlotando rotas...")
 plotar_grafo_e_rotas(graph, node_coords, rotas, cores)
+
+# Parar o rastreador e exibir as emissões
+emissions = tracker.stop()
+print(f"\nEmissões de CO2 estimadas: {emissions:.6f} kg")

@@ -1,5 +1,11 @@
 import osmnx as ox
 import networkx as nx
+from codecarbon import EmissionsTracker
+
+
+# Iniciar o rastreador de emissões
+tracker = EmissionsTracker()
+tracker.start()
 
 # Coordenadas dos bairros
 hospital = (-5.8098114, -35.2028957)  # Hospital Walfredo Gurgel
@@ -62,3 +68,7 @@ for i, (bairro, coords) in enumerate(destinos.items()):
 
 # Plotar todas as rotas no mesmo mapa
 fig, ax = ox.plot_graph_routes(G, rotas, route_colors=cores, route_linewidth=1, node_size=2)
+
+# Parar o rastreador e exibir as emissões
+emissions = tracker.stop()
+print(f"\nEmissões de CO2 estimadas: {emissions:.6f} kg")
