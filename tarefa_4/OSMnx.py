@@ -61,4 +61,4 @@ for i, (bairro, coords) in enumerate(destinos.items()):
     print(f"{bairro}: {distancia:.2f} metros, tempo estimado = {tempo_min:.2f} minutos")
 
 # Plotar todas as rotas no mesmo mapa
-fig, ax = ox.plot_graph_routes(G, rotas, route_colors=cores, route_linewidth=4, node_size=0)
+fig, ax = ox.plot_graph_routes(G, rotas, route_colors=cores, route_linewidth=1, node_size=2)
