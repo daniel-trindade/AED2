@@ -1,123 +1,113 @@
+import os
+import glob
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import os
+import matplotlib as mpl
 
-def plot_codecarbon_data(csv_path='emissions/emissions_osmnx.csv'):
-    """
-    Plota gráficos para visualizar os dados de recursos capturados pelo codecarbon.
+EMISSIONS_SCALE = 1000    # kg → g
+ENERGY_SCALE    = 1000    # kWh → Wh
+
+mpl.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.sans-serif'] = ['DejaVu Sans']
+
+def analyze_codecarbon_data():
+    folder_path = "emissions/"
+    print(f"Analisando dados em: {os.path.abspath(folder_path)}")
     
-    Parâmetros:
-    csv_path (str): Caminho para o arquivo CSV gerado pelo codecarbon
-    """
-    # Verificar se o arquivo existe
-    if not os.path.exists(csv_path):
-        print(f"Arquivo {csv_path} não encontrado!")
+    csv_files = glob.glob(os.path.join(folder_path, "*.csv"))
+    if not csv_files:
+        print("Nenhum CSV encontrado em:", os.path.abspath(folder_path))
         return
-    
-    # Carregar os dados do CSV
-    try:
-        df = pd.read_csv(csv_path)
-        print(f"Dados carregados com sucesso! Colunas disponíveis: {', '.join(df.columns.tolist())}")
-    except Exception as e:
-        print(f"Erro ao carregar o arquivo CSV: {e}")
+
+    all_data, labels = [], []
+    for file_path in csv_files:
+        try:
+            name = os.path.basename(file_path).replace('.csv', '')
+            labels.append(name)
+            df = pd.read_csv(file_path)
+            metrics = {
+                'emissions': df['emissions'].sum(),
+                'energy_consumed': df['energy_consumed'].sum(),
+                'duration': df['duration'].sum(),
+                'cpu_power': df['cpu_power'].mean(),
+                'ram_power': df['ram_power'].mean() if 'ram_power' in df.columns else 0
+            }
+            all_data.append(metrics)
+            print(f"Processado: {name}")
+        except Exception as e:
+            print(f"Erro ao processar {file_path}: {e}")
+
+    comparison_df = pd.DataFrame(all_data, index=labels)
+    # Remove “None” como nome de índice
+    comparison_df.index.name = ''
+    plot_comparisons(comparison_df)
+
+def annotate_bars(ax, fmt="{:.2f}", pad=3, scale=1.10):
+    # seleciona apenas barras com altura > 0
+    bars = [b for b in ax.patches if b.get_height() > 0]
+    if not bars:
         return
-    
-    # Configurar o estilo dos gráficos
-    sns.set_style("whitegrid")
-    plt.figure(figsize=(15, 12))
-    
-    # 1. Gráfico das emissões totais
-    plt.subplot(2, 2, 1)
-    plt.bar(['Emissões de CO2'], [df['emissions'].sum()], color='darkgreen')
-    plt.title('Emissões Totais de CO2 (kg)', fontsize=14)
-    plt.ylabel('CO2 (kg)')
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
-    
-    # 2. Gráfico de consumo de energia
-    plt.subplot(2, 2, 2)
-    energia_cols = [col for col in df.columns if 'energy' in col.lower()]
-    if energia_cols:
-        df[energia_cols].sum().plot(kind='bar', color='orange')
-        plt.title('Consumo de Energia por Fonte (kWh)', fontsize=14)
-        plt.ylabel('Energia (kWh)')
-        plt.xticks(rotation=45)
-        plt.grid(axis='y', linestyle='--', alpha=0.7)
-    else:
-        plt.text(0.5, 0.5, 'Dados de energia não disponíveis', 
-                 horizontalalignment='center', verticalalignment='center')
-        plt.title('Consumo de Energia', fontsize=14)
-    
-    # 3. Gráfico de uso da CPU ao longo do tempo (se houver dados temporais)
-    plt.subplot(2, 2, 3)
-    if 'timestamp' in df.columns and 'cpu_power' in df.columns:
-        df['timestamp'] = pd.to_datetime(df['timestamp'])
-        sns.lineplot(data=df, x='timestamp', y='cpu_power', color='blue')
-        plt.title('Uso de Energia da CPU ao Longo do Tempo', fontsize=14)
-        plt.xlabel('Tempo')
-        plt.ylabel('Energia CPU (W)')
-        plt.xticks(rotation=45)
-        plt.grid(True, linestyle='--', alpha=0.7)
-    else:
-        # Se não houver dados temporais, plotar CPU vs RAM
-        cpu_cols = [col for col in df.columns if 'cpu' in col.lower()]
-        if cpu_cols:
-            df[cpu_cols].sum().plot(kind='bar', color='blue')
-            plt.title('Uso de Recursos da CPU', fontsize=14)
-            plt.xticks(rotation=45)
-            plt.grid(axis='y', linestyle='--', alpha=0.7)
-        else:
-            plt.text(0.5, 0.5, 'Dados de CPU não disponíveis', 
-                     horizontalalignment='center', verticalalignment='center')
-            plt.title('Uso da CPU', fontsize=14)
-    
-    # 4. Breakdown de emissões por componente (se disponível)
-    plt.subplot(2, 2, 4)
-    emission_breakdown = ['cpu_energy', 'gpu_energy', 'ram_energy']
-    emission_data = []
-    emission_labels = []
-    
-    for col in emission_breakdown:
-        if col in df.columns:
-            emission_data.append(df[col].sum())
-            emission_labels.append(col.replace('_energy', '').upper())
-    
-    if emission_data:
-        plt.pie(emission_data, labels=emission_labels, autopct='%1.1f%%', 
-                startangle=90, shadow=True, explode=[0.05]*len(emission_data))
-        plt.title('Distribuição de Energia por Componente', fontsize=14)
-    else:
-        plt.text(0.5, 0.5, 'Dados detalhados de energia não disponíveis', 
-                 horizontalalignment='center', verticalalignment='center')
-        plt.title('Distribuição de Energia', fontsize=14)
-    
-    # Ajustar layout e mostrar os gráficos
+    heights = [b.get_height() for b in bars]
+    ax.set_ylim(0, max(heights) * scale)
+    for bar in bars:
+        h = bar.get_height()
+        ax.annotate(
+            fmt.format(h),
+            xy=(bar.get_x() + bar.get_width() / 2, h),
+            xytext=(0, pad), textcoords='offset points',
+            ha='center', va='bottom'
+        )
+
+def plot_comparisons(df):
+    # cria colunas escaladas
+    df['emissions_g'] = df['emissions'] * EMISSIONS_SCALE
+    df['energy_Wh']   = df['energy_consumed'] * ENERGY_SCALE
+
+    sns.set(style="whitegrid")
+    fig, axs = plt.subplots(2, 2, figsize=(14, 12), gridspec_kw={'hspace': 0.5})
+    fig.suptitle('Comparativo de Emissão de Carbono e Consumo de Energia', fontsize=16)
+
+    # 1. Emissões de Carbono (g CO₂eq)
+    sns.barplot(x=df.index, y='emissions_g', data=df, palette='viridis', ax=axs[0,0])
+    axs[0,0].set_title('Emissões de Carbono (g CO2)')
+    axs[0,0].set_ylabel('Emissões (g CO2)')
+    axs[0,0].set_xlabel('')
+    annotate_bars(axs[0,0])
+
+    # 2. Consumo de Energia (Wh)
+    sns.barplot(x=df.index, y='energy_Wh', data=df, palette='viridis', ax=axs[0,1])
+    axs[0,1].set_title('Consumo de Energia (Wh)')
+    axs[0,1].set_ylabel('Energia (Wh)')
+    axs[0,1].set_xlabel('')
+    annotate_bars(axs[0,1])
+
+    # 3. Duração da Execução (s)
+    sns.barplot(x=df.index, y='duration', data=df, palette='viridis', ax=axs[1,0])
+    axs[1,0].set_title('Duração da Execução (s)')
+    axs[1,0].set_ylabel('Duração (s)')
+    axs[1,0].set_xlabel('')
+    annotate_bars(axs[1,0])
+
+    # 4. Consumo de Potência por Componente (sem zeros)
+    power_data = (
+        df[['cpu_power','ram_power']]
+        .melt(ignore_index=False, var_name='Componente', value_name='Potência (W)')
+        .reset_index().rename(columns={'index': ''})
+    )
+    # Filtra para remover quaisquer valores zero
+    power_data = power_data[power_data['Potência (W)'] > 0]
+
+    sns.barplot(x='', y='Potência (W)', hue='Componente', data=power_data, ax=axs[1,1])
+    axs[1,1].set_title('Consumo de Potência por Componente (W)')
+    axs[1,1].set_ylabel('Potência (W)')
+    axs[1,1].set_xlabel('')
+    axs[1,1].legend(title='Componente')
+    annotate_bars(axs[1,1])
+
     plt.tight_layout()
-    plt.savefig('codecarbon_resources.png', dpi=300, bbox_inches='tight')
+    plt.subplots_adjust(top=0.90)
     plt.show()
-    
-    print(f"Gráficos salvos como 'codecarbon_resources.png'")
-    
-    # Gerar estatísticas resumidas
-    print("\nEstatísticas resumidas dos recursos monitorados:")
-    if len(df) > 0:
-        # Calcular duração em minutos
-        if 'duration' in df.columns:
-            print(f"Duração total: {df['duration'].sum():.2f} segundos")
-        
-        # Emissões totais
-        if 'emissions' in df.columns:
-            print(f"Emissões totais: {df['emissions'].sum():.6f} kg de CO2")
-        
-        # Energia total
-        energy_cols = [col for col in df.columns if 'energy' in col.lower()]
-        if energy_cols:
-            total_energy = df[energy_cols].sum().sum()
-            print(f"Energia total consumida: {total_energy:.6f} kWh")
-    else:
-        print("Não há dados suficientes para gerar estatísticas.")
-
 
 if __name__ == "__main__":
-    # Executar o plot com o caminho padrão do arquivo emissions.csv
-    plot_codecarbon_data()
+    analyze_codecarbon_data()
