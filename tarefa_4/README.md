@@ -1,4 +1,4 @@
-## Avaliação de algoritmos para o caminho mais curto em grafos urbanos
+# Avaliação de algoritmos para o caminho mais curto em grafos urbanos
 
 by <br/>
 [Daniel Bruno Trindade da Silva](https://github.com/daniel-trindade) <br/>
@@ -6,14 +6,14 @@ by <br/>
 
 
 ***
-### 1. Introdução
+## 1. Introdução
 
 A mobilidade urbana eficiente é um fator determinante para a qualidade dos serviços de emergência, especialmente em grandes centros urbanos. Neste contexto, a escolha de algoritmos de menor caminho pode influenciar diretamente no tempo de resposta de ambulâncias e, por consequência, na eficácia do atendimento médico. Este relatório tem como objetivo avaliar e comparar o desempenho de três algoritmos de cálculo de rotas — Dijkstra tradicional (complexidade O(n²)), Dijkstra com min-heap (melhoria em eficiência), e o algoritmo implementado na biblioteca OSMnx — aplicados a um cenário realista: o deslocamento de ambulâncias partindo do Hospital Walfredo Gurgel, em Natal/RN, com destino aos bairros com maior incidência de acidentes de transito com vítimas.
 
 A análise considera três principais aspectos: (i) desempenho computacional dos algoritmos, em termos de tempo de processamento; (ii) similaridade das rotas geradas, com foco em distância e topologia; e (iii) impacto ambiental estimado, avaliado por meio da pegada de carbono associada às rotas. A partir dessa comparação, busca-se entender qual abordagem oferece melhor equilíbrio entre velocidade de cálculo, precisão nas rotas e sustentabilidade ambiental, contribuindo para o aprimoramento de estratégias logísticas em situações críticas de emergência.
 
-### 2. Metodologia
-#### 2.2 Obtenção de informações 
+## 2. Metodologia
+### 2.2 Obtenção de informações 
 Para a realização deste estudo, foi selecionado como ponto de partida o Hospital Walfredo Gurgel, localizado em Natal/RN. A escolha se justifica pelo fato de o hospital ser a principal referência na cidade para o atendimento de vítimas de acidentes de trânsito, recebendo a maioria dos casos de urgência e emergência da região metropolitana.
 
 Com o objetivo de simular trajetos realistas e representativos do cotidiano do atendimento pré-hospitalar, foram definidos como destinos os cinco bairros de Natal com o maior número de acidentes de trânsito registrados. Essa seleção foi baseada nos dados do [Anuário Estatístico de Acidentes de Trânsito de 2018](https://www2.natal.rn.gov.br/sttu2/paginas/File/estatisticas/Anuario_Estatistico_de_Acidentes_de_Transito_2018.pdf), produzido pela prefeitura da cidade de Natal, o qual foi a fonte de informação mais atual que podemos obter de forma segura.
@@ -27,7 +27,7 @@ Os Bairros com maior indice de acidentes em 2018 foram:
 
 Assim, o presente estudo utilizará os algoritmos selecionados para calcular as rotas mais curtas partindo do Hospital Walfredo Gurgel em direção a cada um dos cinco bairros mencionados. O objetivo é simular cenários de deslocamento de ambulâncias e, com isso, analisar o desempenho e a eficiência de cada abordagem na geração dessas rotas.
 
-#### 2.3 Código
+### 2.3 Código
 Para realizar a comparação de desempenho entre os algoritmos, foram desenvolvidos três códigos distintos, cada um implementando uma abordagem específica de cálculo de menor caminho:
 
 - O primeiro, [`cmc_OSMnx.py`](/tarefa_4/cmc_OSMnx.py), utiliza a biblioteca **OSMnx**, que permite acessar e manipular diretamente dados do OpenStreetMap. Essa ferramenta fornece uma interface de alto nível para construção de grafos urbanos e cálculo de rotas com base em atributos reais da malha viária.
@@ -38,10 +38,10 @@ Para realizar a comparação de desempenho entre os algoritmos, foram desenvolvi
 
 Em todos os três códigos, foi utilizada a biblioteca [`codecarbon`](https://codecarbon.io/) para estimar a **pegada de carbono** gerada durante a execução dos algoritmos. Essa ferramenta permite monitorar o consumo energético do processo e calcular sua emissão estimada de CO₂ equivalente, fornecendo uma métrica adicional para comparar a **eficiência ambiental** de cada abordagem.
 
-### 3. Resultados
+## 3. Resultados
 Foram traçadas rotas tendo como origem o hospital e como destino cada um dos bairos listados, para tal tivemos os seguintes resultados:
 
-#### 3.1 - Mapas
+### 3.1 - Mapas
 
 - **OSMnx**
 ![plot gerado pelo OSMnx](/tarefa_4/imgs/plot_osmnx.png)
@@ -53,7 +53,7 @@ Foram traçadas rotas tendo como origem o hospital e como destino cada um dos ba
 ![Erro osmnx](/tarefa_4/imgs/erro_osmnx.png)
 
 
-#### 3.2 - Distancia Percorrida em metros
+### 3.2 - Distancia Percorrida em metros
 
 |             | OSMnx       | Dijkstra Tradicional | Dijkstra Min-Heap |
 |-------------|-------------|----------------------|-------------------|
@@ -64,14 +64,14 @@ Foram traçadas rotas tendo como origem o hospital e como destino cada um dos ba
 | Potengi     | 16096,24    | 11982,82             | 11982,82          |
 
 
-#### 3.3 - Pegada de Carbono
+### 3.3 - Pegada de Carbono
 
 ![Resultados do codecarbom](/tarefa_4/imgs/pegada_de_carbono.png)
 
 
-### Análise dos Resultados
+## Análise dos Resultados
 
-#### Rotas
+### Rotas
 
 A partir dos resultados obtidos na criação de rotas observa-se que, os algoritmos Dijkstra (tradicional e com min-heap) produziram rotas idênticas, o que confirma que ambas as implementações geram os mesmos caminhos, diferindo apenas na estrutura interna e eficiência de execução.
 
@@ -83,7 +83,7 @@ Ainda com relação ao comportamento inadequado do OSMnx na tentativa de criar a
 
 Como ambos os algoritmos utilizam dados do _OpenStreetMap_, é possível que a API empregada na obtenção das informações para o algoritmo de Dijkstra esteja desatualizada ou desconsidere detalhes específicos da rede viária, como a acessibilidade ou restrições associadas à ponte Presidente Costa e Silva.
 
-#### Pegada de Carbono
+### Pegada de Carbono
 
 Com relação a pegada de corbono, o algoritmo Dijkstra Tradicional apresenta as maiores emissões de carbono, significativamente superiores às demais abordagens. O osmnx tem a menor emissão, seguido pelo Dijkstra min-heap, que é 6,75 vezes mais eficiente em carbono do que o dijkstra Tradicional. Isso mostra como o uso de uma estrutura de dados maiseficiente pode causar um grande impacto no desempenho de uma aplicação.
 
@@ -94,7 +94,7 @@ O tempo de execução do dijkstra Tradicional é extremamente alto, quase 7 veze
 De forma geral o osmnx se destaca como a solução mais eficiente em todas as frentes: menor tempo de execução, menor consumo energético e menor pegada de carbono. O dijkstra Tradicional, apesar de conhecido, é significativamente menos eficiente, sendo o pior em todas as métricas analisadas. O dijkstra Min-heap representa um bom meio-termo entre desempenho e sustentabilidade, com consumo energético e emissões moderados, e tempo de execução aceitável.
 
 
-### Conclusão
+## Conclusão
 A avaliação dos algoritmos de menor caminho aplicada ao contexto urbano da cidade de Natal/RN revelou diferenças significativas tanto em desempenho computacional quanto em sustentabilidade ambiental. A análise demonstrou que, embora o algoritmo de Dijkstra tradicional gere rotas corretas, sua implementação com complexidade O(n²) é altamente ineficiente, apresentando o maior tempo de execução, maior consumo de energia e maior emissão de carbono entre os três métodos avaliados.
 
 A versão otimizada com estrutura de min-heap se mostrou uma alternativa viável, mantendo a precisão das rotas e reduzindo consideravelmente o impacto ambiental e o tempo de processamento, representando assim um bom equilíbrio entre desempenho e eficiência energética.
