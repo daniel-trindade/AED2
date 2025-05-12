@@ -1,4 +1,4 @@
-# Avaliação de algoritmos para o caminho mais curto em grafos urbanos
+# Avaliação Comparativa de Algoritmos de Caminho Mais Curto em Grafos Urbanos
 
 by <br/>
 [Daniel Bruno Trindade da Silva](https://github.com/daniel-trindade) <br/>
@@ -16,7 +16,7 @@ A análise considera três principais aspectos: (i) desempenho computacional dos
 ### 2.2 Obtenção de informações 
 Para a realização deste estudo, foi selecionado como ponto de partida o Hospital Walfredo Gurgel, localizado em Natal/RN. A escolha se justifica pelo fato de o hospital ser a principal referência na cidade para o atendimento de vítimas de acidentes de trânsito, recebendo a maioria dos casos de urgência e emergência da região metropolitana.
 
-Com o objetivo de simular trajetos realistas e representativos do cotidiano do atendimento pré-hospitalar, foram definidos como destinos os cinco bairros de Natal com o maior número de acidentes de trânsito registrados. Essa seleção foi baseada nos dados do [Anuário Estatístico de Acidentes de Trânsito de 2018](https://www2.natal.rn.gov.br/sttu2/paginas/File/estatisticas/Anuario_Estatistico_de_Acidentes_de_Transito_2018.pdf), produzido pela prefeitura da cidade de Natal, o qual foi a fonte de informação mais atual que podemos obter de forma segura.
+Com o objetivo de simular trajetos realistas e representativos do cotidiano do atendimento das ambulancias de socorro, foram definidos como destinos os cinco bairros de Natal com o maior número de acidentes de trânsito registrados. Essa seleção foi baseada nos dados do [Anuário Estatístico de Acidentes de Trânsito de 2018](https://www2.natal.rn.gov.br/sttu2/paginas/File/estatisticas/Anuario_Estatistico_de_Acidentes_de_Transito_2018.pdf), produzido pela prefeitura da cidade de Natal, o qual foi a fonte de informação mais atual que podemos obter de forma segura.
 
 Os Bairros com maior indice de acidentes em 2018 foram:
 1. Lagoa Nova - 871 acidentes (16,00%)
@@ -79,13 +79,13 @@ Por outro lado, o algoritmo da biblioteca OSMnx gerou rotas com distâncias lige
 
 Ainda com relação ao comportamento inadequado do OSMnx na tentativa de criar a rota para o bairro do Potengi, acreditamos que o mesmo possa ter obtido informações de que a ponte está inoperante (devido a reformas) pela API, pois ao consultar a ponte pelo site do _OpenStreetMap_ observamos o seguinte comentário:
 
->Bloqueio viário em razão das obras na Av. Felizardo Firmino Moura, com restrição de acesso, conforme explicado em site da Prefeitura Municipal: https://natal.rn.gov.br/news/post2/38197
+>"Bloqueio viário em razão das obras na Av. Felizardo Firmino Moura, com restrição de acesso, conforme explicado em site da Prefeitura Municipal: https://natal.rn.gov.br/news/post2/38197"
 
 Como ambos os algoritmos utilizam dados do _OpenStreetMap_, é possível que a API empregada na obtenção das informações para o algoritmo de Dijkstra esteja desatualizada ou desconsidere detalhes específicos da rede viária, como a acessibilidade ou restrições associadas à ponte Presidente Costa e Silva.
 
 ### Pegada de Carbono
 
-Com relação a pegada de corbono, o algoritmo Dijkstra Tradicional apresenta as maiores emissões de carbono, significativamente superiores às demais abordagens. O osmnx tem a menor emissão, seguido pelo Dijkstra min-heap, que é 6,75 vezes mais eficiente em carbono do que o dijkstra Tradicional. Isso mostra como o uso de uma estrutura de dados maiseficiente pode causar um grande impacto no desempenho de uma aplicação.
+Com relação a pegada de corbono, o algoritmo Dijkstra Tradicional apresenta as maiores emissões de carbono, significativamente superiores às demais abordagens. O osmnx tem a menor emissão, seguido pelo Dijkstra min-heap, que é 6,75 vezes mais eficiente em carbono do que o dijkstra Tradicional. Isso mostra como a utilização de uma estrutura de dados menos eficiente pode causar um grande impacto no desempenho de uma aplicação.
 
 No consumo de energia, mais uma vez, o Dijkstra Tradicional consome muito mais energia que os outros, sendo cerca de 17 vezes mais alto que o consumo do osmnx e 7,4 vezes mais alto que o Dijkstra min-heap. O osmnx é o mais eficiente nesse aspecto.
 
