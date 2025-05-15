@@ -4,6 +4,10 @@ by <br/>
 [Daniel Bruno Trindade da Silva](https://github.com/daniel-trindade) <br/>
 [André Luiz Lima Souza](https://github.com/andreluizlimaa)
 
+***
+## Vídeo de Apresentação
+
+[![YouTube](https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg)](https://youtu.be/_fylSRF4SX8)
 
 ***
 ## 1. Introdução
