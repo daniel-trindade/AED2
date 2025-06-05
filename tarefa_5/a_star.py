@@ -18,12 +18,13 @@ import time
 from codecarbon import EmissionsTracker
 import heapq
 
-# Iniciar o rastreador de emissões
+# Iniciando o rastreador de emissões do code carbon
 tracker = EmissionsTracker()
 tracker.start()
 
-# Coordenadas dos bairros
-czoonoses = (-5.7532189, -35.2621815) # Centro de Zoonoses de Natal
+#########################
+### DEFININDO FUNÇÕES ###
+#########################
 
 # Função para carregar destinos do arquivo JSON
 def carregar_destinos(arquivo_json):
@@ -34,8 +35,7 @@ def carregar_destinos(arquivo_json):
     try:
         with open(arquivo_json, 'r', encoding='utf-8') as file:
             dados = json.load(file)
-        
-        # OPÇÃO 1: Criar IDs únicos para cada ocorrência
+
         destinos_dict = {}
         contador_bairros = {}
         
@@ -76,9 +76,6 @@ def carregar_destinos(arquivo_json):
     except Exception as e:
         print(f"Erro ao carregar destinos: {e}")
         return {}
-
-# Carregar destinos do arquivo JSON
-destinos = carregar_destinos('db.json')
 
 # Função para calcular a distância haversine entre dois pontos em lat/long
 def haversine(lat1, lon1, lat2, lon2):
@@ -188,7 +185,6 @@ def get_default_speed(highway_type):
     }
     return speed_dict.get(highway_type, 40)  # Padrão para vias não especificadas
 
-# Implementação do algoritmo A*
 # Implementação do algoritmo A* para encontrar o caminho mais curto
 # entre dois nós usando uma heurística baseada na distância euclidiana
 def a_star(graph, start_node, end_node, node_coords):
@@ -369,6 +365,14 @@ def plotar_grafo_e_rotas(graph, node_coords, rotas, cores):
     plt.grid(True)
     plt.tight_layout()
     plt.show()
+
+
+
+# Carregar destinos do arquivo JSON
+destinos = carregar_destinos('db.json')
+
+# Coordenadas do centro de zoonoses
+czoonoses = (-5.7532189, -35.2621815)
 
 # Definir limites para extrair dados do OpenStreetMap (bounding box para Natal-RN)
 min_lat = -5.87
