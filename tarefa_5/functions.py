@@ -1,7 +1,3 @@
-##################################################################
-###################### DEFINIÇÃO DE FUNÇÕES ######################
-##################################################################
-
 import requests
 import math
 import matplotlib.pyplot as plt
@@ -61,7 +57,7 @@ def carregar_destinos(arquivo_json):
     except Exception as e:
         print(f"Erro ao carregar destinos: {e}")
         return {}
-
+    
 # Função para calcular a distância haversine entre dois pontos em lat/long
 def haversine(lat1, lon1, lat2, lon2):
     # Raio da Terra em metros
