@@ -1,30 +1,15 @@
-""""
-PARA EXECUÇÃO DESSE PROGRAMA SERÁ NECESSÁRIO A INSTALAÇÃO DE ALGUMAS BIBLIOTECAS:
- - matplotlib
- - codecarbon
- - pandas
-Você pode instalar direto em sua maquina ou usar um ambiente virtual.
-Caso opte por um ambiente virtual, execute os seguintes comandos:
-python -m venv venv
-venv/Scripts/activate
-pip install requirements.txt
-"""
+##################################################################
+###################### DEFINIÇÃO DE FUNÇÕES ######################
+##################################################################
 
 import requests
 import math
 import matplotlib.pyplot as plt
 from collections import defaultdict
 import time
-from codecarbon import EmissionsTracker
 import heapq
-
-# Iniciando o rastreador de emissões do code carbon
-tracker = EmissionsTracker()
-tracker.start()
-
-#########################
-### DEFININDO FUNÇÕES ###
-#########################
+import json
+import osmnx as ox
 
 # Função para carregar destinos do arquivo JSON
 def carregar_destinos(arquivo_json):
@@ -310,6 +295,191 @@ def encontrar_no_mais_proximo(node_coords, lat, lon):
     
     return closest_node
 
+def plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds=None):
+    """
+    Plota um mapa da cidade de Natal mostrando a rede viária e os pontos de destino.
+    
+    Parâmetros:
+    - graph: grafo da rede viária
+    - node_coords: coordenadas dos nós do grafo
+    - destinos: dicionário com destinos carregados do JSON
+    - czoonoses: coordenadas do centro de zoonoses (lat, lon)
+    - bounds: limites da área (min_lat, min_lon, max_lat, max_lon) - opcional
+    """
+    import matplotlib.pyplot as plt
+    import numpy as np
+    
+    plt.figure(figsize=(16, 12))
+    
+    # Definir ou calcular limites para a área do mapa
+    if bounds is None or bounds == (0, 0, 0, 0):
+        # Calcular limites automaticamente baseado nos destinos e centro de zoonoses
+        print("Calculando limites automaticamente...")
+        
+        lats = [czoonoses[0]]  # lat do centro de zoonoses
+        lons = [czoonoses[1]]  # lon do centro de zoonoses
+        
+        # Adicionar coordenadas dos destinos
+        for lon, lat in destinos.values():
+            lats.append(lat)
+            lons.append(lon)
+        
+        # Adicionar coordenadas dos nós do grafo se disponíveis
+        if node_coords:
+            for lat, lon in node_coords.values():
+                lats.append(lat)
+                lons.append(lon)
+        
+        # Calcular limites com margem
+        margem = 0.01  # ~1km aproximadamente
+        min_lat = min(lats) - margem
+        max_lat = max(lats) + margem
+        min_lon = min(lons) - margem
+        max_lon = max(lons) + margem
+        
+        print(f"Limites calculados: lat({min_lat:.4f}, {max_lat:.4f}), lon({min_lon:.4f}, {max_lon:.4f})")
+    else:
+        min_lat, min_lon, max_lat, max_lon = bounds
+        print(f"Usando limites fornecidos: lat({min_lat:.4f}, {max_lat:.4f}), lon({min_lon:.4f}, {max_lon:.4f})")
+    
+    print("Plotando rede viária de Natal...")
+    
+    # Plotar arestas do grafo (rede viária)
+    edges_plotted = 0
+    for node in graph:
+        if node in node_coords:
+            lat1, lon1 = node_coords[node]  # lat, lon
+            x1, y1 = lon1, lat1  # converter para x, y (lon, lat)
+            
+            for neighbor, distance, speed in graph[node]:
+                if neighbor in node_coords:
+                    lat2, lon2 = node_coords[neighbor]
+                    x2, y2 = lon2, lat2
+                    
+                    # Plotar apenas se as coordenadas estão dentro dos limites
+                    if (min_lat <= lat1 <= max_lat and min_lon <= lon1 <= max_lon and
+                        min_lat <= lat2 <= max_lat and min_lon <= lon2 <= max_lon):
+                        plt.plot([x1, x2], [y1, y2], 'gray', linewidth=0.6, alpha=0.9)
+                        edges_plotted += 1
+    
+    print(f"Plotadas {edges_plotted} arestas da rede viária")
+    
+    # Plotar o centro de zoonoses
+    lat_czoonoses, lon_czoonoses = czoonoses
+    plt.plot(lon_czoonoses, lat_czoonoses, 'ro', markersize=12, 
+             label='Centro de Zoonoses', markeredgecolor='darkred', markeredgewidth=2)
+    
+    # Plotar destinos por bairro
+    print("Plotando destinos...")
+    destinos_plotados = 0
+    
+    if not destinos:
+        print("AVISO: Nenhum destino foi carregado!")
+    else:
+        print(f"Destinos disponíveis: {len(destinos)}")
+        
+    cores_bairros = plt.cm.Set3(np.linspace(0, 1, max(12, len(destinos))))
+    bairros_unicos = {}
+    
+    for i, (nome_destino, coordenadas) in enumerate(destinos.items()):
+        # Verificar formato das coordenadas (lon, lat) ou (lat, lon)
+        if len(coordenadas) == 2:
+            # Assumir que está no formato (lon, lat) baseado no código original
+            lon, lat = coordenadas
+            
+            # Verificar se as coordenadas fazem sentido para Natal-RN
+            # Natal: aproximadamente lat -5.7 a -5.8, lon -35.2 a -35.3
+            if not (-6.0 <= lat <= -5.0 and -36.0 <= lon <= -34.0):
+                print(f"AVISO: Coordenadas suspeitas para {nome_destino}: {coordenadas}")
+                # Tentar trocar lat/lon
+                lat, lon = coordenadas
+                
+        else:
+            print(f"ERRO: Formato de coordenadas inválido para {nome_destino}: {coordenadas}")
+            continue
+            
+        # Extrair nome do bairro (remover sufixo numérico se existir)
+        nome_bairro = nome_destino.split('_')[0]
+        
+        # Atribuir cor única por bairro
+        if nome_bairro not in bairros_unicos:
+            bairros_unicos[nome_bairro] = len(bairros_unicos)
+        
+        cor_idx = bairros_unicos[nome_bairro] % len(cores_bairros)
+        cor = cores_bairros[cor_idx]
+        
+        # Plotar ponto
+        plt.plot(lon, lat, 'o', color=cor, markersize=8, 
+                markeredgecolor='black', markeredgewidth=1, alpha=0.8)
+        
+        # Adicionar rótulo com nome do destino
+        plt.text(lon, lat, nome_destino, fontsize=8, 
+                ha='center', va='bottom', weight='bold',
+                bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.7))
+        
+        destinos_plotados += 1
+        print(f"Plotado: {nome_destino} em ({lon:.4f}, {lat:.4f})")
+    
+    print(f"Plotados {destinos_plotados} destinos")
+    
+    # Criar legenda para bairros únicos
+    handles_legenda = []
+    for bairro, idx in bairros_unicos.items():
+        cor_idx = idx % len(cores_bairros)
+        cor = cores_bairros[cor_idx]
+        handles_legenda.append(plt.Line2D([0], [0], marker='o', color='w', 
+                                        markerfacecolor=cor, markersize=8, 
+                                        label=bairro, markeredgecolor='black'))
+    
+    # Adicionar centro de zoonoses à legenda
+    handles_legenda.insert(0, plt.Line2D([0], [0], marker='o', color='w', 
+                                       markerfacecolor='red', markersize=10, 
+                                       label='Centro de Zoonoses', markeredgecolor='darkred'))
+    
+    # Configurar o plot
+    plt.title("Mapa de Natal - RN\nRede Viária e Pontos de Destino", 
+              fontsize=16, weight='bold', pad=20)
+    plt.xlabel("Longitude", fontsize=12, weight='bold')
+    plt.ylabel("Latitude", fontsize=12, weight='bold')
+    
+    # Definir limites do plot baseado nos dados reais
+    if destinos_plotados > 0 or node_coords:
+        plt.xlim(min_lon - 0.005, max_lon + 0.005)
+        plt.ylim(min_lat - 0.005, max_lat + 0.005)
+    else:
+        # Limites padrão para Natal-RN se não houver dados
+        plt.xlim(-35.3, -35.1)
+        plt.ylim(-5.9, -5.7)
+    
+    # Adicionar grade
+    plt.grid(True, alpha=0.3, linestyle='--')
+    
+    # Adicionar legenda
+    plt.legend(handles=handles_legenda, loc='upper left', bbox_to_anchor=(1.05, 1), 
+              fontsize=10, title="Locais", title_fontsize=12)
+    
+    # Ajustar layout
+    plt.tight_layout()
+    
+    # Adicionar informações sobre a área
+    info_text = f"Área: {abs(max_lat - min_lat):.4f}° × {abs(max_lon - min_lon):.4f}°\n"
+    info_text += f"Nós no grafo: {len(node_coords)}\n"
+    info_text += f"Destinos plotados: {destinos_plotados}"
+    
+    plt.text(0.02, 0.98, info_text, transform=plt.gca().transAxes, 
+             fontsize=10, verticalalignment='top',
+             bbox=dict(boxstyle='round,pad=0.5', facecolor='lightblue', alpha=0.8))
+    
+    print("Mapa plotado com sucesso!")
+    plt.show()
+
+
+
+######################################################################################
+######### NÃO SEI SE ESSA FUNÇÃO É NECESSÁRIA, MAS ESTÁ AQUI PARA REFERÊNCIA #########
+######################################################################################
+
+""" 
 # Função para plotar o grafo e as rotas
 def plotar_grafo_e_rotas(graph, node_coords, rotas, cores):
     plt.figure(figsize=(15, 15))
@@ -364,87 +534,6 @@ def plotar_grafo_e_rotas(graph, node_coords, rotas, cores):
     plt.ylabel("Latitude")
     plt.grid(True)
     plt.tight_layout()
-    plt.show()
+    plt.show() 
 
-
-
-# Carregar destinos do arquivo JSON
-destinos = carregar_destinos('db.json')
-
-# Coordenadas do centro de zoonoses
-czoonoses = (-5.7532189, -35.2621815)
-
-# Definir limites para extrair dados do OpenStreetMap (bounding box para Natal-RN)
-min_lat = -5.87
-min_lon = -35.28
-max_lat = -5.73
-max_lon = -35.19
-bounds = (min_lat, min_lon, max_lat, max_lon)
-
-print("Baixando dados do OpenStreetMap...")
-data = obter_dados_estradas(bounds)
-
-print("Criando grafo da rede viária...")
-graph, node_coords = criar_grafo(data)
-
-print(f"Grafo criado com {len(graph)} nós.")
-
-# Encontrar o nó mais próximo ao centro de zoonoses
-no_czoonoses = encontrar_no_mais_proximo(node_coords, czoonoses[0], czoonoses[1])
-print(f"Nó mais próximo ao centro de zoonoses: {no_czoonoses}")
-
-
-
-
-######## A PARTIR DAQUI O CÓDIGO PRECISA SER ########
-######## AJUSTADO DE ACORDO COM A ESTRATÉGIA ########
-######## QUE IREMOS ADOTAR PARA O PROBLEMA   ########
-
-
-
-
-# Cores para as rotas
-cores = ['red', 'blue', 'green', 'orange', 'purple']
-
-# Calcular rotas, distâncias e tempos estimados usando A*
-rotas = []
-print("\nCalculando rotas com A*, distâncias e tempos estimados:")
-for i, (bairro, coords) in enumerate(destinos.items()):
-    # Encontrar o nó mais próximo ao ponto
-    no_destino = encontrar_no_mais_proximo(node_coords, coords[0], coords[1])
-    print(f"Nó mais próximo para {bairro}: {no_destino}")
-    
-    # Verificar se ambos os nós (origem e destino) existem no grafo
-    if no_czoonoses not in graph:
-        print(f"ERRO: Nó do hospital {no_czoonoses} não está no grafo!")
-        continue
-    if no_destino not in graph:
-        print(f"ERRO: Nó do destino {no_destino} para {bairro} não está no grafo!")
-        continue
-    
-    # Calcular a rota usando A*
-    print(f"Calculando rota para {bairro} com A*...")
-    inicio = time.time()
-    path, distancia = a_star(graph, no_czoonoses, no_destino, node_coords)
-    fim = time.time()
-    
-    # Verificar se uma rota válida foi encontrada
-    if len(path) > 0:
-        # Estimar tempo de deslocamento
-        tempo_min = estimar_tempo(graph, path)
-        print(f"{bairro}: {distancia:.2f} metros, tempo estimado = {tempo_min:.2f} minutos")
-        print(f"Tempo de cálculo A*: {(fim - inicio):.4f} segundos, Nós na rota: {len(path)}")
-    else:
-        print(f"AVISO: A* não conseguiu encontrar uma rota para {bairro}")
-    
-    # Adicionar rota à lista (mesmo que vazia)
-    rotas.append(path)
-    print()
-
-# Plotar todas as rotas no mesmo mapa
-print("Plotando rotas calculadas com A*...")
-plotar_grafo_e_rotas(graph, node_coords, rotas, cores)
-
-# Parar o rastreador e exibir as emissões
-emissions = tracker.stop()
-print(f"\nEmissões de CO2 estimadas: {emissions:.6f} kg")
+"""

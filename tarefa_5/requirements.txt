@@ -1,5 +1,7 @@
 codecarbon==3.0.2
 matplot==0.1.9
 matplotlib==3.10.3
+networkx==3.5
 numpy==2.2.6
+osmnx==2.0.3
 pandas==2.3.0
