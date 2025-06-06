@@ -40,12 +40,11 @@ print(f"Grafo criado com {len(graph)} nós.")
 no_czoonoses = encontrar_no_mais_proximo(node_coords, czoonoses[0], czoonoses[1])
 print(f"Nó mais próximo ao centro de zoonoses: {no_czoonoses}")
 
-# Chamar a função:
+# Plot do mapa com os pontos de destino e o centro de zoonoses
 print("Plotando mapa natal com destinos...")
 plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds)
 
 # Código comentado para diagnóstico dos dados carregados
-
 """ 
 # Primeiro, verificar os dados carregados:
 print("=== DIAGNÓSTICO DOS DADOS ===")
