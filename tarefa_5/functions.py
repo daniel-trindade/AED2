@@ -6,6 +6,7 @@ import time
 import heapq
 import json
 import osmnx as ox
+import numpy as np
 
 # Função para carregar destinos do arquivo JSON
 def carregar_destinos(arquivo_json):
@@ -302,9 +303,7 @@ def plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, boun
     - czoonoses: coordenadas do centro de zoonoses (lat, lon)
     - bounds: limites da área (min_lat, min_lon, max_lat, max_lon) - opcional
     """
-    import matplotlib.pyplot as plt
-    import numpy as np
-    
+
     plt.figure(figsize=(16, 12))
     
     # Definir ou calcular limites para a área do mapa
@@ -469,6 +468,61 @@ def plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, boun
     print("Mapa plotado com sucesso!")
     plt.show()
 
+######################################################################################
+########################### TESTANDO FUNÇÕES PARA SEPARAR GRAFO ######################
+######################################################################################
+
+from sklearn.cluster import KMeans
+
+# Função para dividir os destinos em clusters (subgrafos)
+def dividir_destinos_em_clusters(destinos, n_clusters=10, plotar=True):
+    """
+    Divide os destinos em clusters usando K-Means.
+
+    Parâmetros:
+    - destinos: dicionário {nome: (lon, lat)}
+    - n_clusters: número de clusters desejado
+    - plotar: se True, exibe um gráfico dos clusters
+    
+    Retorna:
+    - labels_clusters: dicionário {nome: cluster_id}
+    """
+    # Preparar os dados em formato adequado
+    coords = []
+    nomes = []
+    for nome, (lon, lat) in destinos.items():
+        # Usar lon, lat diretamente (atenção: para clustering mais preciso, ideal seria converter para UTM)
+        coords.append([lon, lat])
+        nomes.append(nome)
+    
+    coords = np.array(coords)
+
+    # Rodar o K-Means
+    kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
+    kmeans.fit(coords)
+    labels = kmeans.labels_
+
+    # Construir dicionário de resultado
+    labels_clusters = {nome: label for nome, label in zip(nomes, labels)}
+
+    # Plotar se desejado
+    if plotar:
+        plt.figure(figsize=(10, 8))
+        cores = plt.cm.tab10(np.linspace(0, 1, n_clusters))
+        for i in range(n_clusters):
+            cluster_coords = coords[labels == i]
+            plt.scatter(cluster_coords[:,0], cluster_coords[:,1], 
+                        color=cores[i], label=f'Cluster {i+1}', s=80, edgecolor='k')
+        
+        plt.title(f"Clusters dos Destinos (K-Means, k={n_clusters})", fontsize=14)
+        plt.xlabel("Longitude")
+        plt.ylabel("Latitude")
+        plt.legend()
+        plt.grid(True)
+        plt.tight_layout()
+        plt.show()
+    
+    return labels_clusters
 
 
 ######################################################################################

@@ -8,7 +8,15 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 """
 
-from functions import carregar_destinos, obter_dados_estradas, criar_grafo, encontrar_no_mais_proximo, plotar_mapa_natal_com_destinos
+from functions import (
+  carregar_destinos,
+  obter_dados_estradas,
+  criar_grafo,
+  encontrar_no_mais_proximo,
+  plotar_mapa_natal_com_destinos,
+  dividir_destinos_em_clusters,
+)
+
 from codecarbon import EmissionsTracker
 
 # Iniciando o rastreador de emissões do code carbon
@@ -41,10 +49,30 @@ no_czoonoses = encontrar_no_mais_proximo(node_coords, czoonoses[0], czoonoses[1]
 print(f"Nó mais próximo ao centro de zoonoses: {no_czoonoses}")
 
 # Plot do mapa com os pontos de destino e o centro de zoonoses
-print("Plotando mapa natal com destinos...")
-plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds)
+#print("Plotando mapa natal com destinos...")
+#plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds)
 
-# Código comentado para diagnóstico dos dados carregados
+print("Dividindo destinos em 10 clusters...")
+labels_clusters = dividir_destinos_em_clusters(destinos, n_clusters=10, plotar=False)
+
+# Exemplo: imprimir quais destinos ficaram em cada cluster
+clusters = {}
+for nome, cluster_id in labels_clusters.items():
+    clusters.setdefault(cluster_id, []).append(nome)
+
+for cluster_id, nomes in clusters.items():
+    print(f"\nCluster {cluster_id+1} ({len(nomes)} pontos):")
+    for nome in nomes:
+        print(f"  - {nome}")
+
+
+
+
+
+###################################################################
+##### Código comentado para diagnóstico dos dados carregados ######
+###################################################################
+
 """ 
 # Primeiro, verificar os dados carregados:
 print("=== DIAGNÓSTICO DOS DADOS ===")
