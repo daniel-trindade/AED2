@@ -430,53 +430,6 @@ def encontrar_pontos_mais_distantes_por_cluster(destinos, labels_clusters, czoon
 
     return resultados
 
-######################################################################################
-############################### TESTE DE FUNÇÕES AQUI ################################
-######################################################################################
-
-def encontrar_ponto_mais_distante_no_cluster(destinos, labels_clusters, czoonoses, cluster_alvo_id):
-    """
-    Encontra o ponto mais distante do centro de zoonoses dentro de um único cluster específico.
-
-    Parâmetros:
-    - destinos: dicionário {nome: (lon, lat)}
-    - labels_clusters: dicionário {nome: cluster_id}
-    - czoonoses: tupla (lat, lon) do ponto de origem
-    - cluster_alvo_id: O ID do cluster a ser analisado.
-
-    Retorna:
-    - Uma tupla (nome_destino_mais_distante, distancia_em_metros).
-    - Retorna (None, -1) se o cluster especificado não contiver nenhum destino.
-    """
-    max_dist = -1
-    destino_mais_distante = None
-
-    # Coordenadas do ponto de origem (Centro de Zoonoses)
-    lat_cz, lon_cz = czoonoses
-
-    # Itera sobre os destinos para encontrar aqueles que pertencem ao cluster alvo
-    for nome_destino, id_cluster_atual in labels_clusters.items():
-        if id_cluster_atual == cluster_alvo_id:
-            # Obtém as coordenadas do destino (lon, lat) e desempacota corretamente
-            lon_destino, lat_destino = destinos[nome_destino]
-            
-            # Calcula a distância Haversine
-            dist = haversine(lat_cz, lon_cz, lat_destino, lon_destino)
-            
-            # Verifica se é a maior distância encontrada até agora neste cluster
-            if dist > max_dist:
-                max_dist = dist
-                destino_mais_distante = nome_destino
-
-    # Retorna o resultado para o cluster específico
-    if destino_mais_distante is not None:
-        return (destino_mais_distante, max_dist)
-    else:
-        # Caso o cluster esteja vazio ou não seja encontrado
-        return (None, -1)
-
-# Adicione esta função em functions.py
-
 def tracar_rota_cluster_tsp(cluster_alvo_id, destinos, labels_clusters, czoonoses_coords, graph, node_coords):
     """
     Traça uma rota otimizada (usando a heurística do vizinho mais próximo) que começa
@@ -652,3 +605,7 @@ def imprimir_resumo_detalhado(rotas_salvas, destinos, node_coords):
     
     print("\n-----------------------------------------")
     print("--- Fim do Resumo ---")
+
+######################################################################################
+############################### TESTE DE FUNÇÕES AQUI ################################
+######################################################################################
