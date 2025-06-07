@@ -13,10 +13,15 @@ from functions import (
   obter_dados_estradas,
   criar_grafo,
   encontrar_no_mais_proximo,
-  plotar_mapa_natal_com_destinos,
   dividir_destinos_em_clusters,
+  planejar_rotas_para_todos_os_clusters,
+  imprimir_resumo_detalhado
+)
+
+from plot_functions import(
   plotar_mapa_com_clusters,
-  encontrar_pontos_mais_distantes_por_cluster
+  plotar_mapa_natal_com_destinos,
+  plotar_mapa_com_rotas
 )
 
 from codecarbon import EmissionsTracker
@@ -54,10 +59,11 @@ no_czoonoses = encontrar_no_mais_proximo(node_coords, czoonoses[0], czoonoses[1]
 print(f"Nó mais próximo ao centro de zoonoses: {no_czoonoses}")
 
 # Plot do mapa com os pontos de destino e o centro de zoonoses
-# Desomente essa parte para plotar mapa com todos os pontos de interesse
-""" 
+# Descomente essa parte para plotar mapa com todos os pontos de interesse
+
+"""
 print("Plotando mapa natal com destinos...")
-plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds)
+plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds) 
 """
 
 ################### Dividir os destinos em clusters ###################
@@ -96,18 +102,42 @@ for cluster_id, cor in mapa_cores.items():
 
 print("\nEstatísticas finais:")
 print(f"Total de clusters: {len(mapa_cores)}")
-print(f"Total de destinos plotados: {sum(estatisticas_clusters.values())}")  
+print(f"Total de destinos plotados: {sum(estatisticas_clusters.values())}")
 """
 
-########### Encontra ponto mais distante de cada Cluster #############
+######## Planejar e Salvar Rotas para Todos os Clusters usado A* ######## 
 
-# Encontrar o ponto mais distante do CZO em cada cluster
-resultados = encontrar_pontos_mais_distantes_por_cluster(destinos, labels_clusters, czoonoses)
+""" 
+# Chama a função principal que gerencia o planejamento para todos os clusters
+rotas_salvas = planejar_rotas_para_todos_os_clusters(
+    destinos=destinos,
+    labels_clusters=labels_clusters,
+    czoonoses_coords=czoonoses,
+    graph=graph,
+    node_coords=node_coords
+)
 
-# Imprimir resultados
-print("\n=== Pontos mais distantes por cluster ===")
-for cluster_id, (nome_destino, distancia) in resultados.items():
-    print(f"Cluster {cluster_id + 1}: '{nome_destino}' a {distancia:.2f} metros")
+# Chama a nova função dedicada a imprimir os resultados de forma organizada
+imprimir_resumo_detalhado(
+    rotas_salvas=rotas_salvas,
+    destinos=destinos,
+    node_coords=node_coords
+)
+
+if rotas_salvas:
+    plotar_mapa_com_rotas(
+        rotas_salvas=rotas_salvas,
+        node_coords=node_coords,
+        destinos=destinos,
+        labels_clusters=labels_clusters,
+        czoonoses_coords=czoonoses
+    ) 
+"""
+######## Planejar e Salvar Rotas para Todos os Clusters usado Dijkstra ######## 
+
+
+
+
 
 
 # Finalizando reastreador de emissões de carbono

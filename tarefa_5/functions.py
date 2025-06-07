@@ -60,32 +60,6 @@ def carregar_destinos(arquivo_json):
         print(f"Erro ao carregar destinos: {e}")
         return {}
     
-# Função para calcular a distância haversine entre dois pontos em lat/long
-def haversine(lat1, lon1, lat2, lon2):
-    # Raio da Terra em metros
-    R = 6371000
-    # Converter coordenadas de graus para radianos
-    lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
-    # Diferença de latitude e longitude
-    dlat = lat2 - lat1
-    dlon = lon2 - lon1
-    # Fórmula haversine
-    a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon/2)**2
-    c = 2 * math.asin(math.sqrt(a))
-    # Distância em metros
-    distance = R * c
-    return distance
-
-# Função heurística para o A* (distância euclidiana estimada)
-# Calcula a heurística entre dois nós usando a fórmula haversine
-def heuristica(node1, node2, node_coords):
-    if node1 not in node_coords or node2 not in node_coords:
-        return 0
-    
-    lat1, lon1 = node_coords[node1]
-    lat2, lon2 = node_coords[node2]
-    return haversine(lat1, lon1, lat2, lon2)
-
 # Função para obter dados de ruas de uma área usando Overpass API
 def obter_dados_estradas(bounds):
     min_lat, min_lon, max_lat, max_lon = bounds
@@ -153,6 +127,83 @@ def criar_grafo(data):
                             graph[n2].append((n1, distance, speed))
     
     return graph, node_coords
+
+# Função para dividir os destinos em clusters (subgrafos)
+def dividir_destinos_em_clusters(destinos, n_clusters=10, plotar=True):
+    """
+    Divide os destinos em clusters usando K-Means.
+
+    Parâmetros:
+    - destinos: dicionário {nome: (lon, lat)}
+    - n_clusters: número de clusters desejado
+    - plotar: se True, exibe um gráfico dos clusters
+    
+    Retorna:
+    - labels_clusters: dicionário {nome: cluster_id}
+    """
+    # Preparar os dados em formato adequado
+    coords = []
+    nomes = []
+    for nome, (lon, lat) in destinos.items():
+        # Usar lon, lat diretamente (atenção: para clustering mais preciso, ideal seria converter para UTM)
+        coords.append([lon, lat])
+        nomes.append(nome)
+    
+    coords = np.array(coords)
+
+    # Rodar o K-Means
+    kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
+    kmeans.fit(coords)
+    labels = kmeans.labels_
+
+    # Construir dicionário de resultado
+    labels_clusters = {nome: label for nome, label in zip(nomes, labels)}
+
+    # Plotar se desejado
+    if plotar:
+        plt.figure(figsize=(10, 8))
+        cores = plt.cm.tab10(np.linspace(0, 1, n_clusters))
+        for i in range(n_clusters):
+            cluster_coords = coords[labels == i]
+            plt.scatter(cluster_coords[:,0], cluster_coords[:,1], 
+                        color=cores[i], label=f'Cluster {i+1}', s=80, edgecolor='k')
+        
+        plt.title(f"Clusters dos Destinos (K-Means, k={n_clusters})", fontsize=14)
+        plt.xlabel("Longitude")
+        plt.ylabel("Latitude")
+        plt.legend()
+        plt.grid(True)
+        plt.tight_layout()
+        plt.show()
+    
+    return labels_clusters
+
+
+# Função para calcular a distância haversine entre dois pontos em lat/long
+def haversine(lat1, lon1, lat2, lon2):
+    # Raio da Terra em metros
+    R = 6371000
+    # Converter coordenadas de graus para radianos
+    lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
+    # Diferença de latitude e longitude
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+    # Fórmula haversine
+    a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon/2)**2
+    c = 2 * math.asin(math.sqrt(a))
+    # Distância em metros
+    distance = R * c
+    return distance
+
+# Função heurística para o A* (distância euclidiana estimada)
+# Calcula a heurística entre dois nós usando a fórmula haversine
+def heuristica(node1, node2, node_coords):
+    if node1 not in node_coords or node2 not in node_coords:
+        return 0
+    
+    lat1, lon1 = node_coords[node1]
+    lat2, lon2 = node_coords[node2]
+    return haversine(lat1, lon1, lat2, lon2)
 
 # Função para definir velocidade padrão por tipo de via
 def get_default_speed(highway_type):
@@ -293,181 +344,6 @@ def encontrar_no_mais_proximo(node_coords, lat, lon):
     
     return closest_node
 
-def plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds=None):
-    """
-    Plota um mapa da cidade de Natal mostrando a rede viária e os pontos de destino.
-    
-    Parâmetros:
-    - graph: grafo da rede viária
-    - node_coords: coordenadas dos nós do grafo
-    - destinos: dicionário com destinos carregados do JSON
-    - czoonoses: coordenadas do centro de zoonoses (lat, lon)
-    - bounds: limites da área (min_lat, min_lon, max_lat, max_lon) - opcional
-    """
-
-    plt.figure(figsize=(16, 12))
-    
-    # Definir ou calcular limites para a área do mapa
-    if bounds is None or bounds == (0, 0, 0, 0):
-        # Calcular limites automaticamente baseado nos destinos e centro de zoonoses
-        print("Calculando limites automaticamente...")
-        
-        lats = [czoonoses[0]]  # lat do centro de zoonoses
-        lons = [czoonoses[1]]  # lon do centro de zoonoses
-        
-        # Adicionar coordenadas dos destinos
-        for lon, lat in destinos.values():
-            lats.append(lat)
-            lons.append(lon)
-        
-        # Adicionar coordenadas dos nós do grafo se disponíveis
-        if node_coords:
-            for lat, lon in node_coords.values():
-                lats.append(lat)
-                lons.append(lon)
-        
-        # Calcular limites com margem
-        margem = 0.01  # ~1km aproximadamente
-        min_lat = min(lats) - margem
-        max_lat = max(lats) + margem
-        min_lon = min(lons) - margem
-        max_lon = max(lons) + margem
-        
-        print(f"Limites calculados: lat({min_lat:.4f}, {max_lat:.4f}), lon({min_lon:.4f}, {max_lon:.4f})")
-    else:
-        min_lat, min_lon, max_lat, max_lon = bounds
-        print(f"Usando limites fornecidos: lat({min_lat:.4f}, {max_lat:.4f}), lon({min_lon:.4f}, {max_lon:.4f})")
-    
-    print("Plotando rede viária de Natal...")
-    
-    # Plotar arestas do grafo (rede viária)
-    edges_plotted = 0
-    for node in graph:
-        if node in node_coords:
-            lat1, lon1 = node_coords[node]  # lat, lon
-            x1, y1 = lon1, lat1  # converter para x, y (lon, lat)
-            
-            for neighbor, distance, speed in graph[node]:
-                if neighbor in node_coords:
-                    lat2, lon2 = node_coords[neighbor]
-                    x2, y2 = lon2, lat2
-                    
-                    # Plotar apenas se as coordenadas estão dentro dos limites
-                    if (min_lat <= lat1 <= max_lat and min_lon <= lon1 <= max_lon and
-                        min_lat <= lat2 <= max_lat and min_lon <= lon2 <= max_lon):
-                        plt.plot([x1, x2], [y1, y2], 'gray', linewidth=0.6, alpha=0.9)
-                        edges_plotted += 1
-    
-    print(f"Plotadas {edges_plotted} arestas da rede viária")
-    
-    # Plotar o centro de zoonoses
-    lat_czoonoses, lon_czoonoses = czoonoses
-    plt.plot(lon_czoonoses, lat_czoonoses, 'ro', markersize=12, 
-             label='Centro de Zoonoses', markeredgecolor='darkred', markeredgewidth=2)
-    
-    # Plotar destinos por bairro
-    print("Plotando destinos...")
-    destinos_plotados = 0
-    
-    if not destinos:
-        print("AVISO: Nenhum destino foi carregado!")
-    else:
-        print(f"Destinos disponíveis: {len(destinos)}")
-        
-    cores_bairros = plt.cm.Set3(np.linspace(0, 1, max(12, len(destinos))))
-    bairros_unicos = {}
-    
-    for i, (nome_destino, coordenadas) in enumerate(destinos.items()):
-        # Verificar formato das coordenadas (lon, lat) ou (lat, lon)
-        if len(coordenadas) == 2:
-            # Assumir que está no formato (lon, lat) baseado no código original
-            lon, lat = coordenadas
-            
-            # Verificar se as coordenadas fazem sentido para Natal-RN
-            # Natal: aproximadamente lat -5.7 a -5.8, lon -35.2 a -35.3
-            if not (-6.0 <= lat <= -5.0 and -36.0 <= lon <= -34.0):
-                print(f"AVISO: Coordenadas suspeitas para {nome_destino}: {coordenadas}")
-                # Tentar trocar lat/lon
-                lat, lon = coordenadas
-                
-        else:
-            print(f"ERRO: Formato de coordenadas inválido para {nome_destino}: {coordenadas}")
-            continue
-            
-        # Extrair nome do bairro (remover sufixo numérico se existir)
-        nome_bairro = nome_destino.split('_')[0]
-        
-        # Atribuir cor única por bairro
-        if nome_bairro not in bairros_unicos:
-            bairros_unicos[nome_bairro] = len(bairros_unicos)
-        
-        cor_idx = bairros_unicos[nome_bairro] % len(cores_bairros)
-        cor = cores_bairros[cor_idx]
-        
-        # Plotar ponto
-        plt.plot(lon, lat, 'o', color=cor, markersize=8, 
-                markeredgecolor='black', markeredgewidth=1, alpha=0.8)
-        
-        # Adicionar rótulo com nome do destino
-        plt.text(lon, lat, nome_destino, fontsize=8, 
-                ha='center', va='bottom', weight='bold',
-                bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.7))
-        
-        destinos_plotados += 1
-        print(f"Plotado: {nome_destino} em ({lon:.4f}, {lat:.4f})")
-    
-    print(f"Plotados {destinos_plotados} destinos")
-    
-    # Criar legenda para bairros únicos
-    handles_legenda = []
-    for bairro, idx in bairros_unicos.items():
-        cor_idx = idx % len(cores_bairros)
-        cor = cores_bairros[cor_idx]
-        handles_legenda.append(plt.Line2D([0], [0], marker='o', color='w', 
-                                        markerfacecolor=cor, markersize=8, 
-                                        label=bairro, markeredgecolor='black'))
-    
-    # Adicionar centro de zoonoses à legenda
-    handles_legenda.insert(0, plt.Line2D([0], [0], marker='o', color='w', 
-                                       markerfacecolor='red', markersize=10, 
-                                       label='Centro de Zoonoses', markeredgecolor='darkred'))
-    
-    # Configurar o plot
-    plt.title("Mapa de Natal - RN\nRede Viária e Pontos de Destino", 
-              fontsize=16, weight='bold', pad=20)
-    plt.xlabel("Longitude", fontsize=12, weight='bold')
-    plt.ylabel("Latitude", fontsize=12, weight='bold')
-    
-    # Definir limites do plot baseado nos dados reais
-    if destinos_plotados > 0 or node_coords:
-        plt.xlim(min_lon - 0.005, max_lon + 0.005)
-        plt.ylim(min_lat - 0.005, max_lat + 0.005)
-    else:
-        # Limites padrão para Natal-RN se não houver dados
-        plt.xlim(-35.3, -35.1)
-        plt.ylim(-5.9, -5.7)
-    
-    # Adicionar grade
-    plt.grid(True, alpha=0.3, linestyle='--')
-    
-    # Adicionar legenda
-    plt.legend(handles=handles_legenda, loc='upper left', bbox_to_anchor=(1.05, 1), 
-              fontsize=10, title="Locais", title_fontsize=12)
-    
-    # Ajustar layout
-    plt.tight_layout()
-    
-    # Adicionar informações sobre a área
-    info_text = f"Área: {abs(max_lat - min_lat):.4f}° × {abs(max_lon - min_lon):.4f}°\n"
-    info_text += f"Nós no grafo: {len(node_coords)}\n"
-    info_text += f"Destinos plotados: {destinos_plotados}"
-    
-    plt.text(0.02, 0.98, info_text, transform=plt.gca().transAxes, 
-             fontsize=10, verticalalignment='top',
-             bbox=dict(boxstyle='round,pad=0.5', facecolor='lightblue', alpha=0.8))
-    
-    print("Mapa plotado com sucesso!")
-    plt.show()
 
 # Função para dividir os destinos em clusters (subgrafos)
 def dividir_destinos_em_clusters(destinos, n_clusters=10, plotar=True):
@@ -519,215 +395,6 @@ def dividir_destinos_em_clusters(destinos, n_clusters=10, plotar=True):
     
     return labels_clusters
 
-def plotar_mapa_com_clusters(graph, node_coords, destinos, labels_clusters, czoonoses, bounds=None):
-    """
-    Plota um mapa da cidade de Natal mostrando a rede viária e os pontos de destino
-    coloridos por cluster.
-    
-    Parâmetros:
-    - graph: grafo da rede viária
-    - node_coords: coordenadas dos nós do grafo
-    - destinos: dicionário com destinos carregados do JSON {nome: (lon, lat)}
-    - labels_clusters: dicionário com os clusters {nome: cluster_id}
-    - czoonoses: coordenadas do centro de zoonoses (lat, lon)
-    - bounds: limites da área (min_lat, min_lon, max_lat, max_lon) - opcional
-    """
-    import matplotlib.pyplot as plt
-    import numpy as np
-
-    plt.figure(figsize=(16, 12))
-    
-    # Definir ou calcular limites para a área do mapa
-    if bounds is None or bounds == (0, 0, 0, 0):
-        print("Calculando limites automaticamente...")
-        
-        lats = [czoonoses[0]]  # lat do centro de zoonoses
-        lons = [czoonoses[1]]  # lon do centro de zoonoses
-        
-        # Adicionar coordenadas dos destinos
-        for lon, lat in destinos.values():
-            lats.append(lat)
-            lons.append(lon)
-        
-        # Adicionar coordenadas dos nós do grafo se disponíveis
-        if node_coords:
-            for lat, lon in node_coords.values():
-                lats.append(lat)
-                lons.append(lon)
-        
-        # Calcular limites com margem
-        margem = 0.01  # ~1km aproximadamente
-        min_lat = min(lats) - margem
-        max_lat = max(lats) + margem
-        min_lon = min(lons) - margem
-        max_lon = max(lons) + margem
-        
-        print(f"Limites calculados: lat({min_lat:.4f}, {max_lat:.4f}), lon({min_lon:.4f}, {max_lon:.4f})")
-    else:
-        min_lat, min_lon, max_lat, max_lon = bounds
-        print(f"Usando limites fornecidos: lat({min_lat:.4f}, {max_lat:.4f}), lon({min_lon:.4f}, {max_lon:.4f})")
-    
-    print("Plotando rede viária de Natal...")
-    
-    # Plotar arestas do grafo (rede viária)
-    edges_plotted = 0
-    for node in graph:
-        if node in node_coords:
-            lat1, lon1 = node_coords[node]  # lat, lon
-            x1, y1 = lon1, lat1  # converter para x, y (lon, lat)
-            
-            for neighbor, distance, speed in graph[node]:
-                if neighbor in node_coords:
-                    lat2, lon2 = node_coords[neighbor]
-                    x2, y2 = lon2, lat2
-                    
-                    # Plotar apenas se as coordenadas estão dentro dos limites
-                    if (min_lat <= lat1 <= max_lat and min_lon <= lon1 <= max_lon and
-                        min_lat <= lat2 <= max_lat and min_lon <= lon2 <= max_lon):
-                        plt.plot([x1, x2], [y1, y2], 'gray', linewidth=0.6, alpha=0.9)
-                        edges_plotted += 1
-    
-    print(f"Plotadas {edges_plotted} arestas da rede viária")
-    
-    # Plotar o centro de zoonoses
-    lat_czoonoses, lon_czoonoses = czoonoses
-    plt.plot(lon_czoonoses, lat_czoonoses, 'ro', markersize=12, 
-             label='Centro de Zoonoses', markeredgecolor='darkred', markeredgewidth=2)
-    
-    # Plotar destinos coloridos por cluster
-    print("Plotando destinos coloridos por cluster...")
-    destinos_plotados = 0
-    
-    if not destinos:
-        print("AVISO: Nenhum destino foi carregado!")
-    else:
-        print(f"Destinos disponíveis: {len(destinos)}")
-        
-    # Determinar número de clusters únicos
-    clusters_unicos = set(labels_clusters.values())
-    n_clusters = len(clusters_unicos)
-    print(f"Número de clusters encontrados: {n_clusters}")
-    
-    # Gerar cores para cada cluster usando uma paleta de cores distinta
-    cores_clusters = plt.cm.tab10(np.linspace(0, 1, min(10, n_clusters)))
-    if n_clusters > 10:
-        # Se tiver mais de 10 clusters, usar paletas adicionais
-        cores_extra = plt.cm.Set3(np.linspace(0, 1, n_clusters - 10))
-        cores_clusters = np.vstack([cores_clusters, cores_extra])
-    
-    # Mapear cada cluster_id para uma cor
-    cluster_ids_ordenados = sorted(clusters_unicos)
-    mapa_cores = {cluster_id: cores_clusters[i % len(cores_clusters)] 
-                  for i, cluster_id in enumerate(cluster_ids_ordenados)}
-    
-    # Agrupar destinos por cluster para estatísticas
-    destinos_por_cluster = {}
-    
-    for nome_destino, coordenadas in destinos.items():
-        # Verificar formato das coordenadas (lon, lat)
-        if len(coordenadas) == 2:
-            lon, lat = coordenadas
-            
-            # Verificar se as coordenadas fazem sentido para Natal-RN
-            if not (-6.0 <= lat <= -5.0 and -36.0 <= lon <= -34.0):
-                print(f"AVISO: Coordenadas suspeitas para {nome_destino}: {coordenadas}")
-                # Tentar trocar lat/lon
-                lat, lon = coordenadas
-                
-        else:
-            print(f"ERRO: Formato de coordenadas inválido para {nome_destino}: {coordenadas}")
-            continue
-        
-        # Obter cluster do destino
-        if nome_destino in labels_clusters:
-            cluster_id = labels_clusters[nome_destino]
-            cor = mapa_cores[cluster_id]
-            
-            # Contar destinos por cluster
-            if cluster_id not in destinos_por_cluster:
-                destinos_por_cluster[cluster_id] = 0
-            destinos_por_cluster[cluster_id] += 1
-            
-            # Plotar ponto com cor do cluster
-            plt.plot(lon, lat, 'o', color=cor, markersize=8, 
-                    markeredgecolor='black', markeredgewidth=1, alpha=0.8)
-            
-            # Adicionar rótulo com nome do destino
-            #plt.text(lon, lat, nome_destino, fontsize=8, 
-            #        ha='center', va='bottom', weight='bold',
-            #        bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.7))
-            
-            destinos_plotados += 1
-            print(f"Plotado: {nome_destino} (Cluster {cluster_id + 1}) em ({lon:.4f}, {lat:.4f})")
-        else:
-            print(f"AVISO: Destino {nome_destino} não encontrado nos clusters!")
-    
-    print(f"Plotados {destinos_plotados} destinos")
-    
-    # Criar legenda para clusters
-    handles_legenda = []
-    
-    # Adicionar centro de zoonoses à legenda
-    handles_legenda.append(plt.Line2D([0], [0], marker='o', color='w', 
-                                    markerfacecolor='red', markersize=10, 
-                                    label='Centro de Zoonoses', markeredgecolor='darkred'))
-    
-    # Adicionar clusters à legenda (ordenados)
-    for cluster_id in cluster_ids_ordenados:
-        cor = mapa_cores[cluster_id]
-        count = destinos_por_cluster.get(cluster_id, 0)
-        handles_legenda.append(plt.Line2D([0], [0], marker='o', color='w', 
-                                        markerfacecolor=cor, markersize=8, 
-                                        label=f'Cluster {cluster_id + 1} ({count} destinos)', 
-                                        markeredgecolor='black'))
-    
-    # Configurar o plot
-    plt.title("Mapa de Natal - RN\nRede Viária e Destinos Agrupados por Clusters", 
-              fontsize=16, weight='bold', pad=20)
-    plt.xlabel("Longitude", fontsize=12, weight='bold')
-    plt.ylabel("Latitude", fontsize=12, weight='bold')
-    
-    # Definir limites do plot baseado nos dados reais
-    if destinos_plotados > 0 or node_coords:
-        plt.xlim(min_lon - 0.005, max_lon + 0.005)
-        plt.ylim(min_lat - 0.005, max_lat + 0.005)
-    else:
-        # Limites padrão para Natal-RN se não houver dados
-        plt.xlim(-35.3, -35.1)
-        plt.ylim(-5.9, -5.7)
-    
-    # Adicionar grade
-    plt.grid(True, alpha=0.3, linestyle='--')
-    
-    # Adicionar legenda
-    plt.legend(handles=handles_legenda, loc='upper left', bbox_to_anchor=(1.05, 1), 
-              fontsize=10, title="Clusters", title_fontsize=12)
-    
-    # Ajustar layout
-    plt.tight_layout()
-    
-    # Adicionar informações sobre a área e clusters
-    info_text = f"Área: {abs(max_lat - min_lat):.4f}° × {abs(max_lon - min_lon):.4f}°\n"
-    info_text += f"Nós no grafo: {len(node_coords)}\n"
-    info_text += f"Destinos plotados: {destinos_plotados}\n"
-    info_text += f"Clusters: {n_clusters}"
-    
-    plt.text(0.02, 0.98, info_text, transform=plt.gca().transAxes, 
-             fontsize=10, verticalalignment='top',
-             bbox=dict(boxstyle='round,pad=0.5', facecolor='lightblue', alpha=0.8))
-    
-    # Imprimir estatísticas dos clusters
-    print("\n=== ESTATÍSTICAS DOS CLUSTERS ===")
-    for cluster_id in cluster_ids_ordenados:
-        count = destinos_por_cluster.get(cluster_id, 0)
-        print(f"Cluster {cluster_id + 1}: {count} destinos")
-    
-    print("Mapa com clusters plotado com sucesso!")
-    plt.show()
-    
-    return mapa_cores, destinos_por_cluster
-
-
 def encontrar_pontos_mais_distantes_por_cluster(destinos, labels_clusters, czoonoses):
     """
     Para cada cluster existente, encontra o ponto mais distante do centro de zoonoses.
@@ -753,7 +420,7 @@ def encontrar_pontos_mais_distantes_por_cluster(destinos, labels_clusters, czoon
 
         for nome, cluster in labels_clusters.items():
             if cluster == cluster_id:
-                lat, lon = destinos[nome]
+                lon, lat = destinos[nome]
                 dist = haversine(lat_cz, lon_cz, lat, lon)
                 if dist > max_dist:
                     max_dist = dist
@@ -763,66 +430,225 @@ def encontrar_pontos_mais_distantes_por_cluster(destinos, labels_clusters, czoon
 
     return resultados
 
-
 ######################################################################################
-######### NÃO SEI SE ESSA FUNÇÃO É NECESSÁRIA, MAS ESTÁ AQUI PARA REFERÊNCIA #########
+############################### TESTE DE FUNÇÕES AQUI ################################
 ######################################################################################
 
-""" 
-# Função para plotar o grafo e as rotas
-def plotar_grafo_e_rotas(graph, node_coords, rotas, cores):
-    plt.figure(figsize=(15, 15))
-    
-    # Plotar arestas do grafo (fundo)
-    print("Plotando arestas do grafo...")
-    edges_plotted = 0
-    for node in graph:
-        if node in node_coords:  # Garantir que o nó tem coordenadas
-            x1, y1 = node_coords[node][1], node_coords[node][0]  # lon, lat
-            for neighbor, _, _ in graph[node]:
-                if neighbor in node_coords:  # Garantir que o vizinho tem coordenadas
-                    x2, y2 = node_coords[neighbor][1], node_coords[neighbor][0]  # lon, lat
-                    plt.plot([x1, x2], [y1, y2], 'k-', linewidth=0.2, alpha=0.5)
-                    edges_plotted += 1
-    print(f"Plotadas {edges_plotted} arestas do grafo")
-    
-    # Plotar rotas
-    print("Plotando rotas...")
-    rotas_validas = 0
-    for i, (rota, cor) in enumerate(zip(rotas, cores)):
-        # Verificar se a rota é válida (não vazia)
-        if len(rota) > 1:
-            x_coords = []
-            y_coords = []
-            for node in rota:
-                if node in node_coords:  # Garantir que o nó tem coordenadas
-                    x_coords.append(node_coords[node][1])  # lon
-                    y_coords.append(node_coords[node][0])  # lat
+def encontrar_ponto_mais_distante_no_cluster(destinos, labels_clusters, czoonoses, cluster_alvo_id):
+    """
+    Encontra o ponto mais distante do centro de zoonoses dentro de um único cluster específico.
+
+    Parâmetros:
+    - destinos: dicionário {nome: (lon, lat)}
+    - labels_clusters: dicionário {nome: cluster_id}
+    - czoonoses: tupla (lat, lon) do ponto de origem
+    - cluster_alvo_id: O ID do cluster a ser analisado.
+
+    Retorna:
+    - Uma tupla (nome_destino_mais_distante, distancia_em_metros).
+    - Retorna (None, -1) se o cluster especificado não contiver nenhum destino.
+    """
+    max_dist = -1
+    destino_mais_distante = None
+
+    # Coordenadas do ponto de origem (Centro de Zoonoses)
+    lat_cz, lon_cz = czoonoses
+
+    # Itera sobre os destinos para encontrar aqueles que pertencem ao cluster alvo
+    for nome_destino, id_cluster_atual in labels_clusters.items():
+        if id_cluster_atual == cluster_alvo_id:
+            # Obtém as coordenadas do destino (lon, lat) e desempacota corretamente
+            lon_destino, lat_destino = destinos[nome_destino]
             
-            if len(x_coords) > 1:  # Só plotar se tiver pelo menos dois pontos
-                bairro_nome = list(destinos.keys())[i]
-                plt.plot(x_coords, y_coords, color=cor, linewidth=2.5, label=bairro_nome)
-                print(f"Rota para {bairro_nome} plotada com {len(x_coords)} pontos")
-                rotas_validas += 1
-        else:
-            print(f"Rota para {list(destinos.keys())[i]} é inválida (vazia)")
-    
-    print(f"Plotadas {rotas_validas} rotas válidas")
-    
-    # Plotar o centro de zoonoses
-    plt.plot(czoonoses[1], czoonoses[0], 'ro', markersize=10, label='czoonoses')
-    
-    # Plotar destinos
-    for bairro, (lat, lon) in destinos.items():
-        plt.plot(lon, lat, 'go', markersize=8)
-        plt.text(lon, lat, bairro, fontsize=12)
-    
-    plt.title("Rotas do Hospital Walfredo Gurgel para diferentes bairros de Natal (A*)")
-    plt.legend()
-    plt.xlabel("Longitude")
-    plt.ylabel("Latitude")
-    plt.grid(True)
-    plt.tight_layout()
-    plt.show() 
+            # Calcula a distância Haversine
+            dist = haversine(lat_cz, lon_cz, lat_destino, lon_destino)
+            
+            # Verifica se é a maior distância encontrada até agora neste cluster
+            if dist > max_dist:
+                max_dist = dist
+                destino_mais_distante = nome_destino
 
-"""
+    # Retorna o resultado para o cluster específico
+    if destino_mais_distante is not None:
+        return (destino_mais_distante, max_dist)
+    else:
+        # Caso o cluster esteja vazio ou não seja encontrado
+        return (None, -1)
+
+# Adicione esta função em functions.py
+
+def tracar_rota_cluster_tsp(cluster_alvo_id, destinos, labels_clusters, czoonoses_coords, graph, node_coords):
+    """
+    Traça uma rota otimizada (usando a heurística do vizinho mais próximo) que começa
+    no Centro de Zoonoses, visita todos os pontos de um cluster específico e retorna ao CZO.
+
+    Parâmetros:
+    - cluster_alvo_id: O ID do cluster para o qual a rota será traçada.
+    - destinos: Dicionário {nome: (lon, lat)} com todos os destinos.
+    - labels_clusters: Dicionário {nome: cluster_id} que mapeia destinos a clusters.
+    - czoonoses_coords: Tupla (lat, lon) com as coordenadas do CZO.
+    - graph: O grafo da rede viária.
+    - node_coords: Dicionário com as coordenadas de cada nó do grafo.
+
+    Retorna:
+    - Uma tupla contendo (rota_completa, distancia_total_metros), onde:
+      - rota_completa: é uma lista de nós do grafo representando o caminho completo.
+      - distancia_total_metros: é a distância total da rota em metros.
+    """
+    print(f"\nIniciando o planejamento da rota para o Cluster {cluster_alvo_id + 1}...")
+
+    # 1. Identificar os pontos a serem visitados no cluster
+    nomes_destinos_cluster = [
+        nome for nome, cluster_id in labels_clusters.items() if cluster_id == cluster_alvo_id
+    ]
+    
+    if not nomes_destinos_cluster:
+        print(f"Cluster {cluster_alvo_id + 1} não possui destinos. Rota não gerada.")
+        return [], 0
+
+    # Encontrar os nós do grafo correspondentes aos pontos
+    no_czoonoses = encontrar_no_mais_proximo(node_coords, czoonoses_coords[0], czoonoses_coords[1])
+    
+    pontos_a_visitar = set()
+    for nome in nomes_destinos_cluster:
+        lon, lat = destinos[nome]
+        no_destino = encontrar_no_mais_proximo(node_coords, lat, lon)
+        if no_destino:
+            pontos_a_visitar.add(no_destino)
+
+    # 2. Iniciar a lógica do Vizinho Mais Próximo
+    rota_completa = [no_czoonoses]
+    distancia_total = 0
+    ponto_atual = no_czoonoses
+
+    while pontos_a_visitar:
+        distancia_minima = float('inf')
+        vizinho_mais_proximo = None
+        melhor_caminho = []
+
+        # Encontra o vizinho mais próximo do ponto atual
+        for ponto_destino in pontos_a_visitar:
+            caminho, distancia = a_star(graph, ponto_atual, ponto_destino, node_coords)
+            if distancia < distancia_minima:
+                distancia_minima = distancia
+                vizinho_mais_proximo = ponto_destino
+                melhor_caminho = caminho
+        
+        if vizinho_mais_proximo:
+            nome_destino_visitado = next((nome for nome, (lon, lat) in destinos.items() if encontrar_no_mais_proximo(node_coords, lat, lon) == vizinho_mais_proximo), "Desconhecido")
+            print(f"  - Visitando '{nome_destino_visitado}' (Distância: {distancia_minima:.2f} m)")
+            
+            # Adiciona o caminho e a distância à rota total
+            # Adiciona a partir do segundo elemento para não duplicar nós
+            rota_completa.extend(melhor_caminho[1:])
+            distancia_total += distancia_minima
+            
+            # Atualiza a posição atual e remove o ponto da lista de visitação
+            ponto_atual = vizinho_mais_proximo
+            pontos_a_visitar.remove(vizinho_mais_proximo)
+        else:
+            print("AVISO: Não foi possível encontrar um caminho para os pontos restantes. Interrompendo.")
+            break
+
+    # 3. Rota de volta para o Centro de Zoonoses
+    print("  - Todos os pontos do cluster visitados. Retornando ao CZO...")
+    caminho_final, distancia_final = a_star(graph, ponto_atual, no_czoonoses, node_coords)
+    
+    if caminho_final:
+        rota_completa.extend(caminho_final[1:])
+        distancia_total += distancia_final
+        print(f"  - Retorno ao CZO (Distância: {distancia_final:.2f} m)")
+    else:
+        print("AVISO: Não foi possível traçar a rota de volta para o CZO.")
+
+    print(f"Rota para o Cluster {cluster_alvo_id + 1} finalizada.")
+    print(f"Distância total estimada: {distancia_total / 1000:.2f} km")
+    
+    return rota_completa, distancia_total
+
+def planejar_rotas_para_todos_os_clusters(destinos, labels_clusters, czoonoses_coords, graph, node_coords):
+    """
+    Itera sobre todos os clusters, traça uma rota para cada um usando a função
+    tracar_rota_cluster_tsp e salva todas as rotas geradas.
+
+    Parâmetros:
+    - Todos os parâmetros necessários para a função tracar_rota_cluster_tsp.
+
+    Retorna:
+    - Um dicionário onde as chaves são os IDs dos clusters e os valores são
+      tuplas contendo (rota_completa, distancia_total_metros) para aquele cluster.
+      Ex: {0: (rota_cluster_0, dist_0), 1: (rota_cluster_1, dist_1), ...}
+    """
+    print("\n\n=== INICIANDO PLANEJAMENTO DE ROTAS PARA TODOS OS CLUSTERS ===")
+    
+    todas_as_rotas = {}
+    
+    # Encontra todos os IDs de cluster únicos e os ordena
+    ids_clusters_unicos = sorted(set(labels_clusters.values()))
+    
+    # Itera sobre cada cluster para planejar sua rota
+    for cluster_id in ids_clusters_unicos:
+        rota, distancia = tracar_rota_cluster_tsp(
+            cluster_alvo_id=cluster_id,
+            destinos=destinos,
+            labels_clusters=labels_clusters,
+            czoonoses_coords=czoonoses_coords,
+            graph=graph,
+            node_coords=node_coords
+        )
+        
+        # Salva a rota e a distância no dicionário se a rota foi gerada com sucesso
+        if rota:
+            todas_as_rotas[cluster_id] = (rota, distancia)
+            
+    print("\n=== PLANEJAMENTO DE TODAS AS ROTAS CONCLUÍDO ===")
+    return todas_as_rotas
+
+def imprimir_resumo_detalhado(rotas_salvas, destinos, node_coords):
+    """
+    Imprime um resumo detalhado e amigável de cada rota que foi planejada e salva.
+    A função exibe a distância total e a ordem de visitação dos pontos para cada cluster.
+
+    Parâmetros:
+    - rotas_salvas: Dicionário gerado por 'planejar_rotas_para_todos_os_clusters'.
+    - destinos: Dicionário {nome: (lon, lat)} com todos os destinos.
+    - node_coords: Dicionário com as coordenadas de cada nó do grafo.
+    """
+    print("\n\n--- RESUMO DETALHADO DAS ROTAS GERADAS ---")
+
+    if not rotas_salvas:
+        print("Nenhuma rota para exibir.")
+        return
+
+    # Para eficiência, crie um mapa reverso de nós para nomes de destinos
+    mapa_no_para_nome = {}
+    for nome, (lon, lat) in destinos.items():
+        # A função encontrar_no_mais_proximo pode ser custosa, mas aqui é necessária
+        # para garantir a correspondência correta entre o destino e o nó no grafo.
+        no = encontrar_no_mais_proximo(node_coords, lat, lon)
+        mapa_no_para_nome[no] = nome
+
+    # Itera sobre cada rota salva no dicionário
+    for cluster_id, (rota, distancia) in sorted(rotas_salvas.items()):
+        print(f"\n-----------------------------------------")
+        print(f"| Rota para o Cluster {cluster_id + 1}                  |")
+        print(f"-----------------------------------------")
+        print(f"  -> Distância Total: {distancia / 1000:.2f} km")
+
+        # Encontra a sequência de visitação dos pontos nomeados
+        pontos_visitados_na_ordem = []
+        for no_da_rota in rota:
+            if no_da_rota in mapa_no_para_nome:
+                nome_do_ponto = mapa_no_para_nome[no_da_rota]
+                if nome_do_ponto not in pontos_visitados_na_ordem:
+                    pontos_visitados_na_ordem.append(nome_do_ponto)
+        
+        if pontos_visitados_na_ordem:
+            print("  -> Ordem de Visitação dos Pontos:")
+            for i, nome in enumerate(pontos_visitados_na_ordem):
+                print(f"     {i + 1}. {nome}")
+        else:
+            print("  -> Nenhum ponto de destino identificado na rota.")
+    
+    print("\n-----------------------------------------")
+    print("--- Fim do Resumo ---")
