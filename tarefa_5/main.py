@@ -15,6 +15,7 @@ from functions import (
   encontrar_no_mais_proximo,
   plotar_mapa_natal_com_destinos,
   dividir_destinos_em_clusters,
+  plotar_mapa_com_clusters
 )
 
 from codecarbon import EmissionsTracker
@@ -52,6 +53,8 @@ print(f"Nó mais próximo ao centro de zoonoses: {no_czoonoses}")
 #print("Plotando mapa natal com destinos...")
 #plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds)
 
+################### Dividir os destinos em clusters ###################
+
 print("Dividindo destinos em 10 clusters...")
 labels_clusters = dividir_destinos_em_clusters(destinos, n_clusters=10, plotar=False)
 
@@ -66,23 +69,21 @@ for cluster_id, nomes in clusters.items():
         print(f"  - {nome}")
 
 
+################### Plota mapa com clusters ###################
+print("\nPlotando mapa com destinos coloridos por cluster...")
+mapa_cores, estatisticas_clusters = plotar_mapa_com_clusters(
+    graph=graph, 
+    node_coords=node_coords, 
+    destinos=destinos, 
+    labels_clusters=labels_clusters, 
+    czoonoses=czoonoses, 
+    bounds=bounds
+)
 
+print("\nCores utilizadas para cada cluster:")
+for cluster_id, cor in mapa_cores.items():
+    print(f"Cluster {cluster_id + 1}: RGB{tuple(cor[:3])}")
 
-
-###################################################################
-##### Código comentado para diagnóstico dos dados carregados ######
-###################################################################
-
-""" 
-# Primeiro, verificar os dados carregados:
-print("=== DIAGNÓSTICO DOS DADOS ===")
-print(f"Destinos carregados: {len(destinos)}")
-if destinos:
-    print("Primeiros 3 destinos:")
-    for i, (nome, coords) in enumerate(list(destinos.items())[:3]):
-        print(f"  {nome}: {coords}")
-
-print(f"Centro de zoonoses: {czoonoses}")
-print(f"Bounds definido: {bounds}")
-print(f"Nós no grafo: {len(node_coords) if node_coords else 0}") 
-"""
+print("\nEstatísticas finais:")
+print(f"Total de clusters: {len(mapa_cores)}")
+print(f"Total de destinos plotados: {sum(estatisticas_clusters.values())}")
