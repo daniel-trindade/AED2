@@ -1,0 +1,10 @@
+requests
+matplotlib
+numpy
+scikit-learn
+networkx
+osmnx
+codecarbon
+seaborn
+pandas
+tqdm
