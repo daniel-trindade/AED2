@@ -727,12 +727,41 @@ def plotar_mapa_com_clusters(graph, node_coords, destinos, labels_clusters, czoo
     
     return mapa_cores, destinos_por_cluster
 
-######################################################################################
-#################################### TESTANDO FUNÇÕES ################################
-######################################################################################
 
+def encontrar_pontos_mais_distantes_por_cluster(destinos, labels_clusters, czoonoses):
+    """
+    Para cada cluster existente, encontra o ponto mais distante do centro de zoonoses.
 
+    Parâmetros:
+    - destinos: dicionário {nome: (lon, lat)}
+    - labels_clusters: dicionário {nome: cluster_id}
+    - czoonoses: tupla (lat, lon)
 
+    Retorna:
+    - dicionário {cluster_id: (nome_destino_mais_distante, distancia_em_metros)}
+    """
+    resultados = {}
+
+    # Obter todos os cluster_ids únicos
+    cluster_ids = set(labels_clusters.values())
+
+    for cluster_id in sorted(cluster_ids):
+        max_dist = -1
+        destino_mais_distante = None
+
+        lat_cz, lon_cz = czoonoses
+
+        for nome, cluster in labels_clusters.items():
+            if cluster == cluster_id:
+                lat, lon = destinos[nome]
+                dist = haversine(lat_cz, lon_cz, lat, lon)
+                if dist > max_dist:
+                    max_dist = dist
+                    destino_mais_distante = nome
+
+        resultados[cluster_id] = (destino_mais_distante, max_dist)
+
+    return resultados
 
 
 ######################################################################################

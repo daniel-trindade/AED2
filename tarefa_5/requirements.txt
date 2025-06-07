@@ -5,3 +5,4 @@ networkx==3.5
 numpy==2.2.6
 osmnx==2.0.3
 pandas==2.3.0
+scikit-learn==1.7.0

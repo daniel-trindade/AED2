@@ -15,22 +15,26 @@ from functions import (
   encontrar_no_mais_proximo,
   plotar_mapa_natal_com_destinos,
   dividir_destinos_em_clusters,
-  plotar_mapa_com_clusters
+  plotar_mapa_com_clusters,
+  encontrar_pontos_mais_distantes_por_cluster
 )
 
 from codecarbon import EmissionsTracker
 
 # Iniciando o rastreador de emissões do code carbon
-tracker = EmissionsTracker()
-tracker.start()
+# Descomente o bloco a seguir e o último bloco do código para calcular a pegada de corbono
+""" 
+tracker = EmissionsTracker()       
+tracker.start()  
+"""                   
 
 # Carregar destinos do arquivo JSON
 destinos = carregar_destinos('db.json')
 
-# Coordenadas do centro de zoonoses
+# Define as coordenadas do centro de zoonoses
 czoonoses = (-5.7532189, -35.2621815)
 
-# Definir limites para extrair dados do OpenStreetMap (bounding box para Natal-RN)
+# Define os limites para extrair dados do OpenStreetMap (bounding box para Natal-RN)
 min_lat = -5.8850
 min_lon = -35.3150
 max_lat = -5.7000
@@ -50,8 +54,11 @@ no_czoonoses = encontrar_no_mais_proximo(node_coords, czoonoses[0], czoonoses[1]
 print(f"Nó mais próximo ao centro de zoonoses: {no_czoonoses}")
 
 # Plot do mapa com os pontos de destino e o centro de zoonoses
-#print("Plotando mapa natal com destinos...")
-#plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds)
+# Desomente essa parte para plotar mapa com todos os pontos de interesse
+""" 
+print("Plotando mapa natal com destinos...")
+plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds)
+"""
 
 ################### Dividir os destinos em clusters ###################
 
@@ -69,7 +76,10 @@ for cluster_id, nomes in clusters.items():
         print(f"  - {nome}")
 
 
-################### Plota mapa com clusters ###################
+###################### Plota mapa com clusters ######################
+# Descomente esse bloco para plotar o mapa com os pontos clusterizados
+
+""" 
 print("\nPlotando mapa com destinos coloridos por cluster...")
 mapa_cores, estatisticas_clusters = plotar_mapa_com_clusters(
     graph=graph, 
@@ -86,4 +96,23 @@ for cluster_id, cor in mapa_cores.items():
 
 print("\nEstatísticas finais:")
 print(f"Total de clusters: {len(mapa_cores)}")
-print(f"Total de destinos plotados: {sum(estatisticas_clusters.values())}")
+print(f"Total de destinos plotados: {sum(estatisticas_clusters.values())}")  
+"""
+
+########### Encontra ponto mais distante de cada Cluster #############
+
+# Encontrar o ponto mais distante do CZO em cada cluster
+resultados = encontrar_pontos_mais_distantes_por_cluster(destinos, labels_clusters, czoonoses)
+
+# Imprimir resultados
+print("\n=== Pontos mais distantes por cluster ===")
+for cluster_id, (nome_destino, distancia) in resultados.items():
+    print(f"Cluster {cluster_id + 1}: '{nome_destino}' a {distancia:.2f} metros")
+
+
+# Finalizando reastreador de emissões de carbono
+# Precisa descomentar para calcular pegada de carbono
+""" 
+emissions = tracker.stop()
+print(f"\nEmissões de CO2 estimadas: {emissions:.6f} kg")
+"""
