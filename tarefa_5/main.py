@@ -61,19 +61,19 @@ print(f"Grafo criado com {len(graph)} nós.")
 # Plot do mapa com os pontos de destino e o centro de zoonoses
 # Descomente esse bloco para plotar mapa com todos os pontos de interesse
 
-
+"""
 print("Plotando mapa natal com destinos...")
-plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds) 
-
+plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds)
+""" 
 
 ################### Diagnosticar Conectividade entra nós ###################
 # Descomente esse bloco para plotar mapa com todos os pontos de interesse
 
- 
+""" 
 destinos_ok, destinos_problematicos = diagnosticar_conectividade_grafo(
     graph, node_coords, destinos, czoonoses
 ) 
-
+"""
 
 ################### Dividir os destinos em clusters ###################
 
