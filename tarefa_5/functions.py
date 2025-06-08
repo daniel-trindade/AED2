@@ -475,83 +475,87 @@ def encontrar_ponto_mais_distante_no_cluster(destinos, labels_clusters, czoonose
         # Caso o cluster esteja vazio ou não seja encontrado
         return (None, -1)
 
-# Adicione esta função em functions.py
-
-def tracar_rota_cluster_tsp(cluster_alvo_id, destinos, labels_clusters, czoonoses_coords, graph, node_coords):
+def tracar_rota_cluster_tsp_a_star(cluster_alvo_id, destinos, labels_clusters, czoonoses_coords, graph, node_coords):
     """
     Traça uma rota otimizada (usando a heurística do vizinho mais próximo) que começa
     no Centro de Zoonoses, visita todos os pontos de um cluster específico e retorna ao CZO.
-
-    Parâmetros:
-    - cluster_alvo_id: O ID do cluster para o qual a rota será traçada.
-    - destinos: Dicionário {nome: (lon, lat)} com todos os destinos.
-    - labels_clusters: Dicionário {nome: cluster_id} que mapeia destinos a clusters.
-    - czoonoses_coords: Tupla (lat, lon) com as coordenadas do CZO.
-    - graph: O grafo da rede viária.
-    - node_coords: Dicionário com as coordenadas de cada nó do grafo.
-
-    Retorna:
-    - Uma tupla contendo (rota_completa, distancia_total_metros), onde:
-      - rota_completa: é uma lista de nós do grafo representando o caminho completo.
-      - distancia_total_metros: é a distância total da rota em metros.
     """
     print(f"\nIniciando o planejamento da rota para o Cluster {cluster_alvo_id + 1}...")
 
-    # 1. Identificar os pontos a serem visitados no cluster
-    nomes_destinos_cluster = [
-        nome for nome, cluster_id in labels_clusters.items() if cluster_id == cluster_alvo_id
-    ]
+    # 1. Identificar os destinos específicos deste cluster
+    destinos_do_cluster = {
+        nome: destinos[nome] for nome, cluster_id in labels_clusters.items() 
+        if cluster_id == cluster_alvo_id
+    }
     
-    if not nomes_destinos_cluster:
+    if not destinos_do_cluster:
         print(f"Cluster {cluster_alvo_id + 1} não possui destinos. Rota não gerada.")
         return [], 0
 
-    # Encontrar os nós do grafo correspondentes aos pontos
+    print(f"Destinos do cluster: {list(destinos_do_cluster.keys())}")
+
+    # Encontrar o nó do CZO
     no_czoonoses = encontrar_no_mais_proximo(node_coords, czoonoses_coords[0], czoonoses_coords[1])
     
-    pontos_a_visitar = set()
-    for nome in nomes_destinos_cluster:
-        lon, lat = destinos[nome]
+    # 2. Mapear cada destino para seu nó mais próximo e verificar conectividade
+    destinos_para_nos = {}
+    destinos_inalcancaveis = []
+    
+    for nome, (lon, lat) in destinos_do_cluster.items():
         no_destino = encontrar_no_mais_proximo(node_coords, lat, lon)
-        if no_destino:
-            pontos_a_visitar.add(no_destino)
+        
+        # Verificar se o nó tem conexões (não está isolado)
+        if no_destino and no_destino in graph and len(graph[no_destino]) > 0:
+            # Testar conectividade fazendo uma busca rápida
+            caminho_teste, dist_teste = a_star(graph, no_czoonoses, no_destino, node_coords)
+            if caminho_teste:  # Se conseguiu encontrar um caminho
+                destinos_para_nos[nome] = no_destino
+            else:
+                destinos_inalcancaveis.append(nome)
+                print(f"AVISO: '{nome}' não é alcançável pela rede viária disponível.")
+        else:
+            destinos_inalcancaveis.append(nome)
+            print(f"AVISO: '{nome}' está mapeado para um nó isolado ou inexistente.")
+    
+    if not destinos_para_nos:
+        print(f"Nenhum destino do Cluster {cluster_alvo_id + 1} é alcançável. Rota não gerada.")
+        return [], 0
 
-    # 2. Iniciar a lógica do Vizinho Mais Próximo
+    # 3. Implementar o algoritmo do vizinho mais próximo usando os destinos alcançáveis
     rota_completa = [no_czoonoses]
     distancia_total = 0
     ponto_atual = no_czoonoses
+    destinos_restantes = destinos_para_nos.copy()
 
-    while pontos_a_visitar:
+    while destinos_restantes:
         distancia_minima = float('inf')
-        vizinho_mais_proximo = None
+        destino_mais_proximo = None
         melhor_caminho = []
 
-        # Encontra o vizinho mais próximo do ponto atual
-        for ponto_destino in pontos_a_visitar:
-            caminho, distancia = a_star(graph, ponto_atual, ponto_destino, node_coords)
-            if distancia < distancia_minima:
+        # Encontrar o destino mais próximo do ponto atual
+        for nome_destino, no_destino in destinos_restantes.items():
+            caminho, distancia = a_star(graph, ponto_atual, no_destino, node_coords)
+            if caminho and distancia < distancia_minima:
                 distancia_minima = distancia
-                vizinho_mais_proximo = ponto_destino
+                destino_mais_proximo = nome_destino
                 melhor_caminho = caminho
         
-        if vizinho_mais_proximo:
-            nome_destino_visitado = next((nome for nome, (lon, lat) in destinos.items() if encontrar_no_mais_proximo(node_coords, lat, lon) == vizinho_mais_proximo), "Desconhecido")
-            print(f"  - Visitando '{nome_destino_visitado}' (Distância: {distancia_minima:.2f} m)")
+        if destino_mais_proximo:
+            print(f"  - Visitando '{destino_mais_proximo}' (Distância: {distancia_minima:.2f} m)")
             
-            # Adiciona o caminho e a distância à rota total
-            # Adiciona a partir do segundo elemento para não duplicar nós
+            # Adicionar o caminho à rota (excluindo o primeiro nó para evitar duplicatas)
             rota_completa.extend(melhor_caminho[1:])
             distancia_total += distancia_minima
             
-            # Atualiza a posição atual e remove o ponto da lista de visitação
-            ponto_atual = vizinho_mais_proximo
-            pontos_a_visitar.remove(vizinho_mais_proximo)
+            # Atualizar posição atual e remover o destino visitado
+            ponto_atual = destinos_para_nos[destino_mais_proximo]
+            del destinos_restantes[destino_mais_proximo]
         else:
-            print("AVISO: Não foi possível encontrar um caminho para os pontos restantes. Interrompendo.")
+            print("ERRO: Não foi possível encontrar caminho para os destinos restantes.")
             break
 
-    # 3. Rota de volta para o Centro de Zoonoses
-    print("  - Todos os pontos do cluster visitados. Retornando ao CZO...")
+    # 4. Retornar ao Centro de Zoonoses
+    print("  - Todos os pontos alcançáveis visitados. Retornando ao CZO...")
     caminho_final, distancia_final = a_star(graph, ponto_atual, no_czoonoses, node_coords)
     
     if caminho_final:
@@ -561,12 +565,16 @@ def tracar_rota_cluster_tsp(cluster_alvo_id, destinos, labels_clusters, czoonose
     else:
         print("AVISO: Não foi possível traçar a rota de volta para o CZO.")
 
+    # Relatório final
     print(f"Rota para o Cluster {cluster_alvo_id + 1} finalizada.")
+    print(f"Destinos visitados: {len(destinos_do_cluster) - len(destinos_inalcancaveis)}/{len(destinos_do_cluster)}")
+    if destinos_inalcancaveis:
+        print(f"Destinos não alcançáveis: {destinos_inalcancaveis}")
     print(f"Distância total estimada: {distancia_total / 1000:.2f} km")
     
     return rota_completa, distancia_total
 
-def planejar_rotas_para_todos_os_clusters(destinos, labels_clusters, czoonoses_coords, graph, node_coords):
+def planejar_rotas_para_todos_os_clusters_a_star(destinos, labels_clusters, czoonoses_coords, graph, node_coords):
     """
     Itera sobre todos os clusters, traça uma rota para cada um usando a função
     tracar_rota_cluster_tsp e salva todas as rotas geradas.
@@ -588,7 +596,7 @@ def planejar_rotas_para_todos_os_clusters(destinos, labels_clusters, czoonoses_c
     
     # Itera sobre cada cluster para planejar sua rota
     for cluster_id in ids_clusters_unicos:
-        rota, distancia = tracar_rota_cluster_tsp(
+        rota, distancia = tracar_rota_cluster_tsp_a_star(
             cluster_alvo_id=cluster_id,
             destinos=destinos,
             labels_clusters=labels_clusters,
@@ -604,15 +612,302 @@ def planejar_rotas_para_todos_os_clusters(destinos, labels_clusters, czoonoses_c
     print("\n=== PLANEJAMENTO DE TODAS AS ROTAS CONCLUÍDO ===")
     return todas_as_rotas
 
-def imprimir_resumo_detalhado(rotas_salvas, destinos, node_coords):
+def extrair_subgrafo_por_cluster(cluster_nodes, node_coords, graph, margem=0.005):
     """
-    Imprime um resumo detalhado e amigável de cada rota que foi planejada e salva.
-    A função exibe a distância total e a ordem de visitação dos pontos para cada cluster.
+    Extrai de 'graph' apenas os nós e arestas que caem no bbox que envolve
+    cluster_nodes (lat/lon em node_coords) com uma pequena margem.
+    """
+    # calcula bbox
+    lats = [node_coords[n][0] for n in cluster_nodes]
+    lons = [node_coords[n][1] for n in cluster_nodes]
+    min_lat, max_lat = min(lats)-margem, max(lats)+margem
+    min_lon, max_lon = min(lons)-margem, max(lons)+margem
+
+    # filtra nós no bbox
+    nodes_ok = {
+        n for n,(lat,lon) in node_coords.items()
+        if min_lat <= lat <= max_lat and min_lon <= lon <= max_lon
+    }
+
+    # monta subgrafo
+    sub = {}
+    for n in nodes_ok:
+        sub[n] = [(v,w,s) for (v,w,s) in graph[n] if v in nodes_ok]
+    return sub
+
+
+def dijkstra_tradicional_distancias(graph, source):
+    """
+    Roda o seu Dijkstra tradicional (sem heap) a partir de 'source'
+    e retorna dois dicts: dist[n] e pred[n].
+    """
+    dist = {n: float('inf') for n in graph}
+    dist[source] = 0
+    pred = {n: None for n in graph}
+    visitados = set()
+
+    while True:
+        u, best = None, float('inf')
+        for n, d in dist.items():
+            if n not in visitados and d < best:
+                u, best = n, d
+        if u is None:
+            break
+        visitados.add(u)
+        for v, w, _ in graph[u]:
+            if v not in visitados and dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
+                pred[v] = u
+
+    return dist, pred
+
+
+def tracar_rota_cluster_tsp_dijkstra_trad(
+    cluster_alvo_id,
+    destinos,
+    labels_clusters,
+    czoonoses_coords,
+    graph,
+    node_coords
+):
+    """
+    Traça rota NN+retorno para o cluster usando Dijkstra tradicional
+    em subgrafo reduzido.
+    """
+    # 1) mapeia nós do CZO e destinos do cluster
+    start = encontrar_no_mais_proximo(node_coords, *czoonoses_coords)
+    nomes = [n for n,c in labels_clusters.items() if c==cluster_alvo_id]
+    destinos_nodes = [
+        encontrar_no_mais_proximo(node_coords, lat, lon)
+        for n in nomes for (lon,lat) in [destinos[n]]
+    ]
+    cluster_nodes = [start] + destinos_nodes
+
+    # 2) extrai subgrafo restrito
+    sub_graph = extrair_subgrafo_por_cluster(cluster_nodes, node_coords, graph)
+
+    # 3) inicializa rota e estado
+    rota = [start]
+    atual = start
+    total = 0.0
+    restantes = set(destinos_nodes)
+
+    # 4) Nearest-Neighbor usando Dijkstra one-to-all
+    while restantes:
+        dist_map, pred_map = dijkstra_tradicional_distancias(sub_graph, atual)
+        vizinho = min(restantes, key=lambda n: dist_map.get(n, float('inf')))
+        dmin = dist_map[vizinho]
+
+        # reconstrói caminho
+        caminho = []
+        cur = vizinho
+        while cur is not None:
+            caminho.append(cur)
+            cur = pred_map[cur]
+        caminho.reverse()
+
+        # anexa e atualiza
+        rota.extend(caminho[1:])
+        total += dmin
+        atual = vizinho
+        restantes.remove(vizinho)
+
+    # 5) volta ao CZO
+    dist_map, pred_map = dijkstra_tradicional_distancias(sub_graph, atual)
+    retorno = []
+    cur = start
+    # reconstrói de atual → start
+    path_back = []
+    node = atual
+    while node is not None:
+        path_back.append(node)
+        node = pred_map[node]
+    path_back.reverse()
+
+    rota.extend(path_back[1:])
+    total += dist_map[start]
+
+    print(f"Cluster {cluster_alvo_id+1}: {len(rota)} nós, {total/1000:.2f} km")
+    return rota, total
+
+
+def planejar_rotas_para_todos_os_clusters_dijkstra_trad(destinos, labels_clusters, czoonoses_coords, graph, node_coords):
+    """
+    Itera sobre todos os clusters, traça uma rota para cada um usando a função
+    tracar_rota_cluster_tsp e salva todas as rotas geradas.
 
     Parâmetros:
-    - rotas_salvas: Dicionário gerado por 'planejar_rotas_para_todos_os_clusters'.
-    - destinos: Dicionário {nome: (lon, lat)} com todos os destinos.
-    - node_coords: Dicionário com as coordenadas de cada nó do grafo.
+    - Todos os parâmetros necessários para a função tracar_rota_cluster_tsp.
+
+    Retorna:
+    - Um dicionário onde as chaves são os IDs dos clusters e os valores são
+      tuplas contendo (rota_completa, distancia_total_metros) para aquele cluster.
+      Ex: {0: (rota_cluster_0, dist_0), 1: (rota_cluster_1, dist_1), ...}
+    """
+    print("\n\n=== INICIANDO PLANEJAMENTO DE ROTAS PARA TODOS OS CLUSTERS ===")
+    
+    todas_as_rotas = {}
+    
+    # Encontra todos os IDs de cluster únicos e os ordena
+    ids_clusters_unicos = sorted(set(labels_clusters.values()))
+    
+    # Itera sobre cada cluster para planejar sua rota
+    for cluster_id in ids_clusters_unicos:
+        rota, distancia = tracar_rota_cluster_tsp_dijkstra_trad(
+            cluster_alvo_id=cluster_id,
+            destinos=destinos,
+            labels_clusters=labels_clusters,
+            czoonoses_coords=czoonoses_coords,
+            graph=graph,
+            node_coords=node_coords
+        )
+        
+        # Salva a rota e a distância no dicionário se a rota foi gerada com sucesso
+        if rota:
+            todas_as_rotas[cluster_id] = (rota, distancia)
+            
+    print("\n=== PLANEJAMENTO DE TODAS AS ROTAS CONCLUÍDO ===")
+    return todas_as_rotas
+
+def dijkstra_min_heap(graph, source):
+    """
+    Dijkstra com min-heap (O(E + V log V)),
+    retornando (dist, pred) para todo nó.
+    """
+    dist = {n: float('inf') for n in graph}
+    dist[source] = 0
+    pred = {n: None for n in graph}
+    visited = set()
+    heap = [(0, source)]
+
+    while heap:
+        d_u, u = heapq.heappop(heap)
+        if u in visited:
+            continue
+        visited.add(u)
+        for v, w, _ in graph[u]:
+            nd = d_u + w
+            if nd < dist[v]:
+                dist[v] = nd
+                pred[v] = u
+                heapq.heappush(heap, (nd, v))
+    return dist, pred
+
+def tracar_rota_cluster_tsp_dijkstra_min_heap(
+    cluster_alvo_id,
+    destinos,
+    labels_clusters,
+    czoonoses_coords,
+    graph,
+    node_coords
+):
+    """
+    Traça rota NN+retorno para o cluster usando Dijkstra com min-heap
+    em subgrafo reduzido com margem dinâmica e fallback.
+    """
+    # 1) nó do depósito e destinos do cluster
+    start = encontrar_no_mais_proximo(node_coords, *czoonoses_coords)
+    nomes = [n for n, c in labels_clusters.items() if c == cluster_alvo_id]
+    dest_nodes = [
+        encontrar_no_mais_proximo(node_coords, lat, lon)
+        for n in nomes for (lon, lat) in [destinos[n]]
+    ]
+    cluster_nodes = [start] + dest_nodes
+
+    # 2) margem dinâmica
+    lats = [node_coords[n][0] for n in cluster_nodes]
+    lons = [node_coords[n][1] for n in cluster_nodes]
+    span_lat = max(lats) - min(lats)
+    span_lon = max(lons) - min(lons)
+    margem = max(span_lat, span_lon) * 0.5 + 0.005
+
+    # 3) extrai sub-grafo
+    subg = extrair_subgrafo_por_cluster(cluster_nodes, node_coords, graph, margem)
+
+    # 4) Nearest-Neighbor usando Dijkstra min-heap one-to-all
+    rota = [start]
+    atual = start
+    total = 0.0
+    restantes = set(dest_nodes)
+
+    while restantes:
+        dist_map, pred_map = dijkstra_min_heap(subg, atual)
+        viz = min(restantes, key=lambda n: dist_map.get(n, float('inf')))
+        dmin = dist_map[viz]
+
+        # reconstrói caminho até viz
+        caminho = []
+        cur = viz
+        while cur is not None:
+            caminho.append(cur)
+            cur = pred_map[cur]
+        caminho.reverse()
+
+        rota.extend(caminho[1:])
+        total += dmin
+        atual = viz
+        restantes.remove(viz)
+
+    # 5) volta ao depósito
+    dist_map, pred_map = dijkstra_min_heap(subg, atual)
+    if dist_map.get(start, float('inf')) == float('inf'):
+        # fallback no grafo completo
+        full_dist, full_pred = dijkstra_min_heap(graph, atual)
+        d_back = full_dist[start]
+        caminho_back = []
+        cur = start
+        while cur is not None:
+            caminho_back.append(cur)
+            cur = full_pred[cur]
+        caminho_back.reverse()
+    else:
+        d_back = dist_map[start]
+        caminho_back = []
+        cur = start
+        while cur is not None:
+            caminho_back.append(cur)
+            cur = pred_map[cur]
+        caminho_back.reverse()
+
+    rota.extend(caminho_back[1:])
+    total += d_back
+
+    print(f"Cluster {cluster_alvo_id+1}: {len(rota)} nós, {total/1000:.2f} km")
+    return rota, total
+
+def planejar_rotas_para_todos_os_clusters_min_heap(
+    destinos,
+    labels_clusters,
+    czoonoses_coords,
+    graph,
+    node_coords
+):
+    """
+    Itera sobre todos os clusters e chama
+    tracar_rota_cluster_tsp_dijkstra_min_heap para cada um.
+    """
+    print("\n=== INICIANDO PLANEJAMENTO DE ROTAS (min-heap) ===")
+    rotas = {}
+    for cid in sorted(set(labels_clusters.values())):
+        rota, dist = tracar_rota_cluster_tsp_dijkstra_min_heap(
+            cluster_alvo_id=cid,
+            destinos=destinos,
+            labels_clusters=labels_clusters,
+            czoonoses_coords=czoonoses_coords,
+            graph=graph,
+            node_coords=node_coords
+        )
+        if rota:
+            rotas[cid] = (rota, dist)
+    print("=== PLANEJAMENTO CONCLUÍDO ===")
+    return rotas
+
+def imprimir_resumo_detalhado(rotas_salvas, destinos, node_coords, labels_clusters):
+    """
+    Imprime um resumo detalhado de cada rota planejada.
+    
+    CORREÇÃO: Agora mapeia corretamente os nós visitados para os destinos específicos
+    de cada cluster, evitando que um mesmo ponto apareça em múltiplas rotas.
     """
     print("\n\n--- RESUMO DETALHADO DAS ROTAS GERADAS ---")
 
@@ -620,35 +915,86 @@ def imprimir_resumo_detalhado(rotas_salvas, destinos, node_coords):
         print("Nenhuma rota para exibir.")
         return
 
-    # Para eficiência, crie um mapa reverso de nós para nomes de destinos
-    mapa_no_para_nome = {}
-    for nome, (lon, lat) in destinos.items():
-        # A função encontrar_no_mais_proximo pode ser custosa, mas aqui é necessária
-        # para garantir a correspondência correta entre o destino e o nó no grafo.
-        no = encontrar_no_mais_proximo(node_coords, lat, lon)
-        mapa_no_para_nome[no] = nome
-
-    # Itera sobre cada rota salva no dicionário
+    # Para cada cluster, identificar quais destinos deveriam ser visitados
     for cluster_id, (rota, distancia) in sorted(rotas_salvas.items()):
         print(f"\n-----------------------------------------")
         print(f"| Rota para o Cluster {cluster_id + 1}                  |")
         print(f"-----------------------------------------")
         print(f"  -> Distância Total: {distancia / 1000:.2f} km")
+        print(f"  -> Número de nós na rota: {len(rota)}")
 
-        # Encontra a sequência de visitação dos pontos nomeados
-        pontos_visitados_na_ordem = []
-        for no_da_rota in rota:
-            if no_da_rota in mapa_no_para_nome:
-                nome_do_ponto = mapa_no_para_nome[no_da_rota]
-                if nome_do_ponto not in pontos_visitados_na_ordem:
-                    pontos_visitados_na_ordem.append(nome_do_ponto)
+        # Identificar quais destinos pertencem a este cluster específico
+        destinos_do_cluster = []
+        for nome, cluster_destino in labels_clusters.items():
+            if cluster_destino == cluster_id:
+                destinos_do_cluster.append(nome)
+
+        # Para cada destino do cluster, verificar se seu nó está na rota
+        destinos_visitados = []
+        destinos_nao_visitados = []
         
-        if pontos_visitados_na_ordem:
-            print("  -> Ordem de Visitação dos Pontos:")
-            for i, nome in enumerate(pontos_visitados_na_ordem):
-                print(f"     {i + 1}. {nome}")
-        else:
-            print("  -> Nenhum ponto de destino identificado na rota.")
+        for nome_destino in destinos_do_cluster:
+            lon, lat = destinos[nome_destino]
+            no_destino = encontrar_no_mais_proximo(node_coords, lat, lon)
+            
+            if no_destino in rota:
+                destinos_visitados.append(nome_destino)
+            else:
+                destinos_nao_visitados.append(nome_destino)
+        
+        print(f"  -> Destinos Visitados ({len(destinos_visitados)}):")
+        for i, nome in enumerate(destinos_visitados, 1):
+            print(f"     {i}. {nome}")
+        
+        if destinos_nao_visitados:
+            print(f"  -> Destinos Não Visitados ({len(destinos_nao_visitados)}):")
+            for nome in destinos_nao_visitados:
+                print(f"     - {nome} (possivelmente isolado na rede viária)")
     
     print("\n-----------------------------------------")
     print("--- Fim do Resumo ---")
+
+
+def diagnosticar_conectividade_grafo(graph, node_coords, destinos, czoonoses_coords):
+    """
+    Nova função para diagnosticar problemas de conectividade no grafo.
+    Ajuda a identificar destinos que não podem ser alcançados.
+    """
+    print("\n=== DIAGNÓSTICO DE CONECTIVIDADE ===")
+    
+    no_czoonoses = encontrar_no_mais_proximo(node_coords, czoonoses_coords[0], czoonoses_coords[1])
+    print(f"Nó do Centro de Zoonoses: {no_czoonoses}")
+    print(f"Conexões do CZO: {len(graph.get(no_czoonoses, []))}")
+    
+    destinos_problematicos = []
+    destinos_ok = []
+    
+    for nome, (lon, lat) in destinos.items():
+        no_destino = encontrar_no_mais_proximo(node_coords, lat, lon)
+        
+        # Verificar se o nó existe e tem conexões
+        if no_destino not in graph:
+            destinos_problematicos.append((nome, "Nó não existe no grafo"))
+            continue
+            
+        if len(graph[no_destino]) == 0:
+            destinos_problematicos.append((nome, "Nó isolado (sem conexões)"))
+            continue
+        
+        # Testar conectividade com o CZO
+        caminho, distancia = a_star(graph, no_czoonoses, no_destino, node_coords)
+        if not caminho:
+            destinos_problematicos.append((nome, "Sem caminho para o CZO"))
+        else:
+            destinos_ok.append((nome, distancia))
+    
+    print(f"\nDestinos alcançáveis: {len(destinos_ok)}")
+    print(f"Destinos problemáticos: {len(destinos_problematicos)}")
+    
+    if destinos_problematicos:
+        print("\nDestinos com problemas:")
+        for nome, problema in destinos_problematicos:
+            print(f"  - {nome}: {problema}")
+    
+    return destinos_ok, destinos_problematicos
+
