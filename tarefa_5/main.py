@@ -8,15 +8,11 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 """
 
-from functions import (
+from aux_functions import (
   carregar_destinos,
   obter_dados_estradas,
   criar_grafo,
-  encontrar_no_mais_proximo,
   dividir_destinos_em_clusters,
-  planejar_rotas_para_todos_os_clusters_dijkstra_trad,
-  planejar_rotas_para_todos_os_clusters_min_heap,
-  planejar_rotas_para_todos_os_clusters_a_star,
   imprimir_resumo_detalhado,
   diagnosticar_conectividade_grafo
 )
@@ -27,14 +23,20 @@ from plot_functions import(
   plotar_mapa_com_rotas
 )
 
+from rotes_functions import(
+planejar_rotas_para_todos_os_clusters_dijkstra_trad,
+  planejar_rotas_para_todos_os_clusters_min_heap,
+  planejar_rotas_para_todos_os_clusters_a_star
+)
+
 from codecarbon import EmissionsTracker
 
 # Iniciando o rastreador de emissões do code carbon
 # Descomente o bloco a seguir e o último bloco do código para calcular a pegada de corbono
-"""
+
 tracker = EmissionsTracker()       
 tracker.start()  
-"""                 
+             
 
 # Carregar destinos do arquivo JSON
 destinos = carregar_destinos('db.json')
@@ -54,24 +56,24 @@ data = obter_dados_estradas(bounds)
 
 print("Criando grafo da rede viária...")
 graph, node_coords = criar_grafo(data)
-
 print(f"Grafo criado com {len(graph)} nós.")
 
-# Encontrar o nó mais próximo ao centro de zoonoses
-no_czoonoses = encontrar_no_mais_proximo(node_coords, czoonoses[0], czoonoses[1])
-print(f"Nó mais próximo ao centro de zoonoses: {no_czoonoses}")
-
 # Plot do mapa com os pontos de destino e o centro de zoonoses
-# Descomente essa parte para plotar mapa com todos os pontos de interesse
+# Descomente esse bloco para plotar mapa com todos os pontos de interesse
 
-"""
+
 print("Plotando mapa natal com destinos...")
 plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds) 
-"""
 
+
+################### Diagnosticar Conectividade entra nós ###################
+# Descomente esse bloco para plotar mapa com todos os pontos de interesse
+
+ 
 destinos_ok, destinos_problematicos = diagnosticar_conectividade_grafo(
     graph, node_coords, destinos, czoonoses
-)
+) 
+
 
 ################### Dividir os destinos em clusters ###################
 
@@ -109,21 +111,25 @@ for cluster_id, cor in mapa_cores.items():
 
 print("\nEstatísticas finais:")
 print(f"Total de clusters: {len(mapa_cores)}")
-print(f"Total de destinos plotados: {sum(estatisticas_clusters.values())}")
+print(f"Total de destinos plotados: {sum(estatisticas_clusters.values())}") 
 """
+
 
 ######## Planejar e Salvar Rotas para Todos os Clusters usado A* ######## 
 # Chama a função principal que gerencia o planejamento para todos os clusters
+
+""" 
 rotas_salvas = planejar_rotas_para_todos_os_clusters_a_star(
     destinos=destinos,
     labels_clusters=labels_clusters,
     czoonoses_coords=czoonoses,
     graph=graph,
     node_coords=node_coords
-)
+)  
+"""
 
 ######## Planejar e Salvar Rotas para Todos os Clusters usado Dijkstra ######## 
-"""
+
 rotas_salvas = planejar_rotas_para_todos_os_clusters_dijkstra_trad(
     destinos=destinos,
     labels_clusters=labels_clusters,
@@ -131,7 +137,7 @@ rotas_salvas = planejar_rotas_para_todos_os_clusters_dijkstra_trad(
     graph=graph,
     node_coords=node_coords
 )
-"""
+
 
 ######## Planejar e Salvar Rotas para Todos os Clusters usado Dijkstra Min-Heap ######## 
 """
@@ -145,6 +151,7 @@ rotas_salvas = planejar_rotas_para_todos_os_clusters_min_heap(
 """
 
 # Chama a nova função dedicada a imprimir os resultados de forma organizada
+
 imprimir_resumo_detalhado(
     rotas_salvas=rotas_salvas,
     destinos=destinos,
@@ -160,10 +167,10 @@ if rotas_salvas:
         labels_clusters=labels_clusters,
         czoonoses_coords=czoonoses
     )
-
+ 
+ 
 # Finalizando reastreador de emissões de carbono
 # Precisa descomentar para calcular pegada de carbono
-""" 
+
 emissions = tracker.stop()
 print(f"\nEmissões de CO2 estimadas: {emissions:.6f} kg")
-"""

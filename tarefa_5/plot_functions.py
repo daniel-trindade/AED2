@@ -137,7 +137,7 @@ def plotar_mapa_com_clusters(graph, node_coords, destinos, labels_clusters, czoo
                     markeredgecolor='black', markeredgewidth=1, alpha=0.8)
             
             # Adicionar rótulo com nome do destino
-            plt.text(lon, lat+0.001, nome_destino, fontsize=8, 
+            plt.text(lon, lat+0.003, nome_destino, fontsize=8, 
                     ha='center', va='bottom', weight='normal',
                     bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.7))
             
@@ -327,8 +327,8 @@ def plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, boun
                 markeredgecolor='black', markeredgewidth=1, alpha=0.8)
         
         # Adicionar rótulo com nome do destino
-        plt.text(lon, lat, nome_destino, fontsize=8, 
-                ha='center', va='bottom', weight='bold',
+        plt.text(lon, lat+0.003, nome_destino, fontsize=8, 
+                ha='center', va='bottom', weight='normal',
                 bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.7))
         
         destinos_plotados += 1
