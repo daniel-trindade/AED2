@@ -1,3 +1,5 @@
+import random
+import heapq
 from aux_functions import (
     a_star,
     encontrar_no_mais_proximo
@@ -418,3 +420,45 @@ def planejar_rotas_para_todos_os_clusters_min_heap(destinos, labels_clusters, cz
             rotas[cid] = (rota, dist)
     print("=== PLANEJAMENTO CONCLUÍDO ===")
     return rotas
+
+
+def gerar_rotas_aleatorias_a_star(
+    destinos, czoonoses_coords, graph, node_coords,
+    num_operadores=10, seed=42
+):
+    random.seed(seed)
+    nomes = list(destinos.keys())
+    random.shuffle(nomes)
+
+    grupos = [[] for _ in range(num_operadores)]
+    for i,nome in enumerate(nomes):
+        grupos[i % num_operadores].append(nome)
+
+    resultado = {}
+    start = encontrar_no_mais_proximo(node_coords, *czoonoses_coords)
+
+    for op_id, grupo in enumerate(grupos, 1):
+        rota = [start]
+        total = 0.0
+        atual = start
+        for nome in grupo:
+            lon, lat = destinos[nome]
+            dest_node = encontrar_no_mais_proximo(node_coords, lat, lon)
+            path, dist = a_star(graph, atual, dest_node, node_coords)
+            if not path:
+                print(f"[Op{op_id}] falha em {nome}")
+                continue
+            rota.extend(path[1:])
+            total += dist
+            atual = dest_node
+        back, dback = a_star(graph, atual, start, node_coords)
+        if back:
+            rota.extend(back[1:])
+            total += dback
+
+        resultado[op_id] = {
+            'rota_nodes': rota,
+            'dist_m': total,
+            'destinos': grupo
+        }
+    return resultado

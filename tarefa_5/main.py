@@ -20,23 +20,25 @@ from aux_functions import (
 from plot_functions import(
   plotar_mapa_com_clusters,
   plotar_mapa_natal_com_destinos,
-  plotar_mapa_com_rotas
+  plotar_mapa_com_rotas,
+  plotar_mapa_rotas_operadores
 )
 
-from rotes_functions import(
+from routes_functions import(
 planejar_rotas_para_todos_os_clusters_dijkstra_trad,
   planejar_rotas_para_todos_os_clusters_min_heap,
-  planejar_rotas_para_todos_os_clusters_a_star
+  planejar_rotas_para_todos_os_clusters_a_star,
+  gerar_rotas_aleatorias_a_star
 )
 
 from codecarbon import EmissionsTracker
 
 # Iniciando o rastreador de emissões do code carbon
 # Descomente o bloco a seguir e o último bloco do código para calcular a pegada de corbono
-
+""" 
 tracker = EmissionsTracker()       
 tracker.start()  
-             
+"""            
 
 # Carregar destinos do arquivo JSON
 destinos = carregar_destinos('db.json')
@@ -63,8 +65,8 @@ print(f"Grafo criado com {len(graph)} nós.")
 
 """
 print("Plotando mapa natal com destinos...")
-plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds)
-""" 
+plotar_mapa_natal_com_destinos(graph, node_coords, destinos, czoonoses, bounds=None)
+"""
 
 ################### Diagnosticar Conectividade entra nós ###################
 # Descomente esse bloco para plotar mapa com todos os pontos de interesse
@@ -129,7 +131,7 @@ rotas_salvas = planejar_rotas_para_todos_os_clusters_a_star(
 """
 
 ######## Planejar e Salvar Rotas para Todos os Clusters usado Dijkstra ######## 
-
+"""
 rotas_salvas = planejar_rotas_para_todos_os_clusters_dijkstra_trad(
     destinos=destinos,
     labels_clusters=labels_clusters,
@@ -137,7 +139,7 @@ rotas_salvas = planejar_rotas_para_todos_os_clusters_dijkstra_trad(
     graph=graph,
     node_coords=node_coords
 )
-
+"""
 
 ######## Planejar e Salvar Rotas para Todos os Clusters usado Dijkstra Min-Heap ######## 
 """
@@ -150,8 +152,8 @@ rotas_salvas = planejar_rotas_para_todos_os_clusters_min_heap(
 )
 """
 
+"""
 # Chama a nova função dedicada a imprimir os resultados de forma organizada
-
 imprimir_resumo_detalhado(
     rotas_salvas=rotas_salvas,
     destinos=destinos,
@@ -167,10 +169,59 @@ if rotas_salvas:
         labels_clusters=labels_clusters,
         czoonoses_coords=czoonoses
     )
- 
+"""
+
+
+""" 
+######## Planejar e Salvar Rotas para os operadores usado A* sem clustering ######## 
+# Gera as 10 rotas
+rotas_por_operador = gerar_rotas_aleatorias_a_star(
+    destinos=destinos,
+    czoonoses_coords=czoonoses,
+    graph=graph,
+    node_coords=node_coords,
+    num_operadores=10,
+    seed=123
+)
+
+# --- Resumo detalhado por Operador, com total geral ---
+print("\n=== Resumo detalhado por Operador ===")
+dist_total = 0.0
+
+for op_id, info in rotas_por_operador.items():
+    rota = info['rota_nodes']
+    distancia = info['dist_m']
+    destinos_vis = info['destinos']
+    
+    dist_total += distancia
+    
+    print("\n" + "-"*41)
+    print(f"| Rota para o Operador {op_id:<2}               |")
+    print("-"*41)
+    print(f"  -> Distância Total: {distancia/1000:.2f} km")
+    print(f"  -> Número de nós na rota: {len(rota)}")
+    print(f"  -> Destinos Visitados ({len(destinos_vis)}):")
+    for i, nome in enumerate(destinos_vis, start=1):
+        print(f"     {i:2d}. {nome}")
+
+# Depois de listar todos, imprime o total
+print("\n" + "="*41)
+print(f"Distância TOTAL percorrida por todos os operadores: {dist_total/1000:.2f} km")
+print("="*41 + "\n")
+
+
+# Plota o mapa
+plotar_mapa_rotas_operadores(
+    rotas_por_operador,
+    node_coords=node_coords,
+    destinos=destinos,
+    czoonoses_coords=czoonoses
+)
+""" 
  
 # Finalizando reastreador de emissões de carbono
 # Precisa descomentar para calcular pegada de carbono
-
+""" 
 emissions = tracker.stop()
 print(f"\nEmissões de CO2 estimadas: {emissions:.6f} kg")
+""" 

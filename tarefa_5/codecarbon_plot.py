@@ -12,7 +12,7 @@ mpl.rcParams['font.family'] = 'sans-serif'
 mpl.rcParams['font.sans-serif'] = ['DejaVu Sans']
 
 def analyze_codecarbon_data():
-    folder_path = "emissions/"
+    folder_path = "pegada_de_carbono/"
     print(f"Analisando dados em: {os.path.abspath(folder_path)}")
     
     csv_files = glob.glob(os.path.join(folder_path, "*.csv"))
@@ -109,5 +109,5 @@ def plot_comparisons(df):
     plt.subplots_adjust(top=0.90)
     plt.show()
 
-if __name__ == "__main__":
-    analyze_codecarbon_data()
+
+analyze_codecarbon_data()

@@ -459,3 +459,77 @@ def plotar_mapa_com_rotas(rotas_salvas, node_coords, destinos, labels_clusters, 
     nome_arquivo = 'mapa_com_rotas.html'
     mapa.save(nome_arquivo)
     print(f"\nMapa com as rotas foi gerado e salvo como '{nome_arquivo}'")
+
+
+    
+def plotar_mapa_rotas_operadores(
+    rotas_por_operador, node_coords, destinos, czoonoses_coords
+):
+    """
+    Plota em Folium uma rota por operador, cada uma com cor distinta,
+    e marcadores dos destinos coloridos pelo operador.
+    """
+    # Obtém paleta Tab10 pela nova API
+    cmap = plt.colormaps['tab10']
+    # Tenta extrair cores diretamente, senão gera via amostragem
+    try:
+        palette = cmap.colors
+    except AttributeError:
+        palette = [cmap(i) for i in range(cmap.N)]
+
+    # Converte cada tupla de 3 ou 4 valores em hexadecimal
+    cores = []
+    for tup in palette:
+        if len(tup) == 4:
+            r,g,b,_ = tup
+        else:
+            r,g,b = tup
+        cores.append(f'#{int(r*255):02x}{int(g*255):02x}{int(b*255):02x}')
+
+    mapa = folium.Map(location=czoonoses_coords, zoom_start=12, tiles="CartoDB positron")
+
+    # Mapeia destino → operador para colorir pontos
+    dest2op = {}
+    for op, info in rotas_por_operador.items():
+        for nome in info['destinos']:
+            dest2op[nome] = op
+
+    # Desenha cada rota com sua cor
+    for op, info in rotas_por_operador.items():
+        cor = cores[(op-1) % len(cores)]
+        coords = [
+            (node_coords[n][0], node_coords[n][1])
+            for n in info['rota_nodes'] if n in node_coords
+        ]
+        folium.PolyLine(
+            locations=coords,
+            color=cor,
+            weight=3,
+            opacity=0.8,
+            popup=f"Operador {op} — {info['dist_m']/1000:.2f} km"
+        ).add_to(mapa)
+
+    # Pontos de destino coloridos por operador
+    for nome,(lon,lat) in destinos.items():
+        op = dest2op.get(nome)
+        cor = cores[(op-1) % len(cores)] if op else '#000000'
+        folium.CircleMarker(
+            location=(lat, lon),
+            radius=5,
+            color=cor,
+            fill=True,
+            fill_color=cor,
+            fill_opacity=1,
+            popup=f"{nome}<br>Operador {op}"
+        ).add_to(mapa)
+
+    # Marcador do CZO
+    folium.Marker(
+        location=czoonoses_coords,
+        popup="Centro de Zoonoses",
+        icon=folium.Icon(color='red', icon='star')
+    ).add_to(mapa)
+
+    arquivo = "rotas_operadores.html"
+    mapa.save(arquivo)
+    print(f"Mapa salvo como '{arquivo}'")
