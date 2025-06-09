@@ -7,6 +7,14 @@ by <br/>
 
 ***
 
+## Vídeo de Apresentação
+
+<a href="https://youtu.be/6qA9rjIAEvk" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" width="150"/>
+</a>
+
+***
+
 ## 1. Introdução
 A efetividade da vigilância epidemiológica contra arboviroses como dengue, Zika e chikungunya, que se apoia em ferramentas como as ovitrampas para o monitoramento do Aedes aegypti, é intrinsecamente dependente da eficiência logística. Este desafio se materializa no cenário operacional do Centro de Controle de Zoonoses (CCZ) de Natal, onde a gestão da manutenção de 65 armadilhas por 10 funcionários constitui um complexo Problema de Roteirização de Veículos (VRP). O objetivo primordial é minimizar os custos operacionais, como tempo e distância percorrida, pois uma abordagem não otimizada resulta em desperdício de recursos, sobrecarga das equipes e comprometimento direto dos resultados do programa de saúde pública.
 
