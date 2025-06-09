@@ -58,6 +58,18 @@ A fim de realizar uma comparação robusta entre os três algoritmos, foram defi
 Ao final desta etapa, os resultados obtidos — distâncias das rotas e suas respectivas pegadas de carbono — foram compilados para permitir uma análise detalhada sobre qual algoritmo oferece a melhor combinação de eficiência de rota, desempenho computacional e sustentabilidade para o problema proposto.
 
 ## 3. Resultados
+### Mapas com rotas
+#### A* com Clustering
+![A* com Clustering](/tarefa_5/imgs/rotas_a_star.png)
+
+#### A* Random (sem clustering)
+![A* Random (sem clustering)](/tarefa_5/imgs/rotas_a_star_random.png)
+
+#### Dijkstra Tradicional
+![Dijkstra Tradicional](/tarefa_5/imgs/rotas_dijkstra_trad.png)
+
+#### Dijkstra MinHeap 
+![Dijkstra MinHeap ](/tarefa_5/imgs/rotas_dijkstra_min_heap.png)
 
 ### Distâncias Percorridas 
 | Algoritmo                   | Distância Total (km) | Nós Percorridos |
