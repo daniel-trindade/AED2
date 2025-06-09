@@ -35,10 +35,10 @@ from codecarbon import EmissionsTracker
 
 # Iniciando o rastreador de emissões do code carbon
 # Descomente o bloco a seguir e o último bloco do código para calcular a pegada de corbono
-""" 
+
 tracker = EmissionsTracker()       
 tracker.start()  
-"""            
+          
 
 # Carregar destinos do arquivo JSON
 destinos = carregar_destinos('db.json')
@@ -120,14 +120,14 @@ print(f"Total de destinos plotados: {sum(estatisticas_clusters.values())}")
 ######## Planejar e Salvar Rotas para Todos os Clusters usado A* ######## 
 # Chama a função principal que gerencia o planejamento para todos os clusters
 
-""" 
+"""
 rotas_salvas = planejar_rotas_para_todos_os_clusters_a_star(
     destinos=destinos,
     labels_clusters=labels_clusters,
     czoonoses_coords=czoonoses,
     graph=graph,
     node_coords=node_coords
-)  
+)
 """
 
 ######## Planejar e Salvar Rotas para Todos os Clusters usado Dijkstra ######## 
@@ -142,7 +142,7 @@ rotas_salvas = planejar_rotas_para_todos_os_clusters_dijkstra_trad(
 """
 
 ######## Planejar e Salvar Rotas para Todos os Clusters usado Dijkstra Min-Heap ######## 
-"""
+
 rotas_salvas = planejar_rotas_para_todos_os_clusters_min_heap(
     destinos=destinos,
     labels_clusters=labels_clusters,
@@ -150,9 +150,9 @@ rotas_salvas = planejar_rotas_para_todos_os_clusters_min_heap(
     graph=graph,
     node_coords=node_coords
 )
-"""
 
-"""
+
+
 # Chama a nova função dedicada a imprimir os resultados de forma organizada
 imprimir_resumo_detalhado(
     rotas_salvas=rotas_salvas,
@@ -169,11 +169,10 @@ if rotas_salvas:
         labels_clusters=labels_clusters,
         czoonoses_coords=czoonoses
     )
-"""
 
 
-""" 
 ######## Planejar e Salvar Rotas para os operadores usado A* sem clustering ######## 
+""" 
 # Gera as 10 rotas
 rotas_por_operador = gerar_rotas_aleatorias_a_star(
     destinos=destinos,
@@ -216,12 +215,12 @@ plotar_mapa_rotas_operadores(
     node_coords=node_coords,
     destinos=destinos,
     czoonoses_coords=czoonoses
-)
-""" 
+) 
+"""
+
  
 # Finalizando reastreador de emissões de carbono
 # Precisa descomentar para calcular pegada de carbono
-""" 
+
 emissions = tracker.stop()
 print(f"\nEmissões de CO2 estimadas: {emissions:.6f} kg")
-""" 
