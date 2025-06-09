@@ -59,12 +59,30 @@ Ao final desta etapa, os resultados obtidos — distâncias das rotas e suas res
 
 ## 3. Resultados
 
-### Distancias Percoridas 
+### Distâncias Percorridas 
+| Algoritmo                   | Distância Total (km) | Nós Percorridos |
+|----------------------------|----------------------|------------------|
+| Dijkstra MinHeap           | 291.80               | 10.077           |
+| A*                         | 291.80               | 10.077           |
+| Dijkstra Tradicional       | ∞                    | 5.835            |
+| A* Random (sem clustering) | 778.15               | 22.060           |
 
 ### Pegadas de Carbono Computacional
 ![Gráficos de Pegada de Carbono](/tarefa_5/imgs/comparativo%20emissao%20de%20carbono.png)
 
-
 ## 4. Analise dos resultados
 
+### Comparação dos algoritmos
+
+O A* Random (sem clustering) percorreu uma distância significativamente maior (778.15 km) e processou o maior número de nós (22.060) — mais que o dobro dos algoritmos baseados em clusters. Apesar disso, foi o mais rápido (11.06 s) e com menor impacto ambiental, sugerindo que sua estratégia de roteamento aleatório com heurística é altamente eficaz em encontrar soluções rápidas mesmo com mais dados.
+
+Por outro lado, os métodos Dijkstra MinHeap e A* seguiram as mesmas rotas (291.8 km e 10.077 nós), dado que ambos foram aplicados com o mesmo particionamento (clusters). O A\* foi mais eficiente que o Dijkstra em todos os aspectos, com menos CO₂ emitido, menos energia consumida e menor tempo de execução.
+
+O Dijkstra Tradicional, além de ter processado menos nós (5.835), apresentou tempo de execução extremamente elevado (2765.93 s) e altos valores absolutos de consumo e emissão, com falha no cálculo da distância (valor infinito). Isso inviabiliza sua comparação por km e evidencia a ineficiência do algoritmo na ausência de otimizações estruturais, como filas de prioridade.
+
+
+
 ## 5. Conclusões
+Este estudo se propôs a desenvolver e avaliar uma solução de otimização logística para as equipes do Centro de Controle de Zoonoses (CCZ) de Natal, comparando a eficácia dos algoritmos A*, Dijkstra com Min-Heap e Dijkstra tradicional. A metodologia adotada, que combinou a setorização dos pontos de coleta com o algoritmo K-Means antes da otimização das rotas, provou ser um passo fundamental e de alto impacto. Os resultados demonstraram que essa estratégia reduziu a distância total percorrida em mais de 60% em comparação com uma abordagem não setorizada. Na análise comparativa, o algoritmo A* se consolidou como a solução mais equilibrada, pois não apenas encontrou a rota ótima de 291.80 km — em paridade com o Dijkstra Min-Heap —, mas o fez com maior eficiência computacional e menor pegada de carbono. Em contrapartida, a implementação do Dijkstra tradicional se mostrou completamente inviável, falhando em encontrar uma solução e consumindo recursos computacionais e ambientais em uma ordem de magnitude centenas de vezes superior, reforçando a necessidade de estruturas de dados otimizadas para problemas de grafos do mundo real.
+
+As conclusões deste trabalho oferecem uma contribuição prática e de aplicação direta para o CCZ de Natal, fornecendo um modelo validado que pode ser implementado para gerar economia significativa de recursos, como tempo e combustível, e, consequentemente, ampliar a eficácia das ações de vigilância epidemiológica.
