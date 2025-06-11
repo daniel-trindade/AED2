@@ -67,16 +67,15 @@ Ao final desta etapa, os resultados obtidos — distâncias das rotas e suas res
 
 ## 3. Resultados
 ### Mapas com rotas
-#### A* com Clustering
+#### A* com Clustering - 🔗  [Link para versão WEB](/tarefa_5/rotas_dos_algoritmos_html/mapa_com_rotas_a_star.html)
 ![A* com Clustering](/tarefa_5/imgs/rotas_a_star.png)
-
-#### A* Random (sem clustering)
+#### A* Random (sem clustering) 🔗  [Link para versão WEB](/tarefa_5/rotas_dos_algoritmos_html/rotas_operadores_a_star_random.html)
 ![A* Random (sem clustering)](/tarefa_5/imgs/rotas_a_star_random.png)
 
-#### Dijkstra Tradicional
+#### Dijkstra Tradicional 🔗  [Link para versão WEB](/tarefa_5/rotas_dos_algoritmos_html/mapa_com_rotas_dijkstra.html)
 ![Dijkstra Tradicional](/tarefa_5/imgs/rotas_dijkstra_trad.png)
 
-#### Dijkstra MinHeap 
+#### Dijkstra MinHeap 🔗  [Link para versão WEB](/tarefa_5/rotas_dos_algoritmos_html/mapa_com_rotas_min_heap.html)
 ![Dijkstra MinHeap ](/tarefa_5/imgs/rotas_dijkstra_min_heap.png)
 
 ### Distâncias Percorridas 
