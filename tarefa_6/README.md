@@ -1,5 +1,15 @@
 # Roteirização das Praias de Natal com Algoritmo de Kruskal
 
+by
+[Daniel Bruno Trindade da Silva](https://github.com/daniel-trindade)
+
+## Links
+[Medium](https://medium.com/@danielbrunotrindade/otimiza%C3%A7%C3%A3o-de-rota-tur%C3%ADstica-com-teoria-dos-grafos-uma-aplica%C3%A7%C3%A3o-do-algoritmo-de-kruskal-ao-832bc44a78b1)
+
+[PodCast](https://notebooklm.google.com/notebook/98871f38-358a-4584-a235-1e0d21bd27b7/audio)
+
+***
+
 Este projeto acadêmico, desenvolvido para a disciplina de Algoritmos e Estrutura de Dados do curso de Engenharia da Computação, demonstra a aplicação prática da teoria dos grafos para resolver um problema de otimização do mundo real.
 
 O objetivo foi encontrar a rota mais curta que conecta todas as principais praias da cidade de Natal-RN, utilizando o Algoritmo de Kruskal para gerar uma Árvore Geradora Mínima (MST).
@@ -66,6 +76,5 @@ O processo implementado no notebook segue 4 etapas principais:
 
 O resultado final é um mapa que exibe a rota mais curta (aproximadamente **28 km**) para conectar todas as 17 praias identificadas. A rota é representada pela linha vermelha, que corresponde à Árvore Geradora Mínima.
 
-![Mapa da Rota Otimizada](rota.jpg)
+![Mapa da Rota Otimizada](/tarefa_6/rota.png)
 
-## Autor
