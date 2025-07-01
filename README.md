@@ -12,3 +12,5 @@ Conteúdo
 3. [Tarefa 3](https://github.com/daniel-trindade/AED2/tree/main/tarefa_3) - Implementação e analise de um grafo de co-ocorrência de ingredientes na culinária Brasileira.
 4. [Tarefa 4](https://github.com/daniel-trindade/AED2/tree/main/tarefa_4) - Avaliação Comparativa de Algoritmos de Caminho Mais Curto em Grafos Urbanos
 5. [Tarefa 5](https://github.com/daniel-trindade/AED2/tree/main/tarefa_5) - Otimização Logística para Vigilância em Saúde: Uma Abordagem Comparativa de Algoritmos de Menor Caminho em Grafos
+6. [Tarefa 6](https://github.com/daniel-trindade/AED2/tree/main/tarefa_6) - Roteirização das Praias de Natal com Algoritmo de Kruskal
+7. [Tarefa 7](https://github.com/daniel-trindade/AED2/tree/main/tarefa_7) - Visualização e Avaliação de Métricas de Centralidade em Grafos Utilizando Gephi

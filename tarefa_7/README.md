@@ -24,15 +24,15 @@ Este trabalho tem como objetivo realizar a análise de uma rede previamente cons
 
 ## Metodologia
 
-A base de dados utilizada neste trabalho foi fornecida pelo professor responsável pela disciplina, contendo uma rede previamente construída com seus respectivos vértices e arestas. A análise e a visualização dessa rede foram realizadas com o auxílio do software Gephi, uma ferramenta de código aberto amplamente utilizada para exploração e representação de grafos e redes complexas.
+A base de dados utilizada neste trabalho foi fornecida pelo professor responsável pela disciplina, contendo uma rede previamente construída com seus respectivos vértices e arestas. A análise e a visualização dessa rede foram realizadas com o auxílio do software **Gephi**, uma ferramenta de código aberto amplamente utilizada para exploração e representação de grafos e redes complexas.
 
 Inicialmente, a rede foi importada para o **Gephi**, onde foram aplicadas as métricas de centralidade disponíveis no módulo de estatísticas. Para este estudo, escolheu-se representar visualmente os nós com base em duas dimensões principais:
 
 - Tamanho dos vértices: definido de forma proporcional ao grau de cada nó, ou seja, ao número de vizinhos diretamente conectados a ele. Essa abordagem facilita a identificação dos nós com maior conectividade local.
 
-- Cores dos vértices: atribuídas com base em uma métrica de centralidade global (Closeness, Betweenness ou Eigenvector Centrality, dependendo da visualização). Utilizou-se uma escala de cores contínua do azul ao vermelho, passando pelo amarelo, conforme mostrado na legenda do Gephi. Nessa escala:
+- Cores dos vértices: atribuídas com base em uma métrica de centralidade global (Closeness, Betweenness ou Eigenvector Centrality, dependendo da visualização). Utilizou-se uma escala de cores contínua do azul ao vermelho, passando pelo amarelo, conforme mostrado na legenda do **Gephi**. Nessa escala:
 
-    -  Azul representa os nós com menor valor na métrica escolhida;
+    - Azul representa os nós com menor valor na métrica escolhida;
 
     - Amarelo representa valores intermediários;
 
