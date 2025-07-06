@@ -78,6 +78,8 @@ A centralidade de grau quantifica o número de conexões diretas de um nó. Na v
 ![Node Degree](./imgs/Node%20Degree.png)
 Figura 1: Rede com o tamanho dos nós proporcional à sua Centralidade de Grau.
 
+Esssa métrica foi representada na rede em produção, que pode ser acessada [aqui](https://marialluz.github.io/netdeploy/network/)
+
 #### Centralidade de Proximidade (Closeness Centrality)
 
 A centralidade de proximidade mede a "distância" média de um nó para todos os outros nós da rede. Nós com alta proximidade (em amarelo/vermelho na Figura 2) estão em uma posição topologicamente favorável para alcançar rapidamente qualquer outro nó, sendo eficientes na disseminação de informação através do grafo.
