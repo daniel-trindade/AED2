@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2025-07-05">
+    <creator>NetworkX 3.5</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <attributes mode="static" class="edge">
+      <attribute id="0" title="Interaction" type="string" />
+      <attribute id="1" title="Distance" type="double" />
+      <attribute id="2" title="Angle" type="string" />
+      <attribute id="3" title="Node1" type="string" />
+      <attribute id="4" title="Node2" type="string" />
+      <attribute id="5" title="Donor" type="string" />
+      <attribute id="6" title="Positive" type="string" />
+      <attribute id="7" title="Ct" type="string" />
+      <attribute id="8" title="Orientation" type="string" />
+      <attribute id="9" title="Model" type="double" />
+    </attributes>
+    <nodes>
+      <node id="B:88:_:L" label="B:88:_:L" />
+      <node id="B:103:_:F" label="B:103:_:F" />
+      <node id="B:141:_:L" label="B:141:_:L" />
+      <node id="B:92:_:H" label="B:92:_:H" />
+      <node id="B:201:_:LIG" label="B:201:_:LIG" />
+    </nodes>
+    <edges>
+      <edge source="B:88:_:L" target="B:201:_:LIG" id="560">
+        <attvalues>
+          <attvalue for="0" value="V:SC_LIG" />
+          <attvalue for="1" value="2.915" />
+          <attvalue for="2" value="" />
+          <attvalue for="3" value="HD21" />
+          <attvalue for="4" value="C3A" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="1.0" />
+        </attvalues>
+      </edge>
+      <edge source="B:88:_:L" target="B:92:_:H" id="623">
+        <attvalues>
+          <attvalue for="0" value="V:MC_SC" />
+          <attvalue for="1" value="2.904" />
+          <attvalue for="2" value="" />
+          <attvalue for="3" value="C" />
+          <attvalue for="4" value="H" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="1.0" />
+        </attvalues>
+      </edge>
+      <edge source="B:88:_:L" target="B:141:_:L" id="626">
+        <attvalues>
+          <attvalue for="0" value="V:SC_SC" />
+          <attvalue for="1" value="2.921" />
+          <attvalue for="2" value="" />
+          <attvalue for="3" value="CB" />
+          <attvalue for="4" value="HD23" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="1.0" />
+        </attvalues>
+      </edge>
+      <edge source="B:103:_:F" target="B:201:_:LIG" id="566">
+        <attvalues>
+          <attvalue for="0" value="V:SC_LIG" />
+          <attvalue for="1" value="2.91" />
+          <attvalue for="2" value="" />
+          <attvalue for="3" value="HD1" />
+          <attvalue for="4" value="CMC" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="1.0" />
+        </attvalues>
+      </edge>
+      <edge source="B:103:_:F" target="B:92:_:H" id="630">
+        <attvalues>
+          <attvalue for="0" value="V:SC_SC" />
+          <attvalue for="1" value="2.91" />
+          <attvalue for="2" value="" />
+          <attvalue for="3" value="CB" />
+          <attvalue for="4" value="HZ" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="1.0" />
+        </attvalues>
+      </edge>
+      <edge source="B:103:_:F" target="B:141:_:L" id="631">
+        <attvalues>
+          <attvalue for="0" value="V:SC_SC" />
+          <attvalue for="1" value="2.918" />
+          <attvalue for="2" value="" />
+          <attvalue for="3" value="CE2" />
+          <attvalue for="4" value="HB2" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="1.0" />
+        </attvalues>
+      </edge>
+      <edge source="B:141:_:L" target="B:201:_:LIG" id="567">
+        <attvalues>
+          <attvalue for="0" value="V:SC_LIG" />
+          <attvalue for="1" value="2.927" />
+          <attvalue for="2" value="" />
+          <attvalue for="3" value="HD11" />
+          <attvalue for="4" value="C3B" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="1.0" />
+        </attvalues>
+      </edge>
+      <edge source="B:92:_:H" target="B:201:_:LIG" id="563">
+        <attvalues>
+          <attvalue for="0" value="V:SC_LIG" />
+          <attvalue for="1" value="3.111" />
+          <attvalue for="2" value="" />
+          <attvalue for="3" value="NE2" />
+          <attvalue for="4" value="NC" />
+          <attvalue for="5" value="" />
+          <attvalue for="6" value="" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="1.0" />
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>
