@@ -10,12 +10,12 @@
   "text": {
     "more": "",
     "intro": "",
-    "title": "Numero de Vizinhos (Grau)"
+    "title": "Número de Vizinhos (Grau)"
   },
   "legend": {
     "edgeLabel": "Aresta",
     "colorLabel": "Grau",
-    "nodeLabel": "No"
+    "nodeLabel": "Nó"
   },
   "features": {
     "search": true,
@@ -28,7 +28,7 @@
   },
   "sigma": {
     "drawingProperties": {
-      "defaultEdgeType": "curve",
+      "defaultEdgeType": "line",
       "defaultHoverLabelBGColor": "#002147",
       "defaultLabelBGColor": "#ddd",
       "activeFontStyle": "bold",
