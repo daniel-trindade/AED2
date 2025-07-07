@@ -10,8 +10,13 @@ by <br/>
 
 ## Vídeo de Apresentação
 
-<a href="https://youtu.be/6qA9rjIAEvk" target="_blank">
+<a href="https://youtu.be/Uy5C_G3lY-4" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" width="150"/>
+</a>
+
+## Webpage com grafo em produção
+<a href="https://marialluz.github.io/netdeploy/network/" target="_blank">
+  <img src="./imgs/web-icon.png" alt="YouTube" width="100"/>
 </a>
 
 ***
