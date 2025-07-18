@@ -1,0 +1,945 @@
+SBGR GRU São Paulo [Aeroporto Internacional Guarulhos], SP, BR
+SBGL GIG Rio de Janeiro [Galeão - Antônio Carlos (Tom) Jobim Intl], RJ, BR
+SBRF REC Recife [Guararapes Intl (Gilberto Freyre Intl)], PE, BR
+SBEG MAO Manaus [Eduardo Gomes Intl], AM, BR
+SBBR BSB Brasília [Presidente Juscelino Kubitschek Intl], DF, BR
+SBSV SSA Salvador [Deputado Luís Eduardo Magalhães (Dois de Julho)], BA, BR
+RIO Rio de Janeiro [Metro Area], RJ, BR
+SBFZ FOR Fortaleza [Pinto Martins Intl], CE, BR
+SBKP VCP Campinas (São Paulo) [Viracopos (Campinas Intl)], SP, BR
+SBNT NAT Natal [Augusto Severo Intl], RN, BR
+SBPA POA Porto Alegre [Porto Alegre Intl / Salgado Filho], RS, BR
+SBBE BEL Belém [Belém Intl - Val de Cães], PA, BR
+SBSP CGH São Paulo [Congonhas Intl], SP, BR
+SBCF CNF Belo Horizonte [Tancredo Neves Intl (Confins Intl)], MG, BR
+SAO São Paulo [Metro Area], SP, BR
+SSMT Mostardas, RS, BR
+SBCT CWB Curitiba [Afonso Pena Intl], PR, BR
+SBSJ SJK São José dos Campos [Professor Urbano Ernesto Stumpf], SP, BR
+SBRJ SDU Rio de Janeiro [Aeroporto Santos Dumont], RJ, BR
+SBFN FEN Fernando de Noronha, FN, PE, BR
+SBFI IGU Iguaçu Falls (Iguazu Falls) [Cataratas Intl], PR, BR
+SBBV BVB Boa Vista, RR, BR
+SBCY CGB Cuiabá [Marechal Rondon], MT, BR
+SBVT VIX Vitória [Goiabeiras], ES, BR
+SBAU ARU Aracatuba, SP, BR
+SBMQ MCP Macapá, PA, BR
+SBCG CGR Campo Grande, MS, BR
+SBFL FLN Florianopolis [Hercilio Luz], SC, BR
+SBSL SLZ São Luis [Marechal Cunha Machado Intl], MA, BR
+SBMO MCZ Maceió [Zumbi dos Palmares (Campo dos Palmares)], AL, BR
+SBBH PLU Belo Horizonte [Pampulha Intl], MG, BR
+SDAM CPQ Campinas [Amarais], SP, BR
+SBPS BPS Porto Seguro, BA, BR
+SBAT AFL Alta Floresta, MT, BR
+SBPV PVH Porto Velho [Governador Jorge Teixeira de Oliveira], RO, BR
+SBRG RIG Rio Grande, RS, BR
+SBGO GYN Goiania [Santa Genoveva], GO, BR
+SBAR AJU Aracaju [Santa Maria], SE, BR
+SBRP RAO Riberão Preto [Leite Lopes], SP, BR
+SBCB CFB Cabo Frio [Intl], RJ, BR
+SBPJ PMW Palmas [Tocantins], PR, BR
+SBLO LDB Londrina, PR, BR
+SNWC CMC Camocim, CE, BR
+SBCX CXJ Caxias do Sul [Campo Dos Bugres], RS, BR
+SBSR SJP São José do Rio Preto, SP, BR
+SBJP JPA Joao Pessoa [Presidente Castro Pinto], PB, BR
+SBSN STM Santarém, PA, BR
+SBUL UDI Uberlândia, MG, BR
+SBBU BAU Bauru, SP, BR
+SBCV CRQ Caravelas, BA, BR
+SBTE THE Teresina [Senador Petrônio Portella], PI, BR
+SBDN PPB Presidente Prudente [A. De Barros], SP, BR
+SBMT São Paulo [Campo de Marte], SP, BR
+SBUR UBA Uberaba, MG, BR
+SBRB RBR Rio Branco [Presidente Medici], AC, BR
+SBIL IOS Ilheus, BA, BR
+SDJD QDV Jundiaí, SP, BR
+SBPB PHB Parnaíba [Santos Dumont], PI, BR
+SWSI OPS Sinop, MT, BR
+SBTF TFF Tefá, AM, BR
+SBQV VDC Vitoria da Conquista, BA, BR
+SBMG MGF Maringá [Aeroporto Regional de Maringá], PR, BR
+SBMS MVF Mossoró (Moçoró) [Dix Sept Rosado], RN, BR
+SDCO SOD Sorocaba, SP, BR
+SNBR BRA Barreiras, BA, BR
+SBJF JDF Juiz de Fora [Francisco de Assis], MG, BR
+SBPL PNZ Petrolina [Senador Nilo Coelho], PE, BR
+SBCJ CKS Carajas, PA, BR
+SWKO CIZ Coari, AM, BR
+SBME MEA Macaé, RJ, BR
+SBML MII Marília, SP, BR
+SBNF NVT Navegantes [Ministro Victor Konder Intl], SC, BR
+SBJC Belém [Júlio Cesar], PA, BR
+SBMA MAB Maraba, PA, BR
+SBMK MOC Montes Claros, MG, BR
+SBSM RIA Santa Maria, RS, BR
+SBTC UNA Una, BA, BR
+SWGN AUX Araguaina, TO, BR
+SBAQ AQA Araraquara, SP, BR
+SBJU JDO Juazeiro do Norte [Regional do Cariri], CE, BR
+SBPF PFB Passo Fundo [Lauro Kurtz], RS, BR
+SBPK PET Pelotas [Intl], RS, BR
+SBKG CPV Campina Grande [Joao Suassuna], PB, BR
+SBCP CAW Campos Dos Goitacazes [Bartolomeu Lisandro], RJ, BR
+SIMK FRC Franca, SP, BR
+SWJI JPR Ji-Paraná, RO, BR
+SBJV JOI Joinville, SC, BR
+SBOI OYK Oiapoque, AP, BR
+SNMZ PTQ Pôrto de Moz, PA, BR
+SWRD ROO Rondonópolis, MT, BR
+SBUA SJL São Gabriel da Cachoeira, AM, BR
+SBTT TBT Tabatinga [Intl], AM, BR
+SBUG URG Uruguaiana [Rubem Berta], RS, BR
+SBHT ATM Altamira, PA, BR
+SWBC BAZ Barcelos, AM, BR
+SBCZ CZS Cruzeiro do Sul, AC, BR
+SWOB Fonte Boa, AM, BR
+SBIP IPN Ipatinga/Santana Do Paraiso [Usiminas], MG, BR
+SWUZ Luziânia [Brigadeiro Araripe Macedo], GO, BR
+SSLI LVB Santana do Livramento [Dos Galpoes], RS, BR
+SBNM GEL Santo Ângelo, RS, BR
+SDCG São Paulo de Olivença [Senadora Eunice Michiles], AM, BR
+SBCH XAP Chapecó, SC, BR
+SBCR CMG Corumbá [Intl], MS, BR
+SBCM CCM Criciuma [Forquilhinha], SC, BR
+SBGV GVR Governador Valadares, MG, BR
+SBIZ IMP Imperatriz, MA, BR
+SBLJ LAJ Lages, SC, BR
+SBVH BVH Vilhena (Novo Campo), RO, BR
+SBLP LAZ Bom Jesus da Lapa, BA, BR
+SWKN CLV Caldas Novas, GO, BR
+SBCA CAC Cascavel, PR, BR
+SWUY Coari [Urucu], AM, BR
+SSDO DOU Dourados, MS, BR
+SBIH ITB Itaituba, PA, BR
+SIZX JUA Juara (Sul), MT, BR
+SBUF PAV Paulo Afonso, BA, BR
+SNMX SBJ São Mateus, ES, BR
+SBTR Torres, RS, BR
+SBMD MEU Almeirim [Monte Dourado], PA, BR
+SBAX AAX Araxa, MG, BR
+SBBT BAT Barretos [Chafei Amsei], SP, BR
+SBGW GUJ Guaratingueta, SP, BR
+SWLB LBR Lábrea, AM, BR
+SBMY MNX Manicoré, AM, BR
+SNMU MVS Mucuri, BA, BR
+SBCC Novo Progresso [Cachimbo AB], PA, BR
+SBTB TMT Porto Trombetas, PA, BR
+SWLC RVD Rio Verde [General Leite de Castro], GO, BR
+SWKU São Gabriel da Cachoeira [Cucuí], AM, BR
+SBTU TUR Tucuruí, PA, BR
+SBVG VAG Varginha [Major Brigadeiro Trompowsky], MG, BR
+SNVS BVS Breves, PA, BR
+SBLE LEC Lençõis [Chapada Diamantina], BA, BR
+SWMW MBZ Maues, AM, BR
+SNYE PHI Pinheiro, MA, BR
+SBSC SNZ Rio de Janeiro [Bartolomeu de Gusmão (Santa Cruz)], RJ, BR
+SNFX SXX São Felix de Xingú, PA, BR
+SWAZ São Gabriel da Cachoeira [Santo Atanazio], AM, BR
+SNRU CAU Caruaru, PE, BR
+SNDV DIQ Divinopolis, MG, BR
+SSPB PTO Pato Branco, PR, BR
+SNSM Salinópolis, PA, BR
+SSVP CTQ Santa Vitória do Palmar [Aeropuerto Fernando Ferrari], RS, BR
+SNJR São João del Rei, MG, BR
+SBES São Pedro da Aldeia, RJ, BR
+SBBG BGX Bagé [Comandante Gustavo Kraemer], RS, BR
+SWCA CAF Carauari, AM, BR
+SSIQ ITQ Itaqui, RS, BR
+SWJN JIA Juina, MT, BR
+SNMA MTE Monte Alegre, PA, BR
+SWPI PIN Parintins, AM, BR
+SBPP PMG Ponta Porã [Intl], MS, BR
+SWYM Pontes e Lacerda [Fazenda Anhanguera], MT, BR
+SBAF Rio de Janeiro [Campo Delio Jardim de Mattos (Afonsos)], RJ, BR
+SBTD TOW Toledo, PR, BR
+SDUB UBT Ubatuba, SP, BR
+SWBR RBB Borba, AM, BR
+SSGB Guaratuba, PR, BR
+SWHT Humaitá, AM, BR
+SNPD Pará de Minas [Pará de Minas 2], MG, BR
+SBPI QPE Petrópolis [Pico do Couto], RJ, BR
+SBJR Rio de Janeiro [Jacarepaguá], RJ, BR
+SWTP Santa Isabel do Rio Negro [Tapuruquara], AM, BR
+SNBL BVM Belmonte, BA, BR
+CPU Cururupu, MA, BR
+SWEI ERN Eirunepé, AM, BR
+SSPG PNG Paranaguá, PR, BR
+SWM Alto Boa Vista [Suia-Missu], MT, BR
+SWNK BCR Boca do Acre [Novo Campo], AM, BR
+SBMN PLL Manaus [Ponta Pelada], AM, BR
+SNOX ORX Oriximina, PA, BR
+SBCO Porto Alegre [Canoas], RS, BR
+SNZA PPY Pouso Alegre, MG, BR
+SSZR SRA Santa Rosa, RS, BR
+SSPF São José das Palmeiras [Fazenda São Rafael], PR, BR
+SWXK São José do Rio Claro [Fazenda Rio Alegre], BR
+SNVB VAL Valença, BA, BR
+SSAL ALQ Alegrete [Federal], RS, BR
+SSER ERM Erechim, RS, BR
+SSIJ IJU Ijuí, RS, BR
+SNUH Piumhir [Sebastião Gomes de Souza], MG, BR
+SNSW SFK Soure, PA, BR
+SWFX SXO São Felix do Araguaia, MT, BR
+SSVI Videira, SC, BR
+SNBX BQQ Barra, BA, BR
+SBBI Curitiba [Bacacheri], PR, BR
+SWGI GRP Gurupi, GO, BR
+SBEK JCR Jacareacanga, PA, BR
+SBPC POO Poços de Caldas [Embaixador Walther Moreira Salles], MG, BR
+SSSC Santa Cruz do Sul, RS, BR
+SNAQ QGS Alagoinhas, BA, BR
+ALT Alenquer, PA, BR
+SBBW BPG Barra do Garças, MT, BR
+SNCE Campo do Meio, MG, BR
+SSPS Palmas, PR, BR
+SBST SSZ Santos (Guaruja) [Santos AB], SP, BR
+SIVU Vila Velha [João Monteiro], BR
+SNKK Caicó, RN, BR
+SNDT Diamantina, MG, BR
+SNGI GNM Guanambi, BA, BR
+SNBF SEI Senhor do Bonfim, BA, BR
+SDSC QSC São Carlos [Francisco Pereira Lopez], SP, BR
+SWUQ Alto Alegre [Surucucu], RR, BR
+SWBV Amajari (Boa Vista) [Auaris], RR, BR
+SBBZ BZC Búzios [Umberto Modiano], RJ, BR
+SWNT Caçu [Fazenda Saõ Antonio], BR
+SWNA NVP Novo Aripuanã, AM, BR
+SWNS APS Anapolis, GO, BR
+SDIL Angra Dos Reis [Fazenda Pedra Branca], RJ, BR
+SDAG Angra Dos Reis, RJ, BR
+SBBQ QAK Barbacena [Major Brigadeiro do Ar Doorgal Gomes], MG, BR
+SWBY Bom Jesus de Goiás [Fazenda Goiása], GO, BR
+SNBU BMS Brumado [Socrates Mariani Bittencourt], BA, BR
+SNED CNV Canavieiras, BA, BR
+SIXO Comodoro [Fazenda N S de Fatima], BR
+SBGU GPB Guarapuava [Tancredo Thomaz de Faria], PR, BR
+SNIU IPU Ipiau, BA, BR
+SNHA ITN Itabuna, BA, BR
+SNNU NNU Nanuque, MG, BR
+SNPE Penedo, AL, BR
+SIPK Poconé [Sesc Pantanal], MT, BR
+SDRS REZ Resende, RJ, BR
+SBYA São Gabriel da Cachoeira [Iauaretê], AM, BR
+SBXI Cachimbo-in-Para, PA, BR
+SNCC Calçoene, AP, BR
+SSAY Campo Grande [Sitio Pouso do Aviador], BR
+SBGP Embraer Unidade Gaviao Peixoto (Gaviao Peixoto Embraer), BR
+SBIC ITA Itacoiatiara, AM, BR
+SNRB Itaituba [Fazenda Rosa de Maio], BR
+SIYY Pocone [Ilha do Caracara], BR
+SNEM Recife [Encanta Moça], PE, BR
+SNPY São Sebastião do Paraíso, MG, BR
+SBAS AIF Assis, SP, BR
+SWEE Atalaia do Norte [Estirão do Equador], AM, BR
+SNBS BSS Balsas, MA, BR
+SNMH Codó [Magalhães de Almeida], MA, BR
+SWXV NOK Nova Xavantina, MT, BR
+SBPN PNB Porto Nacional, TO, BR
+SWSQ São Gabriel da Cachoeira [São Joaquim], AM, BR
+SWUA SQM São Miguel de Aragao, GO, BR
+SWAQ Amajari (Boa Vista) [Edem Erico], RR, BR
+SNFR Belem de São Francisco, PE, BR
+SSBL BNU Blumenau, SC, BR
+SNCP CTP Carutapera, MA, BR
+SWDM DMT Diamantino, MT, BR
+SDIO Itapólis, SP, BR
+SWJP Japurá [Bittencourt], AM, BR
+SDMC Maricá, RJ, BR
+SDNY Nova Iguaçu [Aeroclube Nova Iguaçu], RJ, BR
+SBYS QPS Pirassununga [Campo Fontenelle], SP, BR
+QRZ Resende, RJ, BR
+SNKE CMP Santana do Araguaia [Campo Alegre], PA, BR
+SWTU Sapeza [Fazenda Tucunare], BR
+SWRI São Felix do Araguaia [Fazenda Roncador I], MT, BR
+SDJO São Joaquin da Barra, SP, BR
+SBTA QHP Taubaté [Base de Aviação de Taubaté (Heiponto)], SP, BR
+SWSF Vila Bela da Santissima Trindade [Fazenda São Francisco], BR
+SWVC VLP Vila Rica [Muni], MT, BR
+SBAM Amapá, AP, BR
+SNBC BDC Barra do Corda, MA, BR
+SNKI QXD Cachoeiro do Itapemirim [Off-line Point], ES, BR
+SWIN Campo Novo dos Parecis [Fazenda Itamarati Norte], BR
+SDCA Capão Bonito, SP, BR
+SBAA CDJ Conceicao do Araguaia, PA, BR
+SNJD Feira de Santana [João Durval Carneiro], BA, BR
+MBK Matupá, MT, BR
+SBMC MQH Minaçu, GO, BR
+SWML Monte Alegre de Goiás, GO, BR
+SNOO Mossoró (Moçoró) [Maisa], RN, BR
+SNOZ Paco do Lumiar [Coronel Alexandre Raposo], MA, BR
+SSHX Paranhos [Fazenda Jatoba], BR
+LCB Pontes e Lacerda, MT, BR
+SWMY Porto Fluvial Suia Missu, BR
+SWHG Santa Helena de Goias, GO, BR
+SWII IPG Santo Antônio do Içá [Ipiranga], AM, BR
+SWYQ Sinop [Fazenda Nova Fronteira], BR
+SSOE São Miguel do Oeste, SC, BR
+SBRQ São Roque, SP, BR
+SNOM Vila Bela da S S Trindade [Fazenda Guapore I], BR
+SNTI OBI Óbidos, PA, BR
+SSAP APU Apucarana, PR, BR
+SNAT Aracati, CE, BR
+SWRA AAI Arraias, TO, BR
+SBRR BRB Barreirinhas, BA, BR
+SDFX Casa Nova, BA, BR
+SWKT TLZ Catalão, GO, BR
+SSJA JCB Joacaba, SC, BR
+SBLN LIP Lins, SP, BR
+SSZW PGZ Ponta Grossa, PR, BR
+SWIY IDO Santa Isabel do Morro, TO, BR
+SNOB QBX Sobral, CE, BR
+SWPC São Gabriel da Cachoeira [Pari-Cachoeira], AM, BR
+SWUK São Gabriel da Cachoeira [Uapui-Cachoeira], AM, BR
+SSRU São Lourenco do Sul, RS, BR
+SSLG São Luis Gonzaga, RS, BR
+SWTS Tangara da Serra, BR
+SNAI APY Alto Parnaiba, MA, BR
+SWEC ARS Aragarcas, GO, BR
+SNUC Açu, RN, BR
+SJTC Bauru (Arealva), SP, BR
+SDEO Boa Esperanca do Sul [Fazenda Entre Rios], BR
+SNGG Bom Jesus do Gurgueia [Gurgueia], PI, BR
+SNUP Campo Alegre [Usina P Rico], AL, BR
+SSKN Campo Novo, RS, BR
+SWCG Caçu [Fazenda Varjao Grande], BR
+SSCK CCI Concordia, SC, BR
+SSCP CKO Cornelio Procopio, PR, BR
+SWCQ CQS Costa Marques, RO, BR
+SSBH Coxim/F Baia, BR
+SWYB Fazenda Sagrado Coracao de Jesus, BR
+SSKQ Fazenda Vista Alegre Ii, BR
+SSFB FBE Francisco Beltrao, PR, BR
+SDZM Itapeva [Fazenda São Marco], SP, BR
+SWJU JRN Juruena, MT, BR
+MTG Mato Grosso, MT, BR
+SSNQ Nioaque, MS, BR
+SDOU OUS Ourinhos, SP, BR
+SSPI PVI Paranavai, PR, BR
+SWPM PBQ Pimenta Bueno, RO, BR
+SSFA Pinhao [Foz do Areia], BR
+SNPG Porto Grande, AP, BR
+SNRD PDF Prado, BA, BR
+SFV Santa Fé do Sul, SP, BR
+SWST STZ Santa Terezinha [Confresa], MT, BR
+SNSH Santarém (São Jose), PA, BR
+SWZI Santo Antonio Ica/S Luzia, BR
+SNQD Souza (Sousa), PB, BR
+SNDG São Domingos do Maranhao, MA, BR
+SWAO São Gabriel da Cachoeira [Anamoim], AM, BR
+SWAK São Gabriel da Cachoeira [Assunção de Içana], AM, BR
+SWMK São Gabriel da Cachoeira [Maturaca], AM, BR
+SWQE São Gabriel da Cachoeira [Querari], AM, BR
+SWTR São Gabriel da Cachoeira [Taraquá], AM, BR
+SBFU São José da Barra [Furnas], BR
+SNJV São João da Ponte [Fazenda Santa Monica], BR
+SSEP São Sepe, RS, BR
+SBTX QTB Tubarão, SC, BR
+SWTI Vila Bela da S S Trindade [São Vicente], BR
+SNVL Virgem da Lapa, MG, BR
+SDVG VOT Votuporanga, SP, BR
+SNAL APQ Arapiraca, AL, BR
+SBCI CLN Carolina, MA, BR
+SIBU Catolé do Rocha, PB, BR
+SBCD Caçador, SC, BR
+SWPL Chapada dos Guimarães [Posto Leonardo Vilas Boas], MT, BR
+SNXH Codó [Itapicuru], MA, BR
+SNCX QCH Colatina, ES, BR
+SNWS Crateús, CE, BR
+SWZJ Crixas/F S João, BR
+SNIG QIG Iguatu, CE, BR
+SNGS Maceió [Aeroclube], AL, BR
+SDME Matao [Marchesan S A], BR
+SNXX Maxaranguape, RN, BR
+SNMM Morada Nova de Minas, MG, BR
+SNMO Morada Nova, CE, BR
+SIQJ Morro do Chapeu Ii, BR
+SWMV Mucajaí [Paa-Piu], RR, BR
+SSNQ Nioaque, MS, BR
+SDOU OUS Ourinhos, SP, BR
+SSPI PVI Paranavai, PR, BR
+SSFA Pinhao [Foz do Areia], BR
+SNPG Porto Grande, AP, BR
+SNRD PDF Prado, BA, BR
+SFV Santa Fé do Sul, SP, BR
+SNSH Santarém (São Jose), PA, BR
+SWZI Santo Antonio Ica/S Luzia, BR
+SWYQ Sinop [Fazenda Nova Fronteira], BR
+SWAO São Gabriel da Cachoeira [Anamoim], AM, BR
+SWMK São Gabriel da Cachoeira [Maturaca], AM, BR
+SWQE São Gabriel da Cachoeira [Querari], AM, BR
+SWTR São Gabriel da Cachoeira [Taraquá], AM, BR
+SBFU São José da Barra [Furnas], BR
+SDNO São Manuel, SP, BR
+SSEP São Sepe, RS, BR
+SWTS Tangara da Serra, BR
+SWTI Vila Bela da S S Trindade [São Vicente], BR
+SNVL Virgem da Lapa, MG, BR
+SDVG VOT Votuporanga, SP, BR
+SNUC Açu, RN, BR
+SSKN Campo Novo, RS, BR
+SIBU Catolé do Rocha, PB, BR
+SBCD Caçador, SC, BR
+SWCG Caçu [Fazenda Varjao Grande], BR
+SWPL Chapada dos Guimarães [Posto Leonardo Vilas Boas], MT, BR
+SNXH Codó [Itapicuru], MA, BR
+SNCX QCH Colatina, ES, BR
+SNWS Crateús, CE, BR
+SWZJ Crixas/F S João, BR
+SSKQ Fazenda Vista Alegre Ii, BR
+SDMY Matao [Fazenda do Cambuhy], BR
+SDME Matao [Marchesan S A], BR
+SNXX Maxaranguape, RN, BR
+SNMM Morada Nova de Minas, MG, BR
+SIQJ Morro do Chapeu Ii, BR
+SSNH Novo Hamburgo, RS, BR
+SWPM PBQ Pimenta Bueno, RO, BR
+SSNJ Salto do Jacuí [Nova Jacuí], RS, BR
+SNQD Souza (Sousa), PB, BR
+SSSB São Borja, RS, BR
+SNLO SSO São Lourenço, MG, BR
+SNTF Teixeira de Freitas, BA, BR
+SNVR Veracruz [Bahia Aeroclube], BR
+SBTS Óbidos [Tirios], PA, BR
+SNAE Arcoverde, PE, BR
+SWNI Ariquemes [Nova Vida], RO, BR
+SSKS Cachoeira do Sul, RS, BR
+SSCL CSS Cassilândia, MS, BR
+SNKF QDF Conselheiro Lafaiete, MG, BR
+SWCQ CQS Costa Marques, RO, BR
+SNCQ Euclides da Cunha [Cocorobó], BA, BR
+SNEU Euclides da Cunha, BA, BR
+SWNV Goiánia [Aeródromo Nacional de Aviação], GO, BR
+SNGD GDP Guadalupe, PI, BR
+SSGY QGA Guaira, PR, BR
+SNGM GMS Guimaraes, MA, BR
+SNBV Ipixuna [Campo de Boi], BR
+SNBD Juazeiro [Sobradinho], BR
+SNGS Maceió [Aeroclube], AL, BR
+SNPC PCS Picos, PI, BR
+SSPM Porto Murtinho, MS, BR
+SSSQ São Joaquim, SC, BR
+SWID São Miguel do Araguaia [Fazenda Indiara], BR
+SNSN São Raimundo Nonato, PI, BR
+SSVR QVR Volta Redonda, RJ, BR
+SDLI Abaré [Jeová Gomes Correa], BA, BR
+SNCW Alcântara [Centro de Lançamento de Alcântara], MA, BR
+SSLT Alegrete Novo, RS, BR
+SSGC Aquidauna (Aquidauana) [General Canrobert Pereira da Costa], MS, BR
+SSAE Arroio Grande, RS, BR
+SSWS Caçapava do Sul, RS, BR
+SNIO Cipó, BA, BR
+SNKC Cocos, BA, BR
+SNKD Conceição do Mato Dentro, MG, BR
+SNKN Currais Novos, RN, BR
+SWKC CCX Cáceres, MT, BR
+SNQG FLB Floriano [Cangapara], PI, BR
+SNGN Garanhuns, PE, BR
+SNGT Gentio de Ouro, BA, BR
+SNZW ITE Ituberá, BA, BR
+SNJB JCM Jacobina, BA, BR
+SNMI Jaguarari [Mina Caraiba], BA, BR
+SNJA Jardim de Angicos, RN, BR
+SNJO João Pessoa [Aeroclube], PB, BR
+SDYM QGB Limeira, SP, BR
+SSQZ Mimoso do Oeste [Luis Eduardo Magalhaes], BA, BR
+SJCA Mococa [Comandante Vittorio Bonami], SP, BR
+SNMB Mombaça, CE, BR
+SNOC Morro do Chapeu, BA, BR
+SWNQ NQL Niquelândia, GO, BR
+SWNP Novo Paraiso, BR
+SWRO Porto Velho [Aeroclube de Rondônia], RO, BR
+SNQX Quixadá, CE, BR
+SNHS Serra Talhada [Santa Magalhaes], PE, BR
+SSSG São Gabriel, RS, BR
+SSMY São Miguel do Iguaçu, PR, BR
+SDOB Tapiratiba [Fazenda São José Ob], BR
+SNFI Tupaciguara [Fazenda São José do Parnaiba], BR
+SSUV QVB União da Vitória [José Cleto], PR, BR
+SBUP URB Urubupunga [Ernesto Pochler], SP, BR
+SDXF Alto Paraiso, GO, BR
+SDDN Andradina, SP, BR
+SNBI Bacabal, MA, BR
+SNBJ Belo Jardim, PE, BR
+SSBJ Bom Jesus, RS, BR
+SDBK Botucatu, SP, BR
+SDBP Braganca Paulista [Aeroporto Estadual Arthur Siqueira], SP, BR
+SNRJ Brejo, MA, BR
+SWBA Buriti Alegre, GO, BR
+SWCB Campos Belos, GO, BR
+SNKL Colinas, MA, BR
+SSCI Coxim, MS, BR
+SIXP Diamantino [Fazenda Paiaguas], BR
+SSDC Dionisio Cerqueira, SC, BR
+SWFJ Feijó (Fortaleza), AC, BR
+SDKJ Formosa do Rio Preto, BA, BR
+SSFE Foz do Iguaçu [Estancia Hercules], PR, BR
+SBGM GJM Guajara-Mirim, RO, BR
+SNIC IRE Irece, BA, BR
+SJIT Itau de Minas, BR
+SNJS Jardim do Seridó, RN, BR
+SWJW Jataí, GO, BR
+SSJK Julio de Castilos, RS, BR
+SNLB Livramento do Brumado, BA, BR
+SNMJ Maracás, BA, BR
+SNDS Maraial [São Luiz], PE, BR
+NTM Miracema do Norte, TO, BR
+SNMS Monte Santo de Minas, MG, BR
+SWNO Nova Olinda do Norte, AM, BR
+SSNP Nova Prata, RS, BR
+SDNH Novo Horizonte, SP, BR
+SWTO Paraíso do Tocantins, TO, BR
+SNPA Pará de Minas, MG, BR
+SDJQ Pereira Barreto [Fazenda São Joaquim Ob], BR
+SNPQ Pesqueira, PE, BR
+SDPW Piracicaba, SP, BR
+SIFV Primo Bitti, BR
+SNRM Remanso, BA, BR
+SSRZ Rosario do Sul, RS, BR
+SNVD Santa Maria da Vitória, BA, BR
+SSST Santiago, RS, BR
+SNTL Tamboril, CE, BR
+SSTL Três Lagoas, MS, BR
+SWVB Vila Bela [Vila Bela da Santissima Trindade], MT, BR
+SNVZ Várzea da Palma, MG, BR
+SNAR AMJ Almenara, MG, BR
+SDBY Bariri, SP, BR
+BGV Bento Gonçalves, RS, BR
+SNKO Brotas de Macaúbas, BA, BR
+CCQ Cachoeira, BA, BR
+SSRK Campo Alegre de Lourdes, BA, BR
+SSRF Castro Alves, BA, BR
+SNQN Coelho Neto, BR
+SNVG Conceição das Alagoas [Volta Grande], MG, BR
+SDDR Dracena, SP, BR
+SNDW Encruzilhada [Divisa], BA, BR
+SNFK Francisco Sá, MG, BR
+SNIY Ibimirim, PE, BR
+SNYT Ituaçu, BA, BR
+SNJN JNA Januária, MG, BR
+SNJK JEQ Jequie, BA, BR
+SDLP Lençóis Paulista, SP, BR
+SNDN LEP Leopoldina, MG, BR
+SSMF Mafra, SC, BR
+SNBM Muriaé [Cristiano Ferreira Varella], MG, BR
+SIRN Nova Xavantina [Fazenda Jao], BR
+SNOF Ouro Fino, MG, BR
+SSPL Palmeira Das Missoes, RS, BR
+SDPP Paranapanema [Fazenda Fortaleza], SP, BR
+SNOS PSW Passos, MG, BR
+SNPW Piaus, PA, BR
+SNPX PIV Pirapora, MG, BR
+SNTR Piritiba, BA, BR
+SWYK Poconé [Fazenda Ilha Camargo], MT, BR
+SNCZ Ponte Nova, MG, BR
+SDTY Pradopolis [Usina São Martinho], BR
+SDRK Rio Claro, SP, BR
+SWTQ Rio Quente [Termas Pousada do Rio Quente], BR
+SNRS Russas, CE, BR
+SNSG Salgueiro, PE, BR
+SNSK Santa Rita do Sapucai, BR
+SNAM Santo Antônio do Amparo, MG, BR
+SWSN ZMD Sena Madureira, AC, BR
+SNST Souto Soares, BA, BR
+SWZM São Simao [Usina São Simao], BR
+SNTO TFL Teófilo Otoni [Juscelino Kubitscheck], MG, BR
+SNFE Alfenas [Paschoal Petrocínio Filho], MG, BR
+SDZS Altair [Fazenda Bananeira], BR
+SWXG Barra do Garcas [Xingu], MT, BR
+SSBV Bela Vista, MS, BR
+SBPR Belo Horizonte [Carlos Prates], MG, BR
+SJDB Bonito, MS, BR
+SDLK Caculé, BA, BR
+SNCA Campo Belo, MG, BR
+SSKG Campo Grande [Estancia Santa Maria], MS, BR
+SSKM CBW Campo Mourão, PR, BR
+NBV Cana Brava, GO, BR
+SNLA Canaa dos Carajas [Fazenda Lagoa Das Antas], BR
+SSCN Canela, RS, BR
+SSKZ Carazinho, RS, BR
+SNNH Carinhanha, BA, BR
+SNXB Caxambu, MG, BR
+SSZS Centenario do Sul, PR, BR
+CSW Colorado do Oeste, RO, BR
+CFO Confreza, MT, BR
+CZB Cruz Alta [Carlos Ruhl], RS, BR
+SDKF Curaçá [Juazeiro], BA, BR
+SSKU Curitibanos, SC, BR
+SWDN DNO Dianopolis, TO, BR
+SSZJ Fazenda Torrao de Ouro, BR
+SDFD Fernandópolis, SP, BR
+SNGL Floresta/São Goncalo, BR
+SDGC Garça, SP, BR
+SNGA Guarapari, ES, BR
+SNIT Ibotirama, BA, BR
+SNIB Itaberaba, BA, BR
+SNYH ITI Itambacuri, MG, BR
+SNIP Itapetinga, BA, BR
+SDJC Jaboticabal [Usina Santa Adelia], SP, BR
+SNAP Janaúba, MG, BR
+SNLC Las Casas, PA, BR
+SDLC Lucélia, SP, BR
+SIWE Monte Carlo [Nelson Pizzani], BR
+SSNG Montenegro, RS, BR
+SNQU Mucugê, BA, BR
+SNLQ Nova Crixas [Fazenda Conforto], BR
+SDOW Ourilândia do Norte, PA, BR
+SWMU Pacaraima [Surumu], RR, BR
+SNPM Palmeiras, BA, BR
+SNBZ Paramirim, BA, BR
+SSAQ Passo Fundo [Passo Fundo Aeroclube], RS, BR
+SNTS Patos, PB, BR
+SWPG Porto dos Gaúchos, MT, BR
+SSRB Rio Brilhante, MS, BR
+SNXG Sapacaia [Fazenda dos Castanhais], BR
+SDAL São Carlos [Fazenda Alamo], BR
+SDTF Tatui, SP, BR
+SSTO Tres Passos, RS, BR
+SWBQ Trindade [Barracão Queimado], MT, BR
+SSTB Três Barras, SC, BR
+SDTP Tupã, SP, BR
+SNUD Urbano Santos, MA, BR
+SJCW Urucará [Jatapu], AM, BR
+SNLI Abaeté, MG, BR
+SNAZ Amargosa, BA, BR
+SSHG Antonio João [Hyran Garcete], BR
+SBAN Anápolis [Base Aérea de Anápolis], GO, BR
+SJAU Araguacema, TO, BR
+SJGU Araguatins, TO, BR
+SDTE Arandu [Fazenda Tapijara], SP, BR
+SDAA Araras, SP, BR
+SDRR Avaré [Avaré-Arandu], SP, BR
+SNBO Boquira, BA, BR
+SNIE Caetite, BA, BR
+SDKO Colombia [Fazenda Campo Grande], BR
+SIBW Conceição, PB, BR
+SJGP Condominio Fly In Community, BR
+SWPB Costa Marques [Forte Principe da Beira], RO, BR
+SWOG Diamantino [Fazenda Itaipu], BR
+SSGA Garibaldi, RS, BR
+SSGW Goio Ere, PR, BR
+SSHZ Horizontina, RS, BR
+SNIA Igarape-Acu, PA, BR
+SDUN Itaperuna, RJ, BR
+SDYW Itapeva, SP, BR
+SSJR Jaguarão, RS, BR
+SDJL Jales, SP, BR
+SNJI Jequitai [Fazenda Fortaleza de Santa Terezinha], MG, BR
+SNJQ Jequitinhonha, MG, BR
+SNJP João Pinheiro, MG, BR
+SNLY Lagoa da Prata, BR
+SNMC Macaúbas, BA, BR
+SWFN Manaus [Flores], AM, BR
+SDMH Mirassol [Mirassol Airport], SP, BR
+SWMX Morrinhos, GO, BR
+SWNM Normandia, RR, BR
+SSID Nova Andradina [Independencia], BR
+SNRR Novo Repartimento [Fazenda Aratau], BR
+SWGP Palmeiras de Goias, BR
+SSPN PBB Paranaiba, MS, BR
+SDPN Penápolis, SP, BR
+SSIS Pirai do Sul, BR
+SWPR Pires do Rio, GO, BR
+SNPO Pompéu [Tenente Xavier], MG, BR
+SDPV Presidente Venceslau, SP, BR
+SNDC RDC Redenção, PA, BR
+SSGF Ribas do Rio Pardo [Fazenda Formosa], BR
+SSFV Ribas do Rio Pardo [Fazenda Recreio 3], BR
+SNJW Sacramento [Jaguará], MG, BR
+SDFH Santa Rosa do Viterbo [Fazenda Amalia], BR
+SSSD Soledade, RS, BR
+SBTL TEC Telemaco Borba, PR, BR
+SIAB Tres Pontas [Leda Mello Resende], MG, BR
+SIVD Unai [Fazenda dos Tres Rios], BR
+SSWA Venancio Aires, RS, BR
+SDVE Vera Cruz, SP, BR
+SSVN Veranopolis, RS, BR
+SNAH Adustina, BA, BR
+SDAI Americana, SP, BR
+SWAY Araguaiana, MT, BR
+SSOG APX Arapongas, PR, BR
+SNCF Aurora do Para, BR
+SNBW Baião, PA, BR
+SSTH Balsa Nova [Fazenda Thalia], BR
+SWBI Barreirinha, AM, BR
+SDBB Bebedouro, SP, BR
+SNBT Benedito Leite, MA, BR
+SBBC QAV Benjamin Constant, PA, BR
+SDLO Cairu [Fazenda Pontal], BR
+SNKB Campina Grande [Aeroclube], PB, BR
+SNCS Campos Sales, CE, BR
+SWEK Canarana, MT, BR
+SIGF Chapada dos Guimaraes [Fazenda Jopejo], BR
+SSAD Chapadao do Sul [Fazenda Ribeirao], BR
+SIPG Cocalinho [Fazenda Agua Preta], BR
+SNOA Coroatá, MA, BR
+SNKR Corrente, PI, BR
+SWFA Cristalina/F Pamplona, BR
+SWDW Diamantino [Divisão], MT, BR
+SNES Esplanada, BA, BR
+SJJL Fazenda Campo Aberto, BA, BR
+SJAK Fazenda F5, BR
+SNFU Frutal, MG, BR
+SNGB Gilbués, PI, BR
+SWGD Goiandra/F Dourados, BR
+SNGJ Grajaú, MA, BR
+SNGH Guanhães, MG, BR
+SSGR Guaporé, RS, BR
+SDIG Ibitinga, SP, BR
+SDJA Itirapina [Dr Augusto de A Botelho], BR
+SNND Ituiutaba [Bertin Ltda], MG, BR
+SDIV Ituverava, SP, BR
+SDMV Jau [Fazenda Morro Vermelho], BR
+SNMK Jaíba [Mocambinho], MG, BR
+SDLL Leme, SP, BR
+SSMR Manoel Ribas, PR, BR
+SDEG Martinopolis [Fazenda Nova California], BR
+SDKK Mococa, SP, BR
+SIBY Monteior, PB, BR
+SNRY Nazaré da Mata [Uzina Matary], BR
+SWGZ Nova Olimpia [Fazenda Guanabara], BR
+SNNT Nova Ponte, BR
+SNOE Oeiras, PI, BR
+SNLT Paulistana, PI, BR
+SWPA Pedro Afonso, TO, BR
+SWPK Poconé, MT, BR
+SNZP Poçõne [Poçõne], BA, BR
+SDEP Presidente Epitacio, SP, BR
+SNQM Queimadas, BA, BR
+SNRP Rio Paranaíba, MG, BR
+SWCE Santo Antonio do Leverger [Fazenda Cedro], BR
+SWLV Santo Antonio do Leverger, BR
+SSXD Sarandi, RS, BR
+SNSO Serro, MG, BR
+SNSB São Bento, MA, BR
+SWVI São Valerio, BR
+SBTK TRQ Tarauacá, AC, BR
+SNVI Três Corações [Mello Vianna], MG, BR
+SNTM Turmalina, MG, BR
+SSUM UMU Umuarama, PR, BR
+SSVC Vacaria, RS, BR
+SNXQ Xique-Xique, BA, BR
+SSAM Amambai, MS, BR
+SWJV Atalaia do Norte [Palmeiras do Javari], AM, BR
+SNBG Baixo Guandú [Baixo Guandú-Aimorés], ES, BR
+SWBL Balbina [Presidente Figueiredo], AM, BR
+SDLU Barra Bonita [Fazenda Santa Luiza], BR
+SNFZ Bocaiúva [Fazenda Villa Terezinha], MG, BR
+SWBS Brasiléia, AC, BR
+SSBE Camapuã, MS, BR
+SNCV Campina Verde, MG, BR
+SDXJ Costa Rica, MS, BR
+SWKX Cáceres [Corixá], MT, BR
+SWDV Cáceres [Descalvados], MT, BR
+SSEA Dourados [Spessato Aviacao Agricola], BR
+SDIB Espirito Santo do Pinhal [Irmaos Ribeiro], BR
+SDRA Fazenda Das Represas, BR
+SIZG Fazenda Encantado Das Aguas, BR
+SJCQ Fazenda Serra Azul, BR
+SWSG Fazenda Simarelli, BR
+SSFK Forte Coimbra [Corumbá], MS, BR
+SIPE Goiana [Itapessoca], BR
+SNGU Gurupa, PA, BR
+SSAB Ibaiti, PR, BR
+SIRJ Itaituba [Caima], BR
+SIBZ Itaporanga, PB, BR
+SSLA Laguna, SC, BR
+SSOL Lavras, MG, BR
+SSBY Miranda [Orlando Chesini Ometto], BR
+SNKQ Moju, BR
+SWPN Paranã, TO, BR
+SNPJ Patrocínio, MG, BR
+SDZH Pindamonhangaba [Fazenda Santa Helena], BR
+PGG Progresso, PA, BR
+SDQQ Quata [Companhia Agricola de Quata], BR
+SJQN Quirinópolis, GO, BR
+SNLU Rio Largo [Usina Utinga], AL, BR
+SJBY Santa Inês [João Silva], MA, BR
+SWFU Santíssima Trindade [Fortuna], MT, BR
+SNRE Serra Dourada [Fazenda Rebeca], BA, BR
+SWRU Tesouro [Meruri (Umberto Bosaipo)], MT, BR
+SWTC Tocantinia, TO, BR
+SSSF Tres Lagoas [Fazenda San Marino], BR
+SWUP Uirapuru, MT, BR
+SNAU Aracaju [Aeroclub], SE, BR
+SNUI Araçuaí, MG, BR
+AQM Ariquemes, RO, BR
+SSZQ Bela Vista [Fazenda Panorama], BR
+SNBK Bocaiúva, MG, BR
+SWCX Cabixi, BR
+SWQI Caracaraá, RR, BR
+SIZO Cocalinho [Calcario Vale do Araguaia], BR
+SNKH Creputia, PA, BR
+SNUK Cumaru do Norte, BR
+SNDY Dores do Indaia, BR
+ESI Espinosa, MG, BR
+SNFO Formiga [Formiga Airport], MG, BR
+SBFT Fronteira, MG, BR
+SNSR Guarda Mor [Fazenda Santos Reis], BR
+SWIA Iassiara, GO, BR
+SNQW Itaituba/Cururu, PA, BR
+SNYB Ituiutaba, MG, BR
+SSJI Jardim, MS, BR
+SBLS Lagoa Santa, MG, BR
+SNLN Linhares, ES, BR
+SWUC Luciára, MT, BR
+SNXA Machado, MG, BR
+SSMJ Maracaju, MS, BR
+SNNP Nilo Peçanha, PA, BR
+SWNR Nortelândia, MT, BR
+SNOY Ouricuri, PE, BR
+SNZR Paracatu, MG, BR
+SDLJ Parauapebas [Igarape Bahia], BR
+SNPB Pastos Bons, MA, BR
+SWUI Pauini, AM, BR
+SNPZ Pedra Azul, MG, BR
+SNPH Pedras de Maria da Cruz [Fazenda do Cantagalo], BR
+PIG Pitinga, AM, BR
+SDPF Porto Ferreira, BR
+SNIN Prainha, PA, BR
+SNRN Rio Tinto, BR
+SNSC Sacramento, MG, BR
+SNSS Salinas, MG, BR
+SNWR Senador Jose Porfirio [Wilma Rebelo], BR
+SNSQ Serra Quatro, BR
+SIUW Tres Lagoas [Candote], BR
+SNAS Tres Marias, MG, BR
+SWXU Xapuri, AC, BR
+SNAC Xinguara [Fazenda Santa Rosa], BR
+SDAD Adamantina [Everaldo Moraes Barreto], SP, BR
+SNYA Almeirim, PA, BR
+SWGR Alto Graças, MT, BR
+SSAN Andirá, PR, BR
+SNAG Araguari, MG, BR
+SSYA Arapoti, PR, BR
+SNAB Araripina, PE, BR
+SSNW Barreiras [Fazenda Buriti], BA, BR
+SNEL Belterra, PA, BR
+SNRH Boa Esperanca [Rachid Saliba], BR
+SNPS Buritis [Pontezinha], BR
+SWHC Cachoeira Dourada, BR
+SWKK Cacoal, RO, BR
+SIMJ Capinopolis [Capinopolis Aviac Agri Buttarello Ltda], BR
+SWCW Cavalcante, GO, BR
+SWCZ Ceres, GO, BR
+SSCT Cianorte, PR, BR
+SNQV Curvelo, MG, BR
+SSDP Dom Pedrito, BR
+SWCD Fazenda Santa Monica, BR
+SNTT Felixlandia [Tranquilo Testolin], BR
+SNGR Gorotire, PA, BR
+SNGX Guaxupé, MG, BR
+SNHP Herbert Mata Pires, BR
+SSYB Imbituba, PR, BR
+SNZK Itacarambi [Fazenda Canada], BR
+SDWH Jose Bonifacio [Fazenda Avanhandava], BR
+SSLN Lontras [Helmuth Baungartem], SC, BR
+SSCR Marechal Candido Rondon, PR, BR
+SSMD Medianeira, PR, BR
+SWMR Morrinhos, GO, BR
+SWOW Moura, AM, BR
+SWPJ Palmas, BR
+SNPU Paraguaçu, MG, BR
+SWPV Planaltina, DF, BR
+SSFI Ponta Pora [Fazenda Itamarati], BR
+SWWA Porangatu, GO, BR
+SNRT Prata, MG, BR
+SSRE Realeza, PR, BR
+SJDE Rosana [Usina Porto Primavera], BR
+SWSR Sertania, MT, BR
+SSQC Siqueira Campos, PR, BR
+SWTY Taguatinga, TO, BR
+SJUR Terravista, BR
+TUZ Tucumã, PA, BR
+SNUB Ubá, MG, BR
+SNFA Unai [Fazenda Santo Antonio], BR
+SWWU Uruaçu, GO, BR
+SDUO Alagoinhas, BR
+SWAU Alto Paraguai, BR
+SWNH Aruanã, GO, BR
+SSBB Bodoquena [Estrela Dalva], BR
+SWYV Buriti Alegre [Edmar Ferreira], BR
+SNFG Capitao Poco, BR
+SNQY Cariri, BR
+SSQT Castro, PR, BR
+SNXW Chaves, PA, BR
+SDXB Cristalina, GO, BR
+SWWL Fazenda Agrocentro, BR
+SIFR Fazenda Romaria, BR
+SWFR Formosa, GO, BR
+SWGO Goianesia, BR
+SSIT Irati, BR
+SDUD Jaboticabal [Usina Santa Adelia], BR
+SIBD Maraba [Benedito Mutran], BR
+SDAS Mirandopolis [Fazenda Santo Antonio 4], BR
+SNTK Monte Carmelo, MG, BR
+SDOV Mozarlândia, GO, BR
+SNTD Natalandia [Fazenda Mamoneira], BR
+SSNO Nonoai, RS, BR
+SDOL Olimpia, BR
+SDFA Pereira Barreto [Fazenda Bonanca], BR
+SNXO Poco Branco, BR
+SSPK Porecatu, PR, BR
+SWFQ Porto Nacional [Fazenda Alvorada], BR
+SNRX Riachão, MA, BR
+SNSU Santa Cruz Cabralia [Usina Santa Cruz], BR
+SDAJ Santo Antonio Aracangua [Fazenda Santa Marina], BR
+SNTV Taiobeiras [Fazenda Veredao], BR
+SNUN Unaí, MG, BR
+SWWK Urucará, AM, BR
+SNUT Utinga, BA, BR
+SWAB Abuna, BR
+SJER Acreuna [Fazenda Canada], BR
+SWYN Apuí [Prainha], AM, BR
+SWAN Arenápolis, MT, BR
+SNBY Bambui, BR
+SSBR Bandeirantes, PR, BR
+SSBT Bataipora [Fazenda Santa Ilidia], BR
+SNCI Capanema [Cibrasa], BR
+SNKP Capelinha, BR
+SWKR Caracara, BR
+SNCT Caratinga [Ubaporanga], MG, BR
+SNEW Carneirinho [Fazenda Congonhas], BR
+SDCD Catanduva, BR
+SNXS Caxias, BR
+SSIC Dourados/Aplic, BR
+SSIF Fazenda Baunilha, BR
+SJFF Frigoestrela, BR
+SSGV Getulio Vargas, BR
+SSBI Iguatemi, MS, BR
+SWIP Ipameri, GO, BR
+SNFM Itaituba/Faz MM, BR
+SSUY Itapura [Fazenda Menina], BR
+SIZI Itaruma [Fazenda Vitoria], BR
+SWJC Jaciara, MT, BR
+SSLO Loanda, PR, BR
+SWME Mineiros, GO, BR
+SWAJ Mucajai/Jaragua, BR
+SSPT Palotina, PR, BR
+SWPX Peixe, BR
+SNRA Pirapora, BR
+SSSZ Sertanopolis, PR, BR
+SNTX Tailandia, BR
+SNDR Timon [Domingos Rego], BR
+SJXS Veracel, BR
+SNRV Xinguara, BR
+SDAF Analandia [Fazenda Palmeiras], BR
+SDFI Araraquara [Fazenda Itaquere], BR
+SWXC Cerejeiras [Fazenda Tropical], BR
+SSJP Colorado [Fazenda Junqueira 2], BR
+SWSM Cáceres [Fazenda Santa Maria], BR
+SSUW Guarapuava, BR
+SBIT Itumbiara [Hidroeletrica], BR
+SDXE Jaboticabal [Chacara Serradinho], BR
+SNMW Montalvania, BR
+SSNB Navirai, MS, BR
+SWRZ Nortelandia [Fazenda Arrossensal], BR
+SWPF Pres Figueiredo, BR
+SNOP Propriá, SE, BR
+SSQF Sete Quedas [Fazenda Floresta Negra], BR
+SSIE Teruel Ipanema Estancia, BR
+SSWD Vicente Dutra, BR
+SNPL Portel, BR
+SBEN Macae Plataforma SS18, BR
+SBPW Pindamonhangaba Visaba, BR
