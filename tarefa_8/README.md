@@ -17,7 +17,7 @@ by <br/>
 
 ## Webpage com grafo em produção
 <a href="https://marialluz.github.io/netdeploy/network/" target="_blank">
-  <img src="./imgs/web-icon.png" alt="YouTube" width="100"/>
+  <img src="../tarefa_7/imgs/web-icon.png" alt="YouTube" width="100"/>
 </a>
 
 ***
