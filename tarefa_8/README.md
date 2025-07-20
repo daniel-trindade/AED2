@@ -5,7 +5,6 @@
 by <br/>
 [Daniel Bruno Trindade da Silva](https://github.com/daniel-trindade) <br/>
 [Maria Eduarda Lima da Luz](https://github.com/marialluz) <br/>
-[Juscelino Pereira de Araújo](https://github.com/juscelinoaraujo) <br/>
 
 ***
 

@@ -1,1302 +1,1518 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
   <meta lastmodifieddate="2025-07-20">
-    <creator>NetworkX 3.5</creator>
+    <creator>NetworkX 2.8.8</creator>
   </meta>
   <graph defaultedgetype="directed" mode="static" name="">
     <attributes mode="static" class="node">
       <attribute id="0" title="latitude" type="double" />
       <attribute id="1" title="longitude" type="double" />
+      <attribute id="2" title="core" type="long" />
     </attributes>
     <nodes>
       <node id="SBSV" label="SBSV">
         <attvalues>
           <attvalue for="0" value="-12.9822499" />
           <attvalue for="1" value="-38.4812772" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SNCL" label="SNCL">
         <attvalues>
           <attvalue for="0" value="-13.3854682" />
           <attvalue for="1" value="-38.9187099" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SDLO" label="SDLO">
         <attvalues>
           <attvalue for="0" value="-13.4866098" />
           <attvalue for="1" value="-39.043844" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SIRI" label="SIRI">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SDSV" label="SDSV">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SBKP" label="SBKP">
         <attvalues>
           <attvalue for="0" value="-22.9056391" />
           <attvalue for="1" value="-47.059564" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBMI" label="SBMI">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="8" />
         </attvalues>
       </node>
       <node id="SBVT" label="SBVT">
         <attvalues>
           <attvalue for="0" value="-20.3200917" />
           <attvalue for="1" value="-40.3376682" />
+          <attvalue for="2" value="29" />
         </attvalues>
       </node>
       <node id="SBCF" label="SBCF">
         <attvalues>
           <attvalue for="0" value="-19.9227318" />
           <attvalue for="1" value="-43.9450948" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBGR" label="SBGR">
         <attvalues>
           <attvalue for="0" value="-23.5506507" />
           <attvalue for="1" value="-46.6333824" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBCY" label="SBCY">
         <attvalues>
           <attvalue for="0" value="-15.5986686" />
           <attvalue for="1" value="-56.0991301" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBGL" label="SBGL">
         <attvalues>
           <attvalue for="0" value="-22.9110137" />
           <attvalue for="1" value="-43.2093727" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBMG" label="SBMG">
         <attvalues>
           <attvalue for="0" value="-23.425269" />
           <attvalue for="1" value="-51.9382078" />
+          <attvalue for="2" value="21" />
         </attvalues>
       </node>
       <node id="SBCT" label="SBCT">
         <attvalues>
           <attvalue for="0" value="-25.4295963" />
           <attvalue for="1" value="-49.2712724" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBBE" label="SBBE">
         <attvalues>
           <attvalue for="0" value="-1.45056" />
           <attvalue for="1" value="-48.4682453" />
+          <attvalue for="2" value="26" />
         </attvalues>
       </node>
       <node id="SBCJ" label="SBCJ">
         <attvalues>
           <attvalue for="0" value="-4.5658733" />
           <attvalue for="1" value="-50.2776717" />
+          <attvalue for="2" value="15" />
         </attvalues>
       </node>
       <node id="SDOW" label="SDOW">
         <attvalues>
           <attvalue for="0" value="-6.748975" />
           <attvalue for="1" value="-51.0788476" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SBSP" label="SBSP">
         <attvalues>
           <attvalue for="0" value="-23.5506507" />
           <attvalue for="1" value="-46.6333824" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBJR" label="SBJR">
         <attvalues>
           <attvalue for="0" value="-22.9110137" />
           <attvalue for="1" value="-43.2093727" />
+          <attvalue for="2" value="14" />
         </attvalues>
       </node>
       <node id="SSOU" label="SSOU">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SNSS" label="SNSS">
         <attvalues>
           <attvalue for="0" value="-16.1699073" />
           <attvalue for="1" value="-42.2910368" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SBFZ" label="SBFZ">
         <attvalues>
           <attvalue for="0" value="-3.7304512" />
           <attvalue for="1" value="-38.5217989" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SN6L" label="SN6L">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SWBE" label="SWBE">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SNIG" label="SNIG">
         <attvalues>
           <attvalue for="0" value="-24.7170385" />
           <attvalue for="1" value="-53.0865561" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SNWS" label="SNWS">
         <attvalues>
           <attvalue for="0" value="-5.1782451" />
           <attvalue for="1" value="-40.6696545" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SBJE" label="SBJE">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="14" />
         </attvalues>
       </node>
       <node id="SBRJ" label="SBRJ">
         <attvalues>
           <attvalue for="0" value="-22.9110137" />
           <attvalue for="1" value="-43.2093727" />
+          <attvalue for="2" value="29" />
         </attvalues>
       </node>
       <node id="SBFI" label="SBFI">
         <attvalues>
           <attvalue for="0" value="-25.693905" />
           <attvalue for="1" value="-54.4365376" />
+          <attvalue for="2" value="23" />
         </attvalues>
       </node>
       <node id="SBPB" label="SBPB">
         <attvalues>
           <attvalue for="0" value="-2.9147515" />
           <attvalue for="1" value="-41.7661953" />
+          <attvalue for="2" value="8" />
         </attvalues>
       </node>
       <node id="SSRS" label="SSRS">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="6" />
         </attvalues>
       </node>
       <node id="SBSL" label="SBSL">
         <attvalues>
           <attvalue for="0" value="-2.5295265" />
           <attvalue for="1" value="-44.2963942" />
+          <attvalue for="2" value="25" />
         </attvalues>
       </node>
       <node id="SBRF" label="SBRF">
         <attvalues>
           <attvalue for="0" value="-8.0584933" />
           <attvalue for="1" value="-34.8848193" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBPJ" label="SBPJ">
         <attvalues>
           <attvalue for="0" value="-10.1837852" />
           <attvalue for="1" value="-48.3336423" />
+          <attvalue for="2" value="25" />
         </attvalues>
       </node>
       <node id="SBRP" label="SBRP">
         <attvalues>
           <attvalue for="0" value="-23.3866648" />
           <attvalue for="1" value="-47.3361736" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBGO" label="SBGO">
         <attvalues>
           <attvalue for="0" value="-16.680882" />
           <attvalue for="1" value="-49.2532691" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBMA" label="SBMA">
         <attvalues>
           <attvalue for="0" value="-5.3462821" />
           <attvalue for="1" value="-49.1007401" />
+          <attvalue for="2" value="15" />
         </attvalues>
       </node>
       <node id="SBCH" label="SBCH">
         <attvalues>
           <attvalue for="0" value="-27.1110472" />
           <attvalue for="1" value="-52.5958977" />
+          <attvalue for="2" value="13" />
         </attvalues>
       </node>
       <node id="SBNM" label="SBNM">
         <attvalues>
           <attvalue for="0" value="-28.3000481" />
           <attvalue for="1" value="-54.2669971" />
+          <attvalue for="2" value="13" />
         </attvalues>
       </node>
       <node id="SBCA" label="SBCA">
         <attvalues>
           <attvalue for="0" value="-24.9554996" />
           <attvalue for="1" value="-53.4560544" />
+          <attvalue for="2" value="19" />
         </attvalues>
       </node>
       <node id="SBLO" label="SBLO">
         <attvalues>
           <attvalue for="0" value="-23.3112878" />
           <attvalue for="1" value="-51.1595023" />
+          <attvalue for="2" value="21" />
         </attvalues>
       </node>
       <node id="SBSG" label="SBSG">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBSR" label="SBSR">
         <attvalues>
           <attvalue for="0" value="-20.8125851" />
           <attvalue for="1" value="-49.3804212" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBJD" label="SBJD">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="26" />
         </attvalues>
       </node>
       <node id="SBUR" label="SBUR">
         <attvalues>
           <attvalue for="0" value="-19.750833" />
           <attvalue for="1" value="-47.936666" />
+          <attvalue for="2" value="9" />
         </attvalues>
       </node>
       <node id="SBHT" label="SBHT">
         <attvalues>
           <attvalue for="0" value="-3.204065" />
           <attvalue for="1" value="-52.209961" />
+          <attvalue for="2" value="6" />
         </attvalues>
       </node>
       <node id="SBPL" label="SBPL">
         <attvalues>
           <attvalue for="0" value="-9.3817334" />
           <attvalue for="1" value="-40.4968875" />
+          <attvalue for="2" value="21" />
         </attvalues>
       </node>
       <node id="SBPK" label="SBPK">
         <attvalues>
           <attvalue for="0" value="-31.7699736" />
           <attvalue for="1" value="-52.3410161" />
+          <attvalue for="2" value="16" />
         </attvalues>
       </node>
       <node id="SBSM" label="SBSM">
         <attvalues>
           <attvalue for="0" value="-29.6860512" />
           <attvalue for="1" value="-53.8069214" />
+          <attvalue for="2" value="16" />
         </attvalues>
       </node>
       <node id="SBML" label="SBML">
         <attvalues>
           <attvalue for="0" value="-22.2172002" />
           <attvalue for="1" value="-49.9500061" />
+          <attvalue for="2" value="7" />
         </attvalues>
       </node>
       <node id="SNLN" label="SNLN">
         <attvalues>
           <attvalue for="0" value="-19.341076" />
           <attvalue for="1" value="-39.9483354" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBJP" label="SBJP">
         <attvalues>
           <attvalue for="0" value="-7.1215981" />
           <attvalue for="1" value="-34.882028" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SNJM" label="SNJM">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SBFL" label="SBFL">
         <attvalues>
           <attvalue for="0" value="-27.5973002" />
           <attvalue for="1" value="-48.5496098" />
+          <attvalue for="2" value="29" />
         </attvalues>
       </node>
       <node id="SBMK" label="SBMK">
         <attvalues>
           <attvalue for="0" value="-16.7495727" />
           <attvalue for="1" value="-43.8687268" />
+          <attvalue for="2" value="21" />
         </attvalues>
       </node>
       <node id="SBPS" label="SBPS">
         <attvalues>
           <attvalue for="0" value="-16.443473" />
           <attvalue for="1" value="-39.064251" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBIL" label="SBIL">
         <attvalues>
           <attvalue for="0" value="-14.792599" />
           <attvalue for="1" value="-39.0453843" />
+          <attvalue for="2" value="20" />
         </attvalues>
       </node>
       <node id="SBAE" label="SBAE">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="15" />
         </attvalues>
       </node>
       <node id="SBMO" label="SBMO">
         <attvalues>
           <attvalue for="0" value="-9.6476843" />
           <attvalue for="1" value="-35.7339264" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBUG" label="SBUG">
         <attvalues>
           <attvalue for="0" value="-29.7560726" />
           <attvalue for="1" value="-57.0867546" />
+          <attvalue for="2" value="11" />
         </attvalues>
       </node>
       <node id="SBUL" label="SBUL">
         <attvalues>
           <attvalue for="0" value="-18.9188041" />
           <attvalue for="1" value="-48.2767837" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBFN" label="SBFN">
         <attvalues>
           <attvalue for="0" value="-3.8537498" />
           <attvalue for="1" value="-32.4198018" />
+          <attvalue for="2" value="8" />
         </attvalues>
       </node>
       <node id="SBDN" label="SBDN">
         <attvalues>
           <attvalue for="0" value="-22.1225167" />
           <attvalue for="1" value="-51.3882528" />
+          <attvalue for="2" value="23" />
         </attvalues>
       </node>
       <node id="SBPV" label="SBPV">
         <attvalues>
           <attvalue for="0" value="-8.7494525" />
           <attvalue for="1" value="-63.8735438" />
+          <attvalue for="2" value="15" />
         </attvalues>
       </node>
       <node id="SBBR" label="SBBR">
         <attvalues>
           <attvalue for="0" value="-10.3333333" />
           <attvalue for="1" value="-53.2" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBGV" label="SBGV">
         <attvalues>
           <attvalue for="0" value="-18.8698882" />
           <attvalue for="1" value="-41.9459383" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBSN" label="SBSN">
         <attvalues>
           <attvalue for="0" value="-2.438489" />
           <attvalue for="1" value="-54.699611" />
+          <attvalue for="2" value="15" />
         </attvalues>
       </node>
       <node id="SBTC" label="SBTC">
         <attvalues>
           <attvalue for="0" value="-15.2936233" />
           <attvalue for="1" value="-39.0740884" />
+          <attvalue for="2" value="17" />
         </attvalues>
       </node>
       <node id="SBKG" label="SBKG">
         <attvalues>
           <attvalue for="0" value="-7.2246743" />
           <attvalue for="1" value="-35.8771292" />
+          <attvalue for="2" value="20" />
         </attvalues>
       </node>
       <node id="SBEG" label="SBEG">
         <attvalues>
           <attvalue for="0" value="-3.1316333" />
           <attvalue for="1" value="-59.9825041" />
+          <attvalue for="2" value="29" />
         </attvalues>
       </node>
       <node id="SBCP" label="SBCP">
         <attvalues>
           <attvalue for="0" value="-21.831038" />
           <attvalue for="1" value="-41.2723487" />
+          <attvalue for="2" value="8" />
         </attvalues>
       </node>
       <node id="SWPI" label="SWPI">
         <attvalues>
           <attvalue for="0" value="-2.6344567" />
           <attvalue for="1" value="-56.7319324" />
+          <attvalue for="2" value="6" />
         </attvalues>
       </node>
       <node id="SBJU" label="SBJU">
         <attvalues>
           <attvalue for="0" value="-7.2153453" />
           <attvalue for="1" value="-39.3153336" />
+          <attvalue for="2" value="23" />
         </attvalues>
       </node>
       <node id="SBAU" label="SBAU">
         <attvalues>
           <attvalue for="0" value="-21.207992" />
           <attvalue for="1" value="-50.4390225" />
+          <attvalue for="2" value="10" />
         </attvalues>
       </node>
       <node id="SBCR" label="SBCR">
         <attvalues>
           <attvalue for="0" value="-19.0016365" />
           <attvalue for="1" value="-57.6534316" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SBDB" label="SBDB">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="6" />
         </attvalues>
       </node>
       <node id="SBNF" label="SBNF">
         <attvalues>
           <attvalue for="0" value="-26.8898813" />
           <attvalue for="1" value="-48.6495828" />
+          <attvalue for="2" value="25" />
         </attvalues>
       </node>
       <node id="SBMQ" label="SBMQ">
         <attvalues>
           <attvalue for="0" value="0.0401529" />
           <attvalue for="1" value="-51.0569588" />
+          <attvalue for="2" value="17" />
         </attvalues>
       </node>
       <node id="SBAR" label="SBAR">
         <attvalues>
           <attvalue for="0" value="-10.9162061" />
           <attvalue for="1" value="-37.0774655" />
+          <attvalue for="2" value="25" />
         </attvalues>
       </node>
       <node id="SBCG" label="SBCG">
         <attvalues>
           <attvalue for="0" value="-20.4640173" />
           <attvalue for="1" value="-54.6162947" />
+          <attvalue for="2" value="29" />
         </attvalues>
       </node>
       <node id="SWLC" label="SWLC">
         <attvalues>
           <attvalue for="0" value="-17.7921255" />
           <attvalue for="1" value="-50.9191219" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SBAX" label="SBAX">
         <attvalues>
           <attvalue for="0" value="-19.6009149" />
           <attvalue for="1" value="-46.940923" />
+          <attvalue for="2" value="8" />
         </attvalues>
       </node>
       <node id="SNPD" label="SNPD">
         <attvalues>
           <attvalue for="0" value="-19.8668656" />
           <attvalue for="1" value="-44.5912664" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SBMS" label="SBMS">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="7" />
         </attvalues>
       </node>
       <node id="SBJV" label="SBJV">
         <attvalues>
           <attvalue for="0" value="-26.3044898" />
           <attvalue for="1" value="-48.8486726" />
+          <attvalue for="2" value="21" />
         </attvalues>
       </node>
       <node id="SBSI" label="SBSI">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="12" />
         </attvalues>
       </node>
       <node id="SNRU" label="SNRU">
         <attvalues>
           <attvalue for="0" value="-8.2829702" />
           <attvalue for="1" value="-35.9722852" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SBJI" label="SBJI">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBVG" label="SBVG">
         <attvalues>
           <attvalue for="0" value="-21.5565914" />
           <attvalue for="1" value="-45.4340674" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SNTO" label="SNTO">
         <attvalues>
           <attvalue for="0" value="-17.8579267" />
           <attvalue for="1" value="-41.5081533" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SNZR" label="SNZR">
         <attvalues>
           <attvalue for="0" value="-17.2174056" />
           <attvalue for="1" value="-46.8707514" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SBTF" label="SBTF">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="6" />
         </attvalues>
       </node>
       <node id="SWTP" label="SWTP">
         <attvalues>
           <attvalue for="0" value="-0.4160389" />
           <attvalue for="1" value="-65.0153096" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SWKO" label="SWKO">
         <attvalues>
           <attvalue for="0" value="-4.0885957" />
           <attvalue for="1" value="-63.1431166" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SBMY" label="SBMY">
         <attvalues>
           <attvalue for="0" value="-5.804618" />
           <attvalue for="1" value="-61.289483" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SWBR" label="SWBR">
         <attvalues>
           <attvalue for="0" value="-4.3934778" />
           <attvalue for="1" value="-59.5947721" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SWMW" label="SWMW">
         <attvalues>
           <attvalue for="0" value="-3.3795798" />
           <attvalue for="1" value="-57.7196072" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SBMD" label="SBMD">
         <attvalues>
           <attvalue for="0" value="-1.5290377" />
           <attvalue for="1" value="-52.5788111" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SNSM" label="SNSM">
         <attvalues>
           <attvalue for="0" value="-0.6259282" />
           <attvalue for="1" value="-47.3442819" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SBTU" label="SBTU">
         <attvalues>
           <attvalue for="0" value="-3.766334" />
           <attvalue for="1" value="-49.6663654" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SNEB" label="SNEB">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SBTE" label="SBTE">
         <attvalues>
           <attvalue for="0" value="-5.0874608" />
           <attvalue for="1" value="-42.8049571" />
+          <attvalue for="2" value="24" />
         </attvalues>
       </node>
       <node id="SWJN" label="SWJN">
         <attvalues>
           <attvalue for="0" value="-11.4230908" />
           <attvalue for="1" value="-58.7570212" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBBW" label="SBBW">
         <attvalues>
           <attvalue for="0" value="-15.8916033" />
           <attvalue for="1" value="-52.2615413" />
+          <attvalue for="2" value="6" />
         </attvalues>
       </node>
       <node id="SWLB" label="SWLB">
         <attvalues>
           <attvalue for="0" value="-7.2613683" />
           <attvalue for="1" value="-64.7924505" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SNAB" label="SNAB">
         <attvalues>
           <attvalue for="0" value="-7.5768582" />
           <attvalue for="1" value="-40.5038509" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBCB" label="SBCB">
         <attvalues>
           <attvalue for="0" value="-22.8804369" />
           <attvalue for="1" value="-42.0189227" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SBUA" label="SBUA">
         <attvalues>
           <attvalue for="0" value="-0.1249715" />
           <attvalue for="1" value="-67.0813855" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SNHS" label="SNHS">
         <attvalues>
           <attvalue for="0" value="-7.9867805" />
           <attvalue for="1" value="-38.2920294" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SNTS" label="SNTS">
         <attvalues>
           <attvalue for="0" value="-7.0258285" />
           <attvalue for="1" value="-37.2766817" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SNGN" label="SNGN">
         <attvalues>
           <attvalue for="0" value="-8.8905889" />
           <attvalue for="1" value="-36.4930896" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SSKW" label="SSKW">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SJZA" label="SJZA">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBTG" label="SBTG">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SSUM" label="SSUM">
         <attvalues>
           <attvalue for="0" value="-23.7621152" />
           <attvalue for="1" value="-53.3116192" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SSGY" label="SSGY">
         <attvalues>
           <attvalue for="0" value="-24.0851924" />
           <attvalue for="1" value="-54.2567519" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SSUV" label="SSUV">
         <attvalues>
           <attvalue for="0" value="-26.228596" />
           <attvalue for="1" value="-51.0869796" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SSVL" label="SSVL">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SNMZ" label="SNMZ">
         <attvalues>
           <attvalue for="0" value="-1.7502089" />
           <attvalue for="1" value="-52.235556" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SNVS" label="SNVS">
         <attvalues>
           <attvalue for="0" value="-1.68036" />
           <attvalue for="1" value="-50.479085" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBVH" label="SBVH">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBCO" label="SBCO">
         <attvalues>
           <attvalue for="0" value="-30.0324999" />
           <attvalue for="1" value="-51.2303767" />
+          <attvalue for="2" value="25" />
         </attvalues>
       </node>
       <node id="SBCX" label="SBCX">
         <attvalues>
           <attvalue for="0" value="-29.1685045" />
           <attvalue for="1" value="-51.1796385" />
+          <attvalue for="2" value="25" />
         </attvalues>
       </node>
       <node id="SNYA" label="SNYA">
         <attvalues>
           <attvalue for="0" value="-1.5290377" />
           <attvalue for="1" value="-52.5788111" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBLE" label="SBLE">
         <attvalues>
           <attvalue for="0" value="-12.5615323" />
           <attvalue for="1" value="-41.3895344" />
+          <attvalue for="2" value="7" />
         </attvalues>
       </node>
       <node id="SBIP" label="SBIP">
         <attvalues>
           <attvalue for="0" value="-19.4712386" />
           <attvalue for="1" value="-42.4861646" />
+          <attvalue for="2" value="14" />
         </attvalues>
       </node>
       <node id="SBTT" label="SBTT">
         <attvalues>
           <attvalue for="0" value="-21.7373768" />
           <attvalue for="1" value="-48.6880522" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SNBR" label="SNBR">
         <attvalues>
           <attvalue for="0" value="-12.1440031" />
           <attvalue for="1" value="-44.9967406" />
+          <attvalue for="2" value="10" />
         </attvalues>
       </node>
       <node id="SBTB" label="SBTB">
         <attvalues>
           <attvalue for="0" value="-1.466592" />
           <attvalue for="1" value="-56.378979" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SBIH" label="SBIH">
         <attvalues>
           <attvalue for="0" value="-4.2625218" />
           <attvalue for="1" value="-55.9878139" />
+          <attvalue for="2" value="7" />
         </attvalues>
       </node>
       <node id="SBSO" label="SBSO">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="10" />
         </attvalues>
       </node>
       <node id="SWEI" label="SWEI">
         <attvalues>
           <attvalue for="0" value="-6.6567654" />
           <attvalue for="1" value="-69.866161" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SBVC" label="SBVC">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="12" />
         </attvalues>
       </node>
       <node id="SBPF" label="SBPF">
         <attvalues>
           <attvalue for="0" value="-28.2550598" />
           <attvalue for="1" value="-52.3966606" />
+          <attvalue for="2" value="16" />
         </attvalues>
       </node>
       <node id="SBBH" label="SBBH">
         <attvalues>
           <attvalue for="0" value="-19.9227318" />
           <attvalue for="1" value="-43.9450948" />
+          <attvalue for="2" value="21" />
         </attvalues>
       </node>
       <node id="SDCO" label="SDCO">
         <attvalues>
           <attvalue for="0" value="-23.5003451" />
           <attvalue for="1" value="-47.4582864" />
+          <attvalue for="2" value="6" />
         </attvalues>
       </node>
       <node id="SBBV" label="SBBV">
         <attvalues>
           <attvalue for="0" value="2.8208478" />
           <attvalue for="1" value="-60.6719582" />
+          <attvalue for="2" value="17" />
         </attvalues>
       </node>
       <node id="SBZM" label="SBZM">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="11" />
         </attvalues>
       </node>
       <node id="SBIZ" label="SBIZ">
         <attvalues>
           <attvalue for="0" value="-5.5269279" />
           <attvalue for="1" value="-47.478115" />
+          <attvalue for="2" value="10" />
         </attvalues>
       </node>
       <node id="SBRD" label="SBRD">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="6" />
         </attvalues>
       </node>
       <node id="SBPP" label="SBPP">
         <attvalues>
           <attvalue for="0" value="-22.5286917" />
           <attvalue for="1" value="-55.723426" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SNGI" label="SNGI">
         <attvalues>
           <attvalue for="0" value="-14.223066" />
           <attvalue for="1" value="-42.779943" />
+          <attvalue for="2" value="6" />
         </attvalues>
       </node>
       <node id="SBCN" label="SBCN">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="8" />
         </attvalues>
       </node>
       <node id="SWYN" label="SWYN">
         <attvalues>
           <attvalue for="0" value="-7.1940195" />
           <attvalue for="1" value="-59.8830192" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SNCP" label="SNCP">
         <attvalues>
           <attvalue for="0" value="-1.2016638" />
           <attvalue for="1" value="-46.0205618" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SBAT" label="SBAT">
         <attvalues>
           <attvalue for="0" value="-9.8698547" />
           <attvalue for="1" value="-56.0834993" />
+          <attvalue for="2" value="7" />
         </attvalues>
       </node>
       <node id="SBRB" label="SBRB">
         <attvalues>
           <attvalue for="0" value="-9.9765362" />
           <attvalue for="1" value="-67.8220778" />
+          <attvalue for="2" value="13" />
         </attvalues>
       </node>
       <node id="SBSJ" label="SBSJ">
         <attvalues>
           <attvalue for="0" value="-23.1867782" />
           <attvalue for="1" value="-45.8854538" />
+          <attvalue for="2" value="15" />
         </attvalues>
       </node>
       <node id="SBUY" label="SBUY">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SWCA" label="SWCA">
         <attvalues>
           <attvalue for="0" value="-4.8766426" />
           <attvalue for="1" value="-66.8961433" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SBAC" label="SBAC">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SBJA" label="SBJA">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="26" />
         </attvalues>
       </node>
       <node id="SBCZ" label="SBCZ">
         <attvalues>
           <attvalue for="0" value="-29.5139742" />
           <attvalue for="1" value="-51.9917068" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SUMU" label="SUMU">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SAEZ" label="SAEZ">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="6" />
         </attvalues>
       </node>
       <node id="SBPG" label="SBPG">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SBPO" label="SBPO">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SSGG" label="SSGG">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SWKQ" label="SWKQ">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SDSC" label="SDSC">
         <attvalues>
           <attvalue for="0" value="-21.8788022" />
           <attvalue for="1" value="-47.8567619" />
+          <attvalue for="2" value="9" />
         </attvalues>
       </node>
       <node id="SBPA" label="SBPA">
         <attvalues>
           <attvalue for="0" value="-30.0324999" />
           <attvalue for="1" value="-51.2303767" />
+          <attvalue for="2" value="30" />
         </attvalues>
       </node>
       <node id="SBAQ" label="SBAQ">
         <attvalues>
           <attvalue for="0" value="-21.7886713" />
           <attvalue for="1" value="-48.1773096" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SACO" label="SACO">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBOI" label="SBOI">
         <attvalues>
           <attvalue for="0" value="3.8432128" />
           <attvalue for="1" value="-51.8350798" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SWBC" label="SWBC">
         <attvalues>
           <attvalue for="0" value="-0.9729214" />
           <attvalue for="1" value="-62.925635" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SBUF" label="SBUF">
         <attvalues>
           <attvalue for="0" value="-9.3991006" />
           <attvalue for="1" value="-38.226711" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SNRJ" label="SNRJ">
         <attvalues>
           <attvalue for="0" value="-3.6804397" />
           <attvalue for="1" value="-42.7529313" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SNOX" label="SNOX">
         <attvalues>
           <attvalue for="0" value="-1.7669992" />
           <attvalue for="1" value="-55.868285" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SNMA" label="SNMA">
         <attvalues>
           <attvalue for="0" value="-1.9989108" />
           <attvalue for="1" value="-54.0727694" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SIXE" label="SIXE">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="7" />
         </attvalues>
       </node>
       <node id="SBBU" label="SBBU">
         <attvalues>
           <attvalue for="0" value="-22.3218102" />
           <attvalue for="1" value="-49.0705863" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SDIY" label="SDIY">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SIFC" label="SIFC">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SBEK" label="SBEK">
         <attvalues>
           <attvalue for="0" value="-6.2196518" />
           <attvalue for="1" value="-57.758625" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SDJV" label="SDJV">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SNDV" label="SNDV">
         <attvalues>
           <attvalue for="0" value="-20.1597921" />
           <attvalue for="1" value="-44.8739341" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SBBG" label="SBBG">
         <attvalues>
           <attvalue for="0" value="-31.3314264" />
           <attvalue for="1" value="-54.1062808" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SSCN" label="SSCN">
         <attvalues>
           <attvalue for="0" value="-29.3636094" />
           <attvalue for="1" value="-50.8096844" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SSSC" label="SSSC">
         <attvalues>
           <attvalue for="0" value="-29.714209" />
           <attvalue for="1" value="-52.4285807" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SSLT" label="SSLT">
         <attvalues>
           <attvalue for="0" value="-29.8124318" />
           <attvalue for="1" value="-55.8931513" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SSZR" label="SSZR">
         <attvalues>
           <attvalue for="0" value="-27.8643546" />
           <attvalue for="1" value="-54.4779287" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SNTF" label="SNTF">
         <attvalues>
           <attvalue for="0" value="-17.5384774" />
           <attvalue for="1" value="-39.7451701" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SWGN" label="SWGN">
         <attvalues>
           <attvalue for="0" value="-7.193241" />
           <attvalue for="1" value="-48.2018597" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SCEL" label="SCEL">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SKBO" label="SKBO">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SNOB" label="SNOB">
         <attvalues>
           <attvalue for="0" value="-3.6879135" />
           <attvalue for="1" value="-40.3456372" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SDAG" label="SDAG">
         <attvalues>
           <attvalue for="0" value="-23.1555405" />
           <attvalue for="1" value="-44.2344809" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SBMT" label="SBMT">
         <attvalues>
           <attvalue for="0" value="-23.5506507" />
           <attvalue for="1" value="-46.6333824" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SDCG" label="SDCG">
         <attvalues>
           <attvalue for="0" value="-3.4650627" />
           <attvalue for="1" value="-68.9468462" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="MMUN" label="MMUN">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SNSV" label="SNSV">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SKRG" label="SKRG">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SLVR" label="SLVR">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SLCB" label="SLCB">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SBNT" label="SBNT">
         <attvalues>
           <attvalue for="0" value="-5.805398" />
           <attvalue for="1" value="-35.2080905" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SDVZ" label="SDVZ">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SSQO" label="SSQO">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SEGU" label="SEGU">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SAAR" label="SAAR">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SIUA" label="SIUA">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SBBP" label="SBBP">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SSBN" label="SSBN">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="5" />
         </attvalues>
       </node>
       <node id="SVMI" label="SVMI">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="3" />
         </attvalues>
       </node>
       <node id="SKVP" label="SKVP">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SCCF" label="SCCF">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SNBA" label="SNBA">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SIMK" label="SIMK">
         <attvalues>
           <attvalue for="0" value="-20.5381768" />
           <attvalue for="1" value="-47.4009795" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SBMN" label="SBMN">
         <attvalues>
           <attvalue for="0" value="-3.1316333" />
           <attvalue for="1" value="-59.9825041" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SGAS" label="SGAS">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="4" />
         </attvalues>
       </node>
       <node id="SYEC" label="SYEC">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SMJP" label="SMJP">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="MDPC" label="MDPC">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SPJC" label="SPJC">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="1" />
         </attvalues>
       </node>
       <node id="SEMT" label="SEMT">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
       <node id="SEQM" label="SEQM">
         <attvalues>
           <attvalue for="0" value="NaN" />
           <attvalue for="1" value="NaN" />
+          <attvalue for="2" value="2" />
         </attvalues>
       </node>
     </nodes>
@@ -1314,7 +1530,6 @@
       <edge source="SBSV" target="SBAR" id="10" />
       <edge source="SBSV" target="SBSP" id="11" />
       <edge source="SBSV" target="SBUL" id="12" />
-      <edge source="SBSV" target="SBSV" id="13" />
       <edge source="SBSV" target="SBGR" id="14" />
       <edge source="SBSV" target="SBFZ" id="15" />
       <edge source="SBSV" target="SBBR" id="16" />
@@ -1368,7 +1583,6 @@
       <edge source="SBKP" target="SBPK" id="64" />
       <edge source="SBKP" target="SBSM" id="65" />
       <edge source="SBKP" target="SBRJ" id="66" />
-      <edge source="SBKP" target="SBKP" id="67" />
       <edge source="SBKP" target="SBML" id="68" />
       <edge source="SBKP" target="SBLO" id="69" />
       <edge source="SBKP" target="SBCA" id="70" />
@@ -1442,7 +1656,6 @@
       <edge source="SBVT" target="SBCF" id="138" />
       <edge source="SBVT" target="SBKP" id="139" />
       <edge source="SBVT" target="SBRF" id="140" />
-      <edge source="SBVT" target="SBVT" id="141" />
       <edge source="SBVT" target="SBBE" id="142" />
       <edge source="SBVT" target="SBSR" id="143" />
       <edge source="SBVT" target="SBGL" id="144" />
@@ -1465,7 +1678,6 @@
       <edge source="SBCF" target="SBVT" id="161" />
       <edge source="SBCF" target="SBGO" id="162" />
       <edge source="SBCF" target="SNLN" id="163" />
-      <edge source="SBCF" target="SBCF" id="164" />
       <edge source="SBCF" target="SNJM" id="165" />
       <edge source="SBCF" target="SBKP" id="166" />
       <edge source="SBCF" target="SBFL" id="167" />
@@ -1540,7 +1752,6 @@
       <edge source="SBCF" target="SGAS" id="236" />
       <edge source="SBGR" target="SBCY" id="237" />
       <edge source="SBGR" target="SBCF" id="238" />
-      <edge source="SBGR" target="SBGR" id="239" />
       <edge source="SBGR" target="SBRF" id="240" />
       <edge source="SBGR" target="SBBE" id="241" />
       <edge source="SBGR" target="SBRJ" id="242" />
@@ -1615,7 +1826,6 @@
       <edge source="SBCY" target="SBBR" id="311" />
       <edge source="SBCY" target="SBKP" id="312" />
       <edge source="SBCY" target="SBCF" id="313" />
-      <edge source="SBCY" target="SBCY" id="314" />
       <edge source="SBCY" target="SBSI" id="315" />
       <edge source="SBCY" target="SBJI" id="316" />
       <edge source="SBCY" target="SBCG" id="317" />
@@ -1654,7 +1864,6 @@
       <edge source="SBGL" target="SBMO" id="350" />
       <edge source="SBGL" target="SBKG" id="351" />
       <edge source="SBGL" target="SBJR" id="352" />
-      <edge source="SBGL" target="SBGL" id="353" />
       <edge source="SBGL" target="SBKP" id="354" />
       <edge source="SBGL" target="SBGO" id="355" />
       <edge source="SBGL" target="SBRJ" id="356" />
@@ -1702,7 +1911,6 @@
       <edge source="SBGL" target="SPJC" id="398" />
       <edge source="SBMG" target="SBCT" id="399" />
       <edge source="SBMG" target="SBKP" id="400" />
-      <edge source="SBMG" target="SBMG" id="401" />
       <edge source="SBMG" target="SBGR" id="402" />
       <edge source="SBMG" target="SBSP" id="403" />
       <edge source="SBMG" target="SBRP" id="404" />
@@ -1720,7 +1928,6 @@
       <edge source="SBCT" target="SBUG" id="416" />
       <edge source="SBCT" target="SBFL" id="417" />
       <edge source="SBCT" target="SBCF" id="418" />
-      <edge source="SBCT" target="SBCT" id="419" />
       <edge source="SBCT" target="SBFI" id="420" />
       <edge source="SBCT" target="SBSP" id="421" />
       <edge source="SBCT" target="SBMG" id="422" />
@@ -1773,7 +1980,6 @@
       <edge source="SBBE" target="SBSN" id="469" />
       <edge source="SBBE" target="SBMD" id="470" />
       <edge source="SBBE" target="SNSM" id="471" />
-      <edge source="SBBE" target="SBBE" id="472" />
       <edge source="SBBE" target="SBTU" id="473" />
       <edge source="SBBE" target="SNEB" id="474" />
       <edge source="SBBE" target="SNMZ" id="475" />
@@ -1803,14 +2009,12 @@
       <edge source="SBCJ" target="SBKP" id="499" />
       <edge source="SBCJ" target="SBGR" id="500" />
       <edge source="SBCJ" target="SBGL" id="501" />
-      <edge source="SBCJ" target="SBCJ" id="502" />
       <edge source="SBCJ" target="SBMQ" id="503" />
       <edge source="SBCJ" target="SBVT" id="504" />
       <edge source="SBCJ" target="SBMA" id="505" />
       <edge source="SDOW" target="SBCJ" id="506" />
       <edge source="SDOW" target="SBBE" id="507" />
       <edge source="SBSP" target="SBJR" id="508" />
-      <edge source="SBSP" target="SBSP" id="509" />
       <edge source="SBSP" target="SBPS" id="510" />
       <edge source="SBSP" target="SBJP" id="511" />
       <edge source="SBSP" target="SBRJ" id="512" />
@@ -1872,7 +2076,6 @@
       <edge source="SBJR" target="SBSP" id="568" />
       <edge source="SBJR" target="SBCF" id="569" />
       <edge source="SBJR" target="SBJD" id="570" />
-      <edge source="SBJR" target="SBJR" id="571" />
       <edge source="SBJR" target="SBKP" id="572" />
       <edge source="SBJR" target="SBCP" id="573" />
       <edge source="SBJR" target="SBMI" id="574" />
@@ -1884,10 +2087,8 @@
       <edge source="SSOU" target="SWJN" id="580" />
       <edge source="SSOU" target="SBVH" id="581" />
       <edge source="SNSS" target="SBCF" id="582" />
-      <edge source="SNSS" target="SNSS" id="583" />
       <edge source="SBFZ" target="SN6L" id="584" />
       <edge source="SBFZ" target="SWBE" id="585" />
-      <edge source="SBFZ" target="SBFZ" id="586" />
       <edge source="SBFZ" target="SNIG" id="587" />
       <edge source="SBFZ" target="SNWS" id="588" />
       <edge source="SBFZ" target="SBJE" id="589" />
@@ -1943,7 +2144,6 @@
       <edge source="SBJE" target="SBFZ" id="639" />
       <edge source="SBJE" target="SBGR" id="640" />
       <edge source="SBJE" target="SSRS" id="641" />
-      <edge source="SBJE" target="SBJE" id="642" />
       <edge source="SBJE" target="SBSL" id="643" />
       <edge source="SBJE" target="SBCF" id="644" />
       <edge source="SBJE" target="SBKP" id="645" />
@@ -1955,7 +2155,6 @@
       <edge source="SBRJ" target="SBCF" id="651" />
       <edge source="SBRJ" target="SBSP" id="652" />
       <edge source="SBRJ" target="SBGR" id="653" />
-      <edge source="SBRJ" target="SBRJ" id="654" />
       <edge source="SBRJ" target="SBJR" id="655" />
       <edge source="SBRJ" target="SBBR" id="656" />
       <edge source="SBRJ" target="SBSV" id="657" />
@@ -1974,7 +2173,6 @@
       <edge source="SBRJ" target="SBJU" id="670" />
       <edge source="SBRJ" target="SBPS" id="671" />
       <edge source="SBFI" target="SBCF" id="672" />
-      <edge source="SBFI" target="SBFI" id="673" />
       <edge source="SBFI" target="SBKP" id="674" />
       <edge source="SBFI" target="SBFL" id="675" />
       <edge source="SBFI" target="SBNF" id="676" />
@@ -2010,7 +2208,6 @@
       <edge source="SBSL" target="SBMQ" id="706" />
       <edge source="SBSL" target="SBTE" id="707" />
       <edge source="SBSL" target="SBFZ" id="708" />
-      <edge source="SBSL" target="SBSL" id="709" />
       <edge source="SBSL" target="SBPB" id="710" />
       <edge source="SBSL" target="SBSP" id="711" />
       <edge source="SBSL" target="SBJE" id="712" />
@@ -2027,7 +2224,6 @@
       <edge source="SBRF" target="SBCF" id="723" />
       <edge source="SBRF" target="SBGO" id="724" />
       <edge source="SBRF" target="SBKG" id="725" />
-      <edge source="SBRF" target="SBRF" id="726" />
       <edge source="SBRF" target="SBBR" id="727" />
       <edge source="SBRF" target="SBBE" id="728" />
       <edge source="SBRF" target="SBRP" id="729" />
@@ -2076,7 +2272,6 @@
       <edge source="SBRF" target="SBPJ" id="772" />
       <edge source="SBRF" target="SBTC" id="773" />
       <edge source="SBPJ" target="SBKP" id="774" />
-      <edge source="SBPJ" target="SBPJ" id="775" />
       <edge source="SBPJ" target="SBCF" id="776" />
       <edge source="SBPJ" target="SBBE" id="777" />
       <edge source="SBPJ" target="SBGO" id="778" />
@@ -2101,7 +2296,6 @@
       <edge source="SBRP" target="SBJP" id="797" />
       <edge source="SBRP" target="SBFZ" id="798" />
       <edge source="SBRP" target="SBSP" id="799" />
-      <edge source="SBRP" target="SBRP" id="800" />
       <edge source="SBRP" target="SBBR" id="801" />
       <edge source="SBRP" target="SBGL" id="802" />
       <edge source="SBRP" target="SBRJ" id="803" />
@@ -2131,7 +2325,6 @@
       <edge source="SBGO" target="SBRF" id="827" />
       <edge source="SBGO" target="SBCF" id="828" />
       <edge source="SBGO" target="SBMO" id="829" />
-      <edge source="SBGO" target="SBGO" id="830" />
       <edge source="SBGO" target="SBCY" id="831" />
       <edge source="SBGO" target="SBPJ" id="832" />
       <edge source="SBGO" target="SBJP" id="833" />
@@ -2152,7 +2345,6 @@
       <edge source="SBGO" target="SBVT" id="848" />
       <edge source="SBGO" target="SBFZ" id="849" />
       <edge source="SBMA" target="SBBE" id="850" />
-      <edge source="SBMA" target="SBMA" id="851" />
       <edge source="SBMA" target="SBCF" id="852" />
       <edge source="SBMA" target="SBBR" id="853" />
       <edge source="SBMA" target="SBKP" id="854" />
@@ -2167,7 +2359,6 @@
       <edge source="SBCH" target="SBFL" id="863" />
       <edge source="SBCH" target="SBGR" id="864" />
       <edge source="SBCH" target="SBSP" id="865" />
-      <edge source="SBCH" target="SBCH" id="866" />
       <edge source="SBCH" target="SBCA" id="867" />
       <edge source="SBCH" target="SBCX" id="868" />
       <edge source="SBCH" target="SBCT" id="869" />
@@ -2185,7 +2376,6 @@
       <edge source="SBCA" target="SBCF" id="881" />
       <edge source="SBCA" target="SBSP" id="882" />
       <edge source="SBCA" target="SSVL" id="883" />
-      <edge source="SBCA" target="SBCA" id="884" />
       <edge source="SBCA" target="SBSG" id="885" />
       <edge source="SBCA" target="SBMO" id="886" />
       <edge source="SBCA" target="SBRP" id="887" />
@@ -2196,7 +2386,6 @@
       <edge source="SBLO" target="SBKP" id="892" />
       <edge source="SBLO" target="SBSP" id="893" />
       <edge source="SBLO" target="SBGR" id="894" />
-      <edge source="SBLO" target="SBLO" id="895" />
       <edge source="SBLO" target="SBBR" id="896" />
       <edge source="SBLO" target="SBGL" id="897" />
       <edge source="SBLO" target="SBMO" id="898" />
@@ -2219,7 +2408,6 @@
       <edge source="SBSG" target="SBCT" id="915" />
       <edge source="SBSG" target="SBGO" id="916" />
       <edge source="SBSG" target="SBGL" id="917" />
-      <edge source="SBSG" target="SBSG" id="918" />
       <edge source="SBSG" target="SBGR" id="919" />
       <edge source="SBSG" target="SBMS" id="920" />
       <edge source="SBSG" target="SBSV" id="921" />
@@ -2240,7 +2428,6 @@
       <edge source="SBSR" target="SBCY" id="936" />
       <edge source="SBSR" target="SBJP" id="937" />
       <edge source="SBSR" target="SBFZ" id="938" />
-      <edge source="SBSR" target="SBSR" id="939" />
       <edge source="SBSR" target="SBSP" id="940" />
       <edge source="SBSR" target="SBGR" id="941" />
       <edge source="SBSR" target="SBRP" id="942" />
@@ -2249,7 +2436,6 @@
       <edge source="SBSR" target="SBSV" id="945" />
       <edge source="SBSR" target="SBGL" id="946" />
       <edge source="SBSR" target="SBJV" id="947" />
-      <edge source="SBJD" target="SBJD" id="948" />
       <edge source="SBJD" target="SBMI" id="949" />
       <edge source="SBJD" target="SBSP" id="950" />
       <edge source="SBJD" target="SBSR" id="951" />
@@ -2279,19 +2465,16 @@
       <edge source="SBUR" target="SBKP" id="975" />
       <edge source="SBUR" target="SBMO" id="976" />
       <edge source="SBUR" target="SBSP" id="977" />
-      <edge source="SBUR" target="SBUR" id="978" />
       <edge source="SBUR" target="SBUL" id="979" />
       <edge source="SBHT" target="SBBE" id="980" />
       <edge source="SBHT" target="SBMA" id="981" />
       <edge source="SBHT" target="SBSL" id="982" />
-      <edge source="SBHT" target="SBHT" id="983" />
       <edge source="SBPL" target="SBKP" id="984" />
       <edge source="SBPL" target="SBRF" id="985" />
       <edge source="SBPL" target="SBGR" id="986" />
       <edge source="SBPL" target="SBAR" id="987" />
       <edge source="SBPL" target="SBSG" id="988" />
       <edge source="SBPL" target="SBKG" id="989" />
-      <edge source="SBPL" target="SBPL" id="990" />
       <edge source="SBPL" target="SBSP" id="991" />
       <edge source="SBPL" target="SWKQ" id="992" />
       <edge source="SBPL" target="SBCF" id="993" />
@@ -2312,7 +2495,6 @@
       <edge source="SBPK" target="SBPF" id="1008" />
       <edge source="SBPK" target="SBCT" id="1009" />
       <edge source="SBSM" target="SBKP" id="1010" />
-      <edge source="SBSM" target="SBSM" id="1011" />
       <edge source="SBSM" target="SBFL" id="1012" />
       <edge source="SBSM" target="SBPA" id="1013" />
       <edge source="SBSM" target="SBRP" id="1014" />
@@ -2340,7 +2522,6 @@
       <edge source="SBJP" target="SBGL" id="1036" />
       <edge source="SBJP" target="SBBR" id="1037" />
       <edge source="SBJP" target="SBSV" id="1038" />
-      <edge source="SBJP" target="SBJP" id="1039" />
       <edge source="SBJP" target="SBMO" id="1040" />
       <edge source="SBJP" target="SBFZ" id="1041" />
       <edge source="SBJP" target="SBSG" id="1042" />
@@ -2362,7 +2543,6 @@
       <edge source="SBFL" target="SBSM" id="1058" />
       <edge source="SBFL" target="SBNM" id="1059" />
       <edge source="SBFL" target="SBBR" id="1060" />
-      <edge source="SBFL" target="SBFL" id="1061" />
       <edge source="SBFL" target="SBVT" id="1062" />
       <edge source="SBFL" target="SBPA" id="1063" />
       <edge source="SBFL" target="SBCX" id="1064" />
@@ -2386,7 +2566,6 @@
       <edge source="SBMK" target="SBCF" id="1082" />
       <edge source="SBMK" target="SBPJ" id="1083" />
       <edge source="SBMK" target="SBKP" id="1084" />
-      <edge source="SBMK" target="SBMK" id="1085" />
       <edge source="SBMK" target="SBSP" id="1086" />
       <edge source="SBMK" target="SBPS" id="1087" />
       <edge source="SBMK" target="SBGR" id="1088" />
@@ -2411,7 +2590,6 @@
       <edge source="SBPS" target="SBGR" id="1107" />
       <edge source="SBPS" target="SBVT" id="1108" />
       <edge source="SBPS" target="SBGL" id="1109" />
-      <edge source="SBPS" target="SBPS" id="1110" />
       <edge source="SBPS" target="SBMK" id="1111" />
       <edge source="SBPS" target="SBBR" id="1112" />
       <edge source="SBPS" target="SBAR" id="1113" />
@@ -2432,7 +2610,6 @@
       <edge source="SBPS" target="SBRJ" id="1128" />
       <edge source="SBIL" target="SBKP" id="1129" />
       <edge source="SBIL" target="SBCF" id="1130" />
-      <edge source="SBIL" target="SBIL" id="1131" />
       <edge source="SBIL" target="SBSV" id="1132" />
       <edge source="SBIL" target="SBSP" id="1133" />
       <edge source="SBIL" target="SBGR" id="1134" />
@@ -2446,7 +2623,6 @@
       <edge source="SBAE" target="SBGR" id="1142" />
       <edge source="SBAE" target="SBKP" id="1143" />
       <edge source="SBAE" target="SBPS" id="1144" />
-      <edge source="SBAE" target="SBAE" id="1145" />
       <edge source="SBAE" target="SBMO" id="1146" />
       <edge source="SBAE" target="SBRP" id="1147" />
       <edge source="SBAE" target="SBRF" id="1148" />
@@ -2472,7 +2648,6 @@
       <edge source="SBMO" target="SBJP" id="1168" />
       <edge source="SBMO" target="SBSV" id="1169" />
       <edge source="SBMO" target="SBJA" id="1170" />
-      <edge source="SBMO" target="SBMO" id="1171" />
       <edge source="SBMO" target="SBIL" id="1172" />
       <edge source="SBMO" target="SBCY" id="1173" />
       <edge source="SBMO" target="SBKG" id="1174" />
@@ -2489,7 +2664,6 @@
       <edge source="SBUG" target="SBFL" id="1185" />
       <edge source="SBUG" target="SBPA" id="1186" />
       <edge source="SBUG" target="SBRP" id="1187" />
-      <edge source="SBUG" target="SBUG" id="1188" />
       <edge source="SBUG" target="SBJV" id="1189" />
       <edge source="SBUG" target="SBSP" id="1190" />
       <edge source="SBUL" target="SBPS" id="1191" />
@@ -2504,7 +2678,6 @@
       <edge source="SBUL" target="SBSV" id="1200" />
       <edge source="SBUL" target="SBSP" id="1201" />
       <edge source="SBUL" target="SBGR" id="1202" />
-      <edge source="SBUL" target="SBUL" id="1203" />
       <edge source="SBUL" target="SBCY" id="1204" />
       <edge source="SBUL" target="SBBH" id="1205" />
       <edge source="SBUL" target="SBJD" id="1206" />
@@ -2515,14 +2688,12 @@
       <edge source="SBFN" target="SBRF" id="1211" />
       <edge source="SBFN" target="SBSG" id="1212" />
       <edge source="SBFN" target="SBFZ" id="1213" />
-      <edge source="SBFN" target="SBFN" id="1214" />
       <edge source="SBFN" target="SBMO" id="1215" />
       <edge source="SBFN" target="SBKG" id="1216" />
       <edge source="SBDN" target="SBPS" id="1217" />
       <edge source="SBDN" target="SBKP" id="1218" />
       <edge source="SBDN" target="SBSG" id="1219" />
       <edge source="SBDN" target="SBMO" id="1220" />
-      <edge source="SBDN" target="SBDN" id="1221" />
       <edge source="SBDN" target="SBSP" id="1222" />
       <edge source="SBDN" target="SBGR" id="1223" />
       <edge source="SBDN" target="SBRP" id="1224" />
@@ -2536,7 +2707,6 @@
       <edge source="SBPV" target="SBEG" id="1232" />
       <edge source="SBPV" target="SBCY" id="1233" />
       <edge source="SBPV" target="SBJI" id="1234" />
-      <edge source="SBPV" target="SBPV" id="1235" />
       <edge source="SBPV" target="SBBR" id="1236" />
       <edge source="SBPV" target="SBGR" id="1237" />
       <edge source="SBPV" target="SBRB" id="1238" />
@@ -2545,7 +2715,6 @@
       <edge source="SBPV" target="SBCG" id="1241" />
       <edge source="SBPV" target="SBRF" id="1242" />
       <edge source="SBPV" target="SBPJ" id="1243" />
-      <edge source="SBBR" target="SBBR" id="1244" />
       <edge source="SBBR" target="SBRF" id="1245" />
       <edge source="SBBR" target="SBKP" id="1246" />
       <edge source="SBBR" target="SBSP" id="1247" />
@@ -2600,14 +2769,12 @@
       <edge source="SBBR" target="SBTC" id="1296" />
       <edge source="SBGV" target="SBCF" id="1297" />
       <edge source="SBGV" target="SBKP" id="1298" />
-      <edge source="SBGV" target="SBGV" id="1299" />
       <edge source="SBGV" target="SNSS" id="1300" />
       <edge source="SBSN" target="SBBE" id="1301" />
       <edge source="SBSN" target="SBEG" id="1302" />
       <edge source="SBSN" target="SBTB" id="1303" />
       <edge source="SBSN" target="SBMQ" id="1304" />
       <edge source="SBSN" target="SBBR" id="1305" />
-      <edge source="SBSN" target="SBSN" id="1306" />
       <edge source="SBSN" target="SBIH" id="1307" />
       <edge source="SBSN" target="SNOX" id="1308" />
       <edge source="SBSN" target="SNRJ" id="1309" />
@@ -2633,11 +2800,9 @@
       <edge source="SBKG" target="SBMO" id="1329" />
       <edge source="SBKG" target="SBPL" id="1330" />
       <edge source="SBKG" target="SBAR" id="1331" />
-      <edge source="SBKG" target="SBKG" id="1332" />
       <edge source="SBKG" target="SBRP" id="1333" />
       <edge source="SBKG" target="SBSP" id="1334" />
       <edge source="SBEG" target="SBSN" id="1335" />
-      <edge source="SBEG" target="SBEG" id="1336" />
       <edge source="SBEG" target="SBRF" id="1337" />
       <edge source="SBEG" target="SBTF" id="1338" />
       <edge source="SBEG" target="SWKO" id="1339" />
@@ -2702,7 +2867,6 @@
       <edge source="SBJU" target="SBGR" id="1398" />
       <edge source="SBJU" target="SBCF" id="1399" />
       <edge source="SBJU" target="SBKP" id="1400" />
-      <edge source="SBJU" target="SBJU" id="1401" />
       <edge source="SBJU" target="SBGL" id="1402" />
       <edge source="SBJU" target="SBTE" id="1403" />
       <edge source="SBJU" target="SBSV" id="1404" />
@@ -2722,7 +2886,6 @@
       <edge source="SBDB" target="SBSP" id="1418" />
       <edge source="SBDB" target="SBCR" id="1419" />
       <edge source="SBDB" target="SBCF" id="1420" />
-      <edge source="SBDB" target="SBDB" id="1421" />
       <edge source="SBNF" target="SBKP" id="1422" />
       <edge source="SBNF" target="SBFI" id="1423" />
       <edge source="SBNF" target="SBCT" id="1424" />
@@ -2730,7 +2893,6 @@
       <edge source="SBNF" target="SBGR" id="1426" />
       <edge source="SBNF" target="SBGL" id="1427" />
       <edge source="SBNF" target="SBBR" id="1428" />
-      <edge source="SBNF" target="SBNF" id="1429" />
       <edge source="SBNF" target="SBCF" id="1430" />
       <edge source="SBNF" target="SBCG" id="1431" />
       <edge source="SBNF" target="SBVT" id="1432" />
@@ -2744,7 +2906,6 @@
       <edge source="SBMQ" target="SBOI" id="1440" />
       <edge source="SBMQ" target="SBGR" id="1441" />
       <edge source="SBMQ" target="SBEG" id="1442" />
-      <edge source="SBMQ" target="SBMQ" id="1443" />
       <edge source="SBMQ" target="SBRF" id="1444" />
       <edge source="SBMQ" target="SBGL" id="1445" />
       <edge source="SBMQ" target="SBPJ" id="1446" />
@@ -2759,12 +2920,10 @@
       <edge source="SBAR" target="SBBR" id="1455" />
       <edge source="SBAR" target="SBFZ" id="1456" />
       <edge source="SBAR" target="SBKG" id="1457" />
-      <edge source="SBAR" target="SBAR" id="1458" />
       <edge source="SBAR" target="SBPS" id="1459" />
       <edge source="SBAR" target="SBCT" id="1460" />
       <edge source="SBCG" target="SBKP" id="1461" />
       <edge source="SBCG" target="SBCY" id="1462" />
-      <edge source="SBCG" target="SBCG" id="1463" />
       <edge source="SBCG" target="SBCT" id="1464" />
       <edge source="SBCG" target="SBFL" id="1465" />
       <edge source="SBCG" target="SBNF" id="1466" />
@@ -2809,7 +2968,6 @@
       <edge source="SBJV" target="SBGR" id="1505" />
       <edge source="SBJV" target="SBRP" id="1506" />
       <edge source="SBJV" target="SBSM" id="1507" />
-      <edge source="SBJV" target="SBJV" id="1508" />
       <edge source="SBJV" target="SBPA" id="1509" />
       <edge source="SBJV" target="SBPS" id="1510" />
       <edge source="SBJV" target="SBCO" id="1511" />
@@ -2820,13 +2978,11 @@
       <edge source="SBSI" target="SBSP" id="1516" />
       <edge source="SBSI" target="SBBR" id="1517" />
       <edge source="SBSI" target="SBCG" id="1518" />
-      <edge source="SBSI" target="SBSI" id="1519" />
       <edge source="SBSI" target="SBGL" id="1520" />
       <edge source="SNRU" target="SBRF" id="1521" />
       <edge source="SBJI" target="SBCY" id="1522" />
       <edge source="SBJI" target="SSKW" id="1523" />
       <edge source="SBJI" target="SBPV" id="1524" />
-      <edge source="SBJI" target="SBJI" id="1525" />
       <edge source="SBJI" target="SWJN" id="1526" />
       <edge source="SBVG" target="SBCF" id="1527" />
       <edge source="SBVG" target="SBJR" id="1528" />
@@ -2836,7 +2992,6 @@
       <edge source="SNZR" target="SBCF" id="1532" />
       <edge source="SBTF" target="SWTP" id="1533" />
       <edge source="SBTF" target="SBEG" id="1534" />
-      <edge source="SBTF" target="SBTF" id="1535" />
       <edge source="SBTF" target="SBUY" id="1536" />
       <edge source="SBTF" target="SWPI" id="1537" />
       <edge source="SBTF" target="SBPV" id="1538" />
@@ -2848,7 +3003,6 @@
       <edge source="SWTP" target="SBEG" id="1544" />
       <edge source="SWKO" target="SBEG" id="1545" />
       <edge source="SWKO" target="SWLB" id="1546" />
-      <edge source="SWKO" target="SWKO" id="1547" />
       <edge source="SWKO" target="SWTP" id="1548" />
       <edge source="SWKO" target="SWCA" id="1549" />
       <edge source="SBMY" target="SBEG" id="1550" />
@@ -2857,12 +3011,10 @@
       <edge source="SWMW" target="SBEG" id="1553" />
       <edge source="SBMD" target="SBBE" id="1554" />
       <edge source="SBMD" target="SNYA" id="1555" />
-      <edge source="SBMD" target="SBMD" id="1556" />
       <edge source="SBMD" target="SBMQ" id="1557" />
       <edge source="SNSM" target="SBBE" id="1558" />
       <edge source="SBTU" target="SBBE" id="1559" />
       <edge source="SNEB" target="SBBE" id="1560" />
-      <edge source="SNEB" target="SNEB" id="1561" />
       <edge source="SBTE" target="SBCF" id="1562" />
       <edge source="SBTE" target="SBGL" id="1563" />
       <edge source="SBTE" target="SBKP" id="1564" />
@@ -2873,7 +3025,6 @@
       <edge source="SBTE" target="SBBE" id="1569" />
       <edge source="SBTE" target="SBCJ" id="1570" />
       <edge source="SBTE" target="SBFZ" id="1571" />
-      <edge source="SBTE" target="SBTE" id="1572" />
       <edge source="SBTE" target="SBSV" id="1573" />
       <edge source="SBTE" target="SBPL" id="1574" />
       <edge source="SBTE" target="SBMQ" id="1575" />
@@ -2892,7 +3043,6 @@
       <edge source="SBCB" target="SBCF" id="1588" />
       <edge source="SBCB" target="SBKP" id="1589" />
       <edge source="SBCB" target="SBBR" id="1590" />
-      <edge source="SBCB" target="SBCB" id="1591" />
       <edge source="SBUA" target="SBEG" id="1592" />
       <edge source="SNHS" target="SBRF" id="1593" />
       <edge source="SNHS" target="SBTE" id="1594" />
@@ -2900,7 +3050,6 @@
       <edge source="SNTS" target="SJZA" id="1596" />
       <edge source="SNGN" target="SBRF" id="1597" />
       <edge source="SSKW" target="SBCY" id="1598" />
-      <edge source="SSKW" target="SSKW" id="1599" />
       <edge source="SJZA" target="SBRF" id="1600" />
       <edge source="SJZA" target="SNAB" id="1601" />
       <edge source="SBTG" target="SBKP" id="1602" />
@@ -2918,7 +3067,6 @@
       <edge source="SNVS" target="SBSN" id="1614" />
       <edge source="SBVH" target="SBCY" id="1615" />
       <edge source="SBVH" target="SBCG" id="1616" />
-      <edge source="SBVH" target="SBVH" id="1617" />
       <edge source="SBCO" target="SBKP" id="1618" />
       <edge source="SBCO" target="SBGR" id="1619" />
       <edge source="SBCO" target="SBSP" id="1620" />
@@ -2936,7 +3084,6 @@
       <edge source="SBCX" target="SBGR" id="1632" />
       <edge source="SBCX" target="SBLO" id="1633" />
       <edge source="SBCX" target="SBCT" id="1634" />
-      <edge source="SBCX" target="SBCX" id="1635" />
       <edge source="SBCX" target="SBSR" id="1636" />
       <edge source="SBCX" target="SBSP" id="1637" />
       <edge source="SBCX" target="SBSV" id="1638" />
@@ -2957,13 +3104,11 @@
       <edge source="SNYA" target="SBMQ" id="1653" />
       <edge source="SNYA" target="SNMZ" id="1654" />
       <edge source="SBLE" target="SBSV" id="1655" />
-      <edge source="SBLE" target="SBLE" id="1656" />
       <edge source="SBLE" target="SBCF" id="1657" />
       <edge source="SBLE" target="SBVC" id="1658" />
       <edge source="SBIP" target="SNJM" id="1659" />
       <edge source="SBIP" target="SBCF" id="1660" />
       <edge source="SBIP" target="SBSP" id="1661" />
-      <edge source="SBIP" target="SBIP" id="1662" />
       <edge source="SBIP" target="SBRF" id="1663" />
       <edge source="SBIP" target="SBCA" id="1664" />
       <edge source="SBIP" target="SBSV" id="1665" />
@@ -2974,7 +3119,6 @@
       <edge source="SBTT" target="SBTF" id="1670" />
       <edge source="SBTT" target="SWEI" id="1671" />
       <edge source="SNBR" target="SBCF" id="1672" />
-      <edge source="SNBR" target="SNBR" id="1673" />
       <edge source="SNBR" target="SBSV" id="1674" />
       <edge source="SNBR" target="SBBR" id="1675" />
       <edge source="SNBR" target="SBRP" id="1676" />
@@ -2988,7 +3132,6 @@
       <edge source="SBIH" target="SBEK" id="1684" />
       <edge source="SBIH" target="SBBE" id="1685" />
       <edge source="SBIH" target="SBHT" id="1686" />
-      <edge source="SBIH" target="SBIH" id="1687" />
       <edge source="SBIH" target="SBSN" id="1688" />
       <edge source="SBSO" target="SBCY" id="1689" />
       <edge source="SBSO" target="SBCG" id="1690" />
@@ -3000,7 +3143,6 @@
       <edge source="SBVC" target="SBCF" id="1696" />
       <edge source="SBVC" target="SBSV" id="1697" />
       <edge source="SBVC" target="SBGR" id="1698" />
-      <edge source="SBVC" target="SBVC" id="1699" />
       <edge source="SBVC" target="SBGL" id="1700" />
       <edge source="SBVC" target="SBIL" id="1701" />
       <edge source="SBVC" target="SBLE" id="1702" />
@@ -3010,7 +3152,6 @@
       <edge source="SBPF" target="SBCX" id="1706" />
       <edge source="SBPF" target="SBGR" id="1707" />
       <edge source="SBPF" target="SBSP" id="1708" />
-      <edge source="SBPF" target="SBPF" id="1709" />
       <edge source="SBPF" target="SBFL" id="1710" />
       <edge source="SBPF" target="SBPK" id="1711" />
       <edge source="SBPF" target="SBSM" id="1712" />
@@ -3020,7 +3161,6 @@
       <edge source="SBBH" target="SBBR" id="1716" />
       <edge source="SBBH" target="SBRJ" id="1717" />
       <edge source="SBBH" target="SBIL" id="1718" />
-      <edge source="SBBH" target="SBBH" id="1719" />
       <edge source="SBBH" target="SBSV" id="1720" />
       <edge source="SBBH" target="SBGR" id="1721" />
       <edge source="SBBH" target="SBSP" id="1722" />
@@ -3031,7 +3171,6 @@
       <edge source="SDCO" target="SBKP" id="1727" />
       <edge source="SDCO" target="SBJD" id="1728" />
       <edge source="SBBV" target="SBBE" id="1729" />
-      <edge source="SBBV" target="SBBV" id="1730" />
       <edge source="SBBV" target="SBEG" id="1731" />
       <edge source="SBBV" target="SBBR" id="1732" />
       <edge source="SBBV" target="SBCT" id="1733" />
@@ -3044,8 +3183,6 @@
       <edge source="SBZM" target="SBCF" id="1740" />
       <edge source="SBZM" target="SBGL" id="1741" />
       <edge source="SBZM" target="SBRP" id="1742" />
-      <edge source="SBZM" target="SBZM" id="1743" />
-      <edge source="SBIZ" target="SBIZ" id="1744" />
       <edge source="SBIZ" target="SBSL" id="1745" />
       <edge source="SBIZ" target="SBCF" id="1746" />
       <edge source="SBIZ" target="SBGR" id="1747" />
@@ -3074,7 +3211,6 @@
       <edge source="SBAT" target="SBEG" id="1770" />
       <edge source="SBAT" target="SBSN" id="1771" />
       <edge source="SBAT" target="SBKP" id="1772" />
-      <edge source="SBAT" target="SBAT" id="1773" />
       <edge source="SBAT" target="SBGO" id="1774" />
       <edge source="SBRB" target="SBBR" id="1775" />
       <edge source="SBRB" target="SBEG" id="1776" />
@@ -3082,12 +3218,10 @@
       <edge source="SBRB" target="SBCF" id="1778" />
       <edge source="SBRB" target="SBPV" id="1779" />
       <edge source="SBRB" target="SBBV" id="1780" />
-      <edge source="SBRB" target="SBRB" id="1781" />
       <edge source="SBRB" target="SBGL" id="1782" />
       <edge source="SBRB" target="SBSN" id="1783" />
       <edge source="SBSJ" target="SBGL" id="1784" />
       <edge source="SBSJ" target="SBCX" id="1785" />
-      <edge source="SBSJ" target="SBSJ" id="1786" />
       <edge source="SBSJ" target="SBCF" id="1787" />
       <edge source="SBSJ" target="SBSP" id="1788" />
       <edge source="SBSJ" target="SBSV" id="1789" />
@@ -3095,7 +3229,6 @@
       <edge source="SBSJ" target="SBGR" id="1791" />
       <edge source="SBUY" target="SBEG" id="1792" />
       <edge source="SBUY" target="SWCA" id="1793" />
-      <edge source="SBUY" target="SBUY" id="1794" />
       <edge source="SBUY" target="SBTF" id="1795" />
       <edge source="SBUY" target="SBSN" id="1796" />
       <edge source="SWCA" target="SBUY" id="1797" />
@@ -3133,7 +3266,6 @@
       <edge source="SWKQ" target="SBPL" id="1829" />
       <edge source="SDSC" target="SBGR" id="1830" />
       <edge source="SDSC" target="SBSP" id="1831" />
-      <edge source="SDSC" target="SDSC" id="1832" />
       <edge source="SDSC" target="SBBR" id="1833" />
       <edge source="SBPA" target="SBKP" id="1834" />
       <edge source="SBPA" target="SBGR" id="1835" />
@@ -3144,7 +3276,6 @@
       <edge source="SBPA" target="SBBR" id="1840" />
       <edge source="SBPA" target="SBJD" id="1841" />
       <edge source="SBPA" target="SBJA" id="1842" />
-      <edge source="SBPA" target="SBPA" id="1843" />
       <edge source="SBPA" target="SBNM" id="1844" />
       <edge source="SBPA" target="SBUG" id="1845" />
       <edge source="SBPA" target="SBSM" id="1846" />
@@ -3196,7 +3327,6 @@
       <edge source="SDIY" target="SBRF" id="1892" />
       <edge source="SIFC" target="SBRF" id="1893" />
       <edge source="SBEK" target="SBIH" id="1894" />
-      <edge source="SDJV" target="SDJV" id="1895" />
       <edge source="SDJV" target="SBJD" id="1896" />
       <edge source="SNDV" target="SBCF" id="1897" />
       <edge source="SNDV" target="SBKP" id="1898" />

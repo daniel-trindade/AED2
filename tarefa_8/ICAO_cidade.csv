@@ -1,0 +1,946 @@
+ICAO,Cidade
+SBGR,São Paulo
+SBGL,Rio de Janeiro
+SBRF,Recife
+SBEG,Manaus
+SBBR,Brasília
+SBSV,Salvador
+RIO,Rio de Janeiro
+SBFZ,Fortaleza
+SBKP,Campinas (São Paulo)
+SBNT,Natal
+SBPA,Porto Alegre
+SBBE,Belém
+SBSP,São Paulo
+SBCF,Belo Horizonte
+SAO,São Paulo
+SSMT,Mostardas
+SBCT,Curitiba
+SBSJ,São José dos Campos
+SBRJ,Rio de Janeiro
+SBFN,Fernando de Noronha
+SBFI,Iguaçu Falls (Iguazu Falls)
+SBBV,Boa Vista
+SBCY,Cuiabá
+SBVT,Vitória
+SBAU,Aracatuba
+SBMQ,Macapá
+SBCG,Campo Grande
+SBFL,Florianopolis
+SBSL,São Luis
+SBMO,Maceió
+SBBH,Belo Horizonte
+SDAM,Campinas
+SBPS,Porto Seguro
+SBAT,Alta Floresta
+SBPV,Porto Velho
+SBRG,Rio Grande
+SBGO,Goiania
+SBAR,Aracaju
+SBRP,Riberão Preto
+SBCB,Cabo Frio
+SBPJ,Palmas
+SBLO,Londrina
+SNWC,Camocim
+SBCX,Caxias do Sul
+SBSR,São José do Rio Preto
+SBJP,Joao Pessoa
+SBSN,Santarém
+SBUL,Uberlândia
+SBBU,Bauru
+SBCV,Caravelas
+SBTE,Teresina
+SBDN,Presidente Prudente
+SBMT,São Paulo
+SBUR,Uberaba
+SBRB,Rio Branco
+SBIL,Ilheus
+SDJD,Jundiaí
+SBPB,Parnaíba
+SWSI,Sinop
+SBTF,Tefá
+SBQV,Vitoria da Conquista
+SBMG,Maringá
+SBMS,Mossoró (Moçoró)
+SDCO,Sorocaba
+SNBR,Barreiras
+SBJF,Juiz de Fora
+SBPL,Petrolina
+SBCJ,Carajas
+SWKO,Coari
+SBME,Macaé
+SBML,Marília
+SBNF,Navegantes
+SBJC,Belém
+SBMA,Maraba
+SBMK,Montes Claros
+SBSM,Santa Maria
+SBTC,Una
+SWGN,Araguaina
+SBAQ,Araraquara
+SBJU,Juazeiro do Norte
+SBPF,Passo Fundo
+SBPK,Pelotas
+SBKG,Campina Grande
+SBCP,Campos Dos Goitacazes
+SIMK,Franca
+SWJI,Ji-Paraná
+SBJV,Joinville
+SBOI,Oiapoque
+SNMZ,Pôrto de Moz
+SWRD,Rondonópolis
+SBUA,São Gabriel da Cachoeira
+SBTT,Tabatinga
+SBUG,Uruguaiana
+SBHT,Altamira
+SWBC,Barcelos
+SBCZ,Cruzeiro do Sul
+SWOB,Fonte Boa
+SBIP,Ipatinga/Santana Do Paraiso
+SWUZ,Luziânia
+SSLI,Santana do Livramento
+SBNM,Santo Ângelo
+SDCG,São Paulo de Olivença
+SBCH,Chapecó
+SBCR,Corumbá
+SBCM,Criciuma
+SBGV,Governador Valadares
+SBIZ,Imperatriz
+SBLJ,Lages
+SBVH,Vilhena (Novo Campo)
+SBLP,Bom Jesus da Lapa
+SWKN,Caldas Novas
+SBCA,Cascavel
+SWUY,Coari
+SSDO,Dourados
+SBIH,Itaituba
+SIZX,Juara (Sul)
+SBUF,Paulo Afonso
+SNMX,São Mateus
+SBTR,Torres
+SBMD,Almeirim
+SBAX,Araxa
+SBBT,Barretos
+SBGW,Guaratingueta
+SWLB,Lábrea
+SBMY,Manicoré
+SNMU,Mucuri
+SBCC,Novo Progresso
+SBTB,Porto Trombetas
+SWLC,Rio Verde
+SWKU,São Gabriel da Cachoei
+SBTU,Tucuruí
+SBVG,Varginha
+SNVS,Breves
+SBLE,Lençõis
+SWMW,Maues
+SNYE,Pinheiro
+SBSC,Rio de Janeiro
+SNFX,São Felix de Xingú
+SWAZ,São Gabriel da Cachoeira
+SNRU,Caruaru
+SNDV,Divinopolis
+SSPB,Pato Branco
+SNSM,Salinópolis
+SSVP,Santa Vitória do Palmar
+SNJR,São João del Rei
+SBES,São Pedro da Aldeia
+SBBG,Bagé
+SWCA,Carauari
+SSIQ,Itaqui
+SWJN,Juina
+SNMA,Monte Alegre
+SWPI,Parintins
+SBPP,Ponta Porã
+SWYM,Pontes e Lacerda
+SBAF,Rio de Janeiro
+SBTD,Toledo
+SDUB,Ubatuba
+SWBR,Borba
+SSGB,Guaratuba
+SWHT,Humaitá
+SNPD,Pará de Minas
+SBPI,Petrópolis
+SBJR,Rio de Janeiro
+SWTP,Santa Isabel do Rio Negro
+SNBL,Belmonte
+CPU,Cururupu
+SWEI,Eirunepé
+SSPG,Paranaguá
+SWM,Alto Boa Vista
+SWNK,Boca do Acre
+SBMN,Manaus
+SNOX,Oriximina
+SBCO,Porto Alegre
+SNZA,Pouso Alegre
+SSZR,Santa Rosa
+SSPF,São José das Palmeiras
+SWXK,São José do Rio Claro
+SNVB,Valença
+SSAL,Alegrete
+SSER,Erechim
+SSIJ,Ijuí
+SNUH,Piumhir
+SNSW,Soure
+SWFX,São Felix do Araguaia
+SSVI,Videira
+SNBX,Barra
+SBBI,Curitiba
+SWGI,Gurupi
+SBEK,Jacareacanga
+SBPC,Poços de Caldas
+SSSC,Santa Cruz do Sul
+SNAQ,Alagoinhas
+ALT,Alenquer
+SBBW,Barra do Garças
+SNCE,Campo do Meio
+SSPS,Palmas
+SBST,Santos (Guaruja)
+SIVU,Vila Velha
+SNKK,Caicó
+SNDT,Diamantina
+SNGI,Guanambi
+SNBF,Senhor do Bonfim
+SDSC,São Carlos
+SWUQ,Alto Alegre
+SWBV,Amajari (Boa Vista)
+SBBZ,Búzios
+SWNT,Caçu
+SWNA,Novo Aripuanã
+SWNS,Anapolis
+SDIL,Angra Dos Reis
+SDAG,Angra Dos Reis
+SBBQ,Barbacena
+SWBY,Bom Jesus de Goiás
+SNBU,Brumado
+SNED,Canavieiras
+SIXO,Comodoro
+SBGU,Guarapuava
+SNIU,Ipiau
+SNHA,Itabuna
+SNNU,Nanuque
+SNPE,Penedo
+SIPK,Poconé
+SDRS,Rezende
+SBYA,São Gabriel da Cachoeira
+SBXI,Cachimbo-in-Para
+SNCC,Calçoene
+SSAY,Campo Grande
+SBGP,Embraer Unidade Gaviao Peixoto (Gaviao Peixoto Embraer)
+SBIC,Itacoiatiara
+SNRB,Itaituba
+SIYY,Pocone
+SNEM,Recife
+SNPY,São Sebastião do Paraíso
+SBAS,Assis
+SWEE,Atalaia do Norte
+SNBS,Balsas
+SNMH,Codó
+SWXV,Nova Xavantina
+SBPN,Porto Nacional
+SWSQ,São Gabriel da Cachoeira
+SWUA,São Miguel de Aragao
+SWAQ,Amajari (Boa Vista)
+SNFR,Belem de São Francisco
+SSBL,Blumenau
+SNCP,Carutapera
+SWDM,Diamantino
+SDIO,Itapólis
+SWJP,Japurá
+SDMC,Maricá
+SDNY,Nova Iguaçu
+SBYS,Pirassununga
+QRZ,Resende
+SNKE,Santana do Araguaia
+SWTU,Sapeza
+SWRI,São Felix do Araguaia
+SDJO,São Joaquin da Barra
+SBTA,Taubaté
+SWSF,Vila Bela da Santissima Trindade
+SWVC,Vila Rica
+SBAM,Amapá
+SNBC,Barra do Corda
+SNKI,Cachoeiro do Itapemirim
+SWIN,Campo Novo dos Parecis
+SDCA,Capão Bonito
+SBAA,Conceicao do Araguaia
+SNJD,Feira de Santana
+MBK,Matupá
+SBMC,Minaçu
+SWML,Monte Alegre de Goiás
+SNOO,Mossoró (Moçoró)
+SNOZ,Paco do Lumiar
+SSHX,Paranhos
+LCB,Pontes e Lacerda
+SWMY,Porto Fluvial Suia Missu
+SWHG,Santa Helena de Goias
+SWII,Santo Antônio do Içá
+SWYQ,Sinop
+SSOE,São Miguel do Oeste
+SBRQ,São Roque
+SNOM,Vila Bela da S S Trindade
+SNTI,Óbidos
+SSAP,Apucarana
+SNAT,Aracati
+SWRA,Arraias
+SBRR,Barreirinhas
+SDFX,Casa Nova
+SWKT,Catalão
+SSJA,Joacaba
+SBLN,Lins
+SSZW,Ponta Grossa
+SWIY,Santa Isabel do Morro
+SNOB,Sobral
+SWPC,São Gabriel da Cachoeira
+SWUK,São Gabriel da Cachoeira
+SSRU,São Lourenco do Sul
+SSLG,São Luis Gonzaga
+SWTS,Tangara da Serra
+SNAI,Alto Parnaiba
+SWEC,Aragarcas
+SNUC,Açu
+SJTC,Bauru (Arealva)
+SDEO,Boa Esperanca do Sul
+SNGG,Bom Jesus do Gurgueia
+SNUP,Campo Alegre
+SSKN,Campo Novo
+SWCG,Caçu
+SSCK,Concordia
+SSCP,Cornelio Procopio
+SWCQ,Costa Marques
+SSBH,Coxim/F Baia
+SWYB,Fazenda Sagrado Coracao de Jesus
+SSKQ,Fazenda Vista Alegre Ii
+SSFB,Francisco Beltrao
+SDZM,Itapeva
+SWJU,Juruena
+MTG,Mato Grosso
+SSNQ,Nioaque
+SDOU,Ourinhos
+SSPI,Paranavai
+SWPM,Pimenta Bueno
+SSFA,Pinhao
+SNPG,Porto Grande
+SNRD,Prado
+SFV,Santa Fé do Sul
+SWST,Santa Terezinha
+SNSH,Santarém (São Jose)
+SWZI,Santo Antonio Ica/S Luzia
+SNQD,Souza (Sousa)
+SNDG,São Domingos do Maranhao
+SWAO,São Gabriel da Cachoeira
+SWAK,São Gabriel da Cachoeira
+SWMK,São Gabriel da Cachoeira
+SWQE,São Gabriel da Cachoeira
+SWTR,São Gabriel da Cachoeira
+SBFU,São José da Barra
+SNJV,São João da Ponte
+SSEP,São Sepe
+SBTX,Tubarão
+SWTI,Vila Bela da S S Trindade
+SNVL,Virgem da Lapa
+SDVG,Votuporanga
+SNAL,Arapiraca
+SBCI,Carolina
+SIBU,Catolé do Rocha
+SBCD,Caçador
+SWPL,Chapada dos Guimarães
+SNXH,Codó
+SNCX,Colatina
+SNWS,Crateús
+SWZJ,Crixas/F S João
+SNIG,Iguatu
+SNGS,Maceió
+SDME,Matao
+SNXX,Maxaranguape
+SNMM,Morada Nova de Minas
+SNMO,Morada Nova
+SIQJ,Morro do Chapeu Ii
+SWMV,Mucajaí
+SSNQ,Nioaque
+SDOU,Ourinhos
+SSPI,Paranavai
+SSFA,Pinhao
+SNPG,Porto Grande
+SNRD,Prado
+SFV,Santa Fé do Sul
+SNSH,Santarém (São Jose)
+SWZI,Santo Antonio Ica/S Luzia
+SWYQ,Sinop
+SWAO,São Gabriel da Cachoeira
+SWMK,São Gabriel da Cachoeira
+SWQE,São Gabriel da Cachoeira
+SWTR,São Gabriel da Cachoeira
+SBFU,São José da Barra
+SDNO,São Manuel
+SSEP,São Sepe
+SWTS,Tangara da Serra
+SWTI,Vila Bela da S S Trindade
+SNVL,Virgem da Lapa
+SDVG,Votuporanga
+SNUC,Açu
+SSKN,Campo Novo
+SIBU,Catolé do Rocha
+SBCD,Caçador
+SWCG,Caçu
+SWPL,Chapada dos Guimarães
+SNXH,Codó
+SNCX,Colatina
+SNWS,Crateús
+SWZJ,Crixas/F S João
+SSKQ,Fazenda Vista Alegre Ii
+SDMY,Matao
+SDME,Matao
+SNXX,Maxaranguape
+SNMM,Morada Nova de Minas
+SIQJ,Morro do Chapeu Ii
+SSNH,Novo Hamburgo
+SWPM,Pimenta Bueno
+SSNJ,Salto do Jacuí
+SNQD,Souza (Sousa)
+SSSB,São Borja
+SNLO,São Lourenço
+SNTF,Teixeira de Freitas
+SNVR,Veracruz
+SBTS,Óbidos
+SNAE,Arcoverde
+SWNI,Ariquemes
+SSKS,Cachoeira do Sul
+SSCL,Cassilândia
+SNKF,Conselheiro Lafaiete
+SWCQ,Costa Marques
+SNCQ,Euclides da Cunha
+SNEU,Euclides da Cunha
+SWNV,Goiánia
+SNGD,Guadalupe
+SSGY,Guaira
+SNGM,Guimaraes
+SNBV,Ipixuna
+SNBD,Juazeiro
+SNGS,Maceió
+SNPC,Picos
+SSPM,Porto Murtinho
+SSSQ,São Joaquim
+SWID,São Miguel do Araguaia
+SNSN,São Raimundo Nonato
+SSVR,Volta Redonda
+SDLI,Abaré
+SNCW,Alcântara
+SSLT,Alegrete Novo
+SSGC,Aquidauna (Aquidauana)
+SSAE,Arroio Grande
+SSWS,Caçapava do Sul
+SNIO,Cipó
+SNKC,Cocos
+SNKD,Conceição do Mato Dentro
+SNKN,Currais Novos
+SWKC,Cáceres
+SNQG,Floriano
+SNGN,Garanhuns
+SNGT,Gentio de Ouro
+SNZW,Ituberá
+SNJB,Jacobina
+SNMI,Jaguarari
+SNJA,Jardim de Angicos
+SNJO,João Pessoa
+SDYM,Limeira
+SSQZ,Mimoso do Oeste
+SJCA,Mococa
+SNMB,Mombaça
+SNOC,Morro do Chapeu
+SWNQ,Niquelândia
+SWNP,Novo Paraiso
+SWRO,Porto Velho
+SNQX,Quixadá
+SNHS,Serra Talhada
+SSSG,São Gabriel
+SSMY,São Miguel do Iguaçu
+SDOB,Tapiratiba
+SNFI,Tupaciguara
+SSUV,União da Vitória
+SBUP,Urubupunga
+SDXF,Alto Paraiso
+SDDN,Andradina
+SNBI,Bacabal
+SNBJ,Belo Jardim
+SSBJ,Bom Jesus
+SDBK,Botucatu
+SDBP,Braganca Paulista
+SNRJ,Brejo
+SWBA,Buriti Alegre
+SWCB,Campos Belos
+SNKL,Colinas
+SSCI,Coxim
+SIXP,Diamantino
+SSDC,Dionisio Cerqueira
+SWFJ,Feijó (Fortaleza)
+SDKJ,Formosa do Rio Preto
+SSFE,Foz do Iguaçu
+SBGM,Guajara-Mirim
+SNIC,Irece
+SJIT,Itau de Minas
+SNJS,Jardim do Seridó
+SWJW,Jataí
+SSJK,Julio de Castilos
+SNLB,Livramento do Brumado
+SNMJ,Maracás
+SNDS,Maraial
+NTM,Miracema do Norte
+SNMS,Monte Santo de Minas
+SWNO,Nova Olinda do Norte
+SSNP,Nova Prata
+SDNH,Novo Horizonte
+SWTO,Paraíso do Tocantins
+SNPA,Pará de Minas
+SDJQ,Pereira Barreto
+SNPQ,Pesqueira
+SDPW,Piracicaba
+SIFV,Primo Bitti
+SNRM,Remanso
+SSRZ,Rosario do Sul
+SNVD,Santa Maria da Vitória
+SSST,Santiago
+SNTL,Tamboril
+SSTL,Três Lagoas
+SWVB,Vila Bela
+SNVZ,Várzea da Palma
+SNAR,Almenara
+SDBY,Bariri
+BGV,Bento Gonçalves
+SNKO,Brotas de Macaúbas
+CCQ,Cachoeira
+SSRK,Campo Alegre de Lourdes
+SSRF,Castro Alves
+SNQN,Coelho Neto
+SNVG,Conceição das Alagoas
+SDDR,Dracena
+SNDW,Encruzilhada
+SNFK,Francisco Sá
+SNIY,Ibimirim
+SNYT,Ituaçu
+SNJN,Januária
+SNJK,Jequie
+SDLP,Lençóis Paulista
+SNDN,Leopoldina
+SSMF,Mafra
+SNBM,Muriaé
+SIRN,Nova Xavantina
+SNOF,Ouro Fino
+SSPL,Palmeira Das Missoes
+SDPP,Paranapanema
+SNOS,Passos
+SNPW,Piaus
+SNPX,Pirapora
+SNTR,Piritiba
+SWYK,Poconé
+SNCZ,Ponte Nova
+SDTY,Pradopolis
+SDRK,Rio Claro
+SWTQ,Rio Quente
+SNRS,Russas
+SNSG,Salgueiro
+SNSK,Santa Rita do Sapucai
+SNAM,Santo Antônio do Amparo
+SWSN,Sena Madureira
+SNST,Souto Soares
+SWZM,São Simao
+SNTO,Teófilo Otoni
+SNFE,Alfenas
+SDZS,Altair
+SWXG,Barra do Garcas
+SSBV,Bela Vista
+SBPR,Belo Horizonte
+SJDB,Bonito
+SDLK,Caculé
+SNCA,Campo Belo
+SSKG,Campo Grande
+SSKM,Campo Mourão
+NBV,Cana Brava
+SNLA,Canaa dos Carajas
+SSCN,Canela
+SSKZ,Carazinho
+SNNH,Carinhanha
+SNXB,Caxambu
+SSZS,Centenario do Sul
+CSW,Colorado do Oeste
+CFO,Confreza
+CZB,Cruz Alta
+SDKF,Curaçá
+SSKU,Curitibanos
+SWDN,Dianopolis
+SSZJ,Fazenda Torrao de Ouro
+SDFD,Fernandópolis
+SNGL,Floresta/São Goncalo
+SDGC,Garça
+SNGA,Guarapari
+SNIT,Ibotirama
+SNIB,Itaberaba
+SNYH,Itambacuri
+SNIP,Itapetinga
+SDJC,Jaboticabal
+SNAP,Janaúba
+SNLC,Las Casas
+SDLC,Lucélia
+SIWE,Monte Carlo
+SSNG,Montenegro
+SNQU,Mucugê
+SNLQ,Nova Crixas
+SDOW,Ourilândia do Norte
+SWMU,Pacaraima
+SNPM,Palmeiras
+SNBZ,Paramirim
+SSAQ,Passo Fundo
+SNTS,Patos
+SWPG,Porto dos Gaúchos
+SSRB,Rio Brilhante
+SNXG,Sapacaia
+SDAL,São Carlos
+SDTF,Tatui
+SSTO,Tres Passos
+SWBQ,Trindade
+SSTB,Três Barras
+SDTP,Tupã
+SNUD,Urbano Santos
+SJCW,Urucará
+SNLI,Abaeté
+SNAZ,Amargosa
+SSHG,Antonio João
+SBAN,Anápolis
+SJAU,Araguacema
+SJGU,Araguatins
+SDTE,Arandu
+SDAA,Araras
+SDRR,Avaré
+SNBO,Boquira
+SNIE,Caetite
+SDKO,Colombia
+SIBW,Conceição
+SJGP,Condominio Fly In Community
+SWPB,Costa Marques
+SWOG,Diamantino
+SSGA,Garibaldi
+SSGW,Goio Ere
+SSHZ,Horizontina
+SNIA,Igarape-Acu
+SDUN,Itaperuna
+SDYW,Itapeva
+SSJR,Jaguarão
+SDJL,Jales
+SNJI,Jequitai
+SNJQ,Jequitinhonha
+SNJP,João Pinheiro
+SNLY,Lagoa da Prata
+SNMC,Macaúbas
+SWFN,Manaus
+SDMH,Mirassol
+SWMX,Morrinhos
+SWNM,Normandia
+SSID,Nova Andradina
+SNRR,Novo Repartimento
+SWGP,Palmeiras de Goias
+SSPN,Paranaiba
+SDPN,Penápolis
+SSIS,Pirai do Sul
+SWPR,Pires do Rio
+SNPO,Pompéu
+SDPV,Presidente Venceslau
+SNDC,Redenção
+SSGF,Ribas do Rio Pardo
+SSFV,Ribas do Rio Pardo
+SNJW,Sacramento
+SDFH,Santa Rosa do Viterbo
+SSSD,Soledade
+SBTL,Telemaco Borba
+SIAB,Tres Pontas
+SIVD,Unai
+SSWA,Venancio Aires
+SDVE,Vera Cruz
+SSVN,Veranopolis
+SNAH,Adustina
+SDAI,Americana
+SWAY,Araguaiana
+SSOG,Arapongas
+SNCF,Aurora do Para
+SNBW,Baião
+SSTH,Balsa Nova
+SWBI,Barreirinha
+SDBB,Bebedouro
+SNBT,Benedito Leite
+SBBC,Benjamin Constant
+SDLO,Cairu
+SNKB,Campina Grande
+SNCS,Campos Sales
+SWEK,Canarana
+SIGF,Chapada dos Guimaraes
+SSAD,Chapadao do Sul
+SIPG,Cocalinho
+SNOA,Coroatá
+SNKR,Corrente
+SWFA,Cristalina/F Pamplona
+SWDW,Diamantino
+SNES,Esplanada
+SJJL,Fazenda Campo Aberto
+SJAK,Fazenda F5
+SNFU,Frutal
+SNGB,Gilbués
+SWGD,Goiandra/F Dourados
+SNGJ,Grajaú
+SNGH,Guanhães
+SSGR,Guaporé
+SDIG,Ibitinga
+SDJA,Itirapina
+SNND,Ituiutaba
+SDIV,Ituverava
+SDMV,Jau
+SNMK,Jaíba
+SDLL,Leme
+SSMR,Manoel Ribas
+SDEG,Martinopolis
+SDKK,Mococa
+SIBY,Monteior
+SNRY,Nazaré da Mata
+SWGZ,Nova Olimpia
+SNNT,Nova Ponte
+SNOE,Oeiras
+SNLT,Paulistana
+SWPA,Pedro Afonso
+SWPK,Poconé
+SNZP,Poçõne
+SDEP,Presidente Epitacio
+SNQM,Queimadas
+SNRP,Rio Paranaíba
+SWCE,Santo Antonio do Leverger
+SWLV,Santo Antonio do Leverger
+SSXD,Sarandi
+SNSO,Serro
+SNSB,São Bento
+SWVI,São Valerio
+SBTK,Tarauacá
+SNVI,Três Corações
+SNTM,Turmalina
+SSUM,Umuarama
+SSVC,Vacaria
+SNXQ,Xique-Xique
+SSAM,Amambai
+SWJV,Atalaia do Norte
+SNBG,Baixo Guandú
+SWBL,Balbina
+SDLU,Barra Bonita
+SNFZ,Bocaiúva
+SWBS,Brasiléia
+SSBE,Camapuã
+SNCV,Campina Verde
+SDXJ,Costa Rica
+SWKX,Cáceres
+SWDV,Cáceres
+SSEA,Dourados
+SDIB,Espirito Santo do Pinhal
+SDRA,Fazenda Das Represas
+SIZG,Fazenda Encantado Das Aguas
+SJCQ,Fazenda Serra Azul
+SWSG,Fazenda Simarelli
+SSFK,Forte Coimbra
+SIPE,Goiana
+SNGU,Gurupa
+SSAB,Ibaiti
+SIRJ,Itaituba
+SIBZ,Itaporanga
+SSLA,Laguna
+SSOL,Lavras
+SSBY,Miranda
+SNKQ,Moju
+SWPN,Paranã
+SNPJ,Patrocínio
+SDZH,Pindamonhangaba
+PGG,Progresso
+SDQQ,Quata
+SJQN,Quirinópolis
+SNLU,Rio Largo
+SJBY,Santa Inês
+SWFU,Santíssima Trindade
+SNRE,Serra Dourada
+SWRU,Tesouro
+SWTC,Tocantinia
+SSSF,Tres Lagoas
+SWUP,Uirapuru
+SNAU,Aracaju
+SNUI,Araçuaí
+AQM,Ariquemes
+SSZQ,Bela Vista
+SNBK,Bocaiúva
+SWCX,Cabixi
+SWQI,Caracaraá
+SIZO,Cocalinho
+SNKH,Creputia
+SNUK,Cumaru do Norte
+SNDY,Dores do Indaia
+ESI,Espinosa
+SNFO,Formiga
+SBFT,Fronteira
+SNSR,Guarda Mor
+SWIA,Iassiara
+SNQW,Itaituba/Cururu
+SNYB,Ituiutaba
+SSJI,Jardim
+SBLS,Lagoa Santa
+SNLN,Linhares
+SWUC,Luciára
+SNXA,Machado
+SSMJ,Maracaju
+SNNP,Nilo Peçanha
+SWNR,Nortelândia
+SNOY,Ouricuri
+SNZR,Paracatu
+SDLJ,Parauapebas
+SNPB,Pastos Bons
+SWUI,Pauini
+SNPZ,Pedra Azul
+SNPH,Pedras de Maria da Cruz
+PIG,Pitinga
+SDPF,Porto Ferreira
+SNIN,Prainha
+SNRN,Rio Tinto
+SNSC,Sacramento
+SNSS,Salinas
+SNWR,Senador Jose Porfirio
+SNSQ,Serra Quatro
+SIUW,Tres Lagoas
+SNAS,Tres Marias
+SWXU,Xapuri
+SNAC,Xinguara
+SDAD,Adamantina
+SNYA,Almeirim
+SWGR,Alto Graças
+SSAN,Andirá
+SNAG,Araguari
+SSYA,Arapoti
+SNAB,Araripina
+SSNW,Barreiras
+SNEL,Belterra
+SNRH,Boa Esperanca
+SNPS,Buritis
+SWHC,Cachoeira Dourada
+SWKK,Cacoal
+SIMJ,Capinopolis
+SWCW,Cavalcante
+SWCZ,Ceres
+SSCT,Cianorte
+SNQV,Curvelo
+SSDP,Dom Pedrito
+SWCD,Fazenda Santa Monica
+SNTT,Felixlandia
+SNGR,Gorotire
+SNGX,Guaxupé
+SNHP,Herbert Mata Pires
+SSYB,Imbituba
+SNZK,Itacarambi
+SDWH,Jose Bonifacio
+SSLN,Lontras
+SSCR,Marechal Candido Rondon
+SSMD,Medianeira
+SWMR,Morrinhos
+SWOW,Moura
+SWPJ,Palmas
+SNPU,Paraguaçu
+SWPV,Planaltina
+SSFI,Ponta Pora
+SWWA,Porangatu
+SNRT,Prata
+SSRE,Realeza
+SJDE,Rosana
+SWSR,Sertania
+SSQC,Siqueira Campos
+SWTY,Taguatinga
+SJUR,Terravista
+TUZ,Tucumã
+SNUB,Ubá
+SNFA,Unai
+SWWU,Uruaçu
+SDUO,Alagoinhas
+SWAU,Alto Paraguai
+SWNH,Aruanã
+SSBB,Bodoquena
+SWYV,Buriti Alegre
+SNFG,Capitao Poco
+SNQY,Cariri
+SSQT,Castro
+SNXW,Chaves
+SDXB,Cristalina
+SWWL,Fazenda Agrocentro
+SIFR,Fazenda Romaria
+SWFR,Formosa
+SWGO,Goianesia
+SSIT,Irati
+SDUD,Jaboticabal
+SIBD,Maraba
+SDAS,Mirandopolis
+SNTK,Monte Carmelo
+SDOV,Mozarlândia
+SNTD,Natalandia
+SSNO,Nonoai
+SDOL,Olimpia
+SDFA,Pereira Barreto
+SNXO,Poco Branco
+SSPK,Porecatu
+SWFQ,Porto Nacional
+SNRX,Riachão
+SNSU,Santa Cruz Cabralia
+SDAJ,Santo Antonio Aracangua
+SNTV,Taiobeiras
+SNUN,Unaí
+SWWK,Urucará
+SNUT,Utinga
+SWAB,Abuna
+SJER,Acreuna
+SWYN,Apuí
+SWAN,Arenápolis
+SNBY,Bambui
+SSBR,Bandeirantes
+SSBT,Bataipora
+SNCI,Capanema
+SNKP,Capelinha
+SWKR,Caracara
+SNCT,Caratinga
+SNEW,Carneirinho
+SDCD,Catanduva
+SNXS,Caxias
+SSIC,Dourados/Aplic
+SSIF,Fazenda Baunilha
+SJFF,Frigoestrela
+SSGV,Getulio Vargas
+SSBI,Iguatemi
+SWIP,Ipameri
+SNFM,Itaituba/Faz MM
+SSUY,Itapura
+SIZI,Itaruma
+SWJC,Jaciara
+SSLO,Loanda
+SWME,Mineiros
+SWAJ,Mucajai/Jaragua
+SSPT,Palotina
+SWPX,Peixe
+SNRA,Pirapora
+SSSZ,Sertanopolis
+SNTX,Tailandia
+SNDR,Timon
+SJXS,Veracel
+SNRV,Xinguara
+SDAF,Analandia
+SDFI,Araraquara
+SWXC,Cerejeiras
+SSJP,Colorado
+SWSM,Cáceres
+SSUW,Guarapuava
+SBIT,Itumbiara
+SDXE,Jaboticabal
+SNMW,Montalvania
+SSNB,Navirai
+SWRZ,Nortelandia
+SWPF,Pres Figueiredo
+SNOP,Propriá
+SSQF,Sete Quedas
+SSIE,Teruel Ipanema Estancia
+SSWD,Vicente Dutra
+SNPL,Portel
+SBEN,Macae Plataforma SS18
+SBPW,Pindamonhangaba Visaba
