@@ -39,7 +39,7 @@ Ao longo deste relatório, cada uma dessas análises será detalhada, acompanhad
 
 ## 2. Metodologia
 
-A metodologia empregada neste estudo foi estruturada em cinco etapas principais: (1) obtenção e coleta de dados, (2) pré-processamento e filtragem, (3) enriquecimento de dados com coordenadas geográficas, (4) construção do modelo de rede e cálculo de métricas primárias, e (5) análise e visualização gráfica no software Gephi.
+A metodologia empregada neste estudo foi estruturada em cinco etapas principais: (1) obtenção e coleta de dados, (2) pré-processamento e filtragem, (3) enriquecimento de dados com coordenadas geográficas, (4) construção do modelo de rede e cálculo de métricas primárias, e (5) análise e visualização gráfica no software Gephi. Essas etapas foram feitas usando o Google Colab, clique [aqui](./processamento_dos_dados.ipynb) para ver o script utilizado.
 
 ### 2.1. Obtenção e Coleta de Dados
 
@@ -47,11 +47,11 @@ A base de dados fundamental para esta análise foi extraída do [portal de Dados
 
 ### 2.2. Pré-processamento e Filtragem dos Dados
 
-Com o objetivo de isolar o escopo do estudo para a malha doméstica, foi aplicado um filtro para selecionar exclusivamente os voos de natureza nacional. Esta etapa reduziu o universo de análise para 796.923 voos. A seguir, realizou-se uma etapa de seleção de atributos (feature selection) para otimizar o dataset. Colunas que não eram relevantes para a análise estrutural da rede, como informações sobre horários de partida, atrasos e datas específicas, foram descartadas. O dataframe resultante preservou apenas as seguintes colunas essenciais: ICAO Empresa Aérea, Número Voo, Código Tipo Linha, ICAO Aeródromo Origem e ICAO Aeródromo Destino.
+Com o objetivo de isolar o escopo do estudo para a malha doméstica, foi aplicado um filtro para selecionar exclusivamente os voos de natureza nacional. Esta etapa reduziu o universo de análise para 796.923 voos. A seguir, realizou-se uma etapa de seleção de atributos (feature selection) para otimizar o dataset. Colunas que não eram relevantes para a análise estrutural da rede, como informações sobre horários de partida, atrasos e datas específicas, foram descartadas. O dataframe resultante preservou apenas as seguintes colunas essenciais: [ICAO](https://pt.wikipedia.org/wiki/C%C3%B3digo_aeroportu%C3%A1rio_ICAO) Empresa Aérea, Número Voo, Código Tipo Linha, ICAO Aeródromo Origem e ICAO Aeródromo Destino.
 
 ### 2.3. Enriquecimento de Dados: Geocodificação dos Aeroportos
 
-Para viabilizar uma visualização geoespacial da rede através do layout GeoLayout do Gephi, onde cada aeroporto é posicionado em sua localização real, foi necessário obter as coordenadas geográficas (latitude e longitude) de cada um dos 215 aeroportos únicos identificados no dataframe. Para isso, foi desenvolvido um script em Python que, utilizando a biblioteca GeoPy e o serviço de geocodificação Nominatim, iterou sobre a lista de códigos ICAO dos aeroportos e buscou suas respectivas coordenadas. As coordenadas de latitude e longitude de cada aeroporto foram então incorporadas ao dataframe principal como novos atributos.
+Para viabilizar uma visualização geoespacial da rede através do layout GeoLayout do Gephi, onde cada aeroporto é posicionado em sua localização real, foi necessário obter as coordenadas geográficas (latitude e longitude) de cada um dos 215 aeroportos únicos identificados no dataframe. Para isso, foi desenvolvido um script em Python que, utilizando a biblioteca GeoPy e o serviço de geocodificação Nominatim, iterou sobre a lista de códigos [ICAO](https://pt.wikipedia.org/wiki/C%C3%B3digo_aeroportu%C3%A1rio_ICAO) dos aeroportos e buscou suas respectivas coordenadas. As coordenadas de latitude e longitude de cada aeroporto foram então incorporadas ao dataframe principal como novos atributos.
 
 ### 2.4. Construção da Rede e Cálculo de Métricas
 
@@ -61,8 +61,6 @@ A partir do dataframe tratado e enriquecido, a rede foi construída. Neste model
 
  - Uma aresta (link) não-direcionada foi estabelecida entre dois vértices sempre que havia ao menos um voo registrado entre eles.
 
- - **As arestas foram ponderadas (Weighted), com o peso de cada aresta correspondendo ao número total de voos na respectiva rota durante o ano de 2024, representando a intensidade do tráfego.**
-
 Posteriormente, um segundo script em Python, utilizando a biblioteca NetworkX, foi empregado para realizar a decomposição k-core da rede. O valor de k-core de cada vértice foi calculado e adicionado como um novo atributo ao grafo, permitindo uma análise posterior de sua coesão estrutural.
 
 ### 2.5. Análise e Visualização no Gephi
@@ -70,4 +68,13 @@ Posteriormente, um segundo script em Python, utilizando a biblioteca NetworkX, f
 O grafo final, contendo os vértices, arestas ponderadas, coordenadas geográficas e atributos de k-core, foi exportado em formato GEXF e importado na plataforma de análise de redes Gephi. Dentro do Gephi, foram executados os algoritmos internos para o cálculo de métricas adicionais de centralidade, a Centralidade de Intermediação (Betweenness Centrality) e a Centralidade de Autovetor (Eigenvector Centrality).
 
 Por fim, a plataforma foi utilizada para gerar todas as visualizações gráficas apresentadas neste relatório. Foi aplicado o GeoLayout, para uma visualização geospacial. A aparência dos nós também foi selecionada para mapear metricas. O tamanho dos nós foi determinado pelo numero de rotas que o conecta com outros aeroportos e as cores remetem a cada analise de métrica especifica sempre tomando o azul para valores mais baixos, amarelo para valores intermediários e vermelho para os valores mais altos de cada metrica representada (Grau, K-Core, Centralidades), a fim de ilustrar visualmente os resultados da análise.
+
+## 3. Resultados e Analises
+
+Nesta seção, são apresentados os resultados obtidos a partir da aplicação da metodologia sobre a rede da malha aérea brasileira de 2024. Cada subseção a seguir é dedicada a uma faceta da análise, combinando uma visualização gráfica gerada no software Gephi com uma interpretação descritiva dos padrões e métricas revelados. O objetivo é traduzir os dados estruturais da rede em insights claros sobre a hierarquia, coesão e organização da aviação comercial no país.
+
+### 3.1. Degree (Grau dos nós)
+
+![Visualização do grau dos nós](./imgs/degrees.png)
+**Figura 1 - Degrees**
 
