@@ -78,3 +78,11 @@ Nesta seção, são apresentados os resultados obtidos a partir da aplicação d
 ![Visualização do grau dos nós](./imgs/degrees.png)
 **Figura 1 - Degrees**
 
+A Figura 1 exibe a rede aérea brasileira em seu layout geográfico, com o tamanho e a cor dos nós representando seu número de rotas diretas (Grau). Nós maiores e vermelhos possuem mais conexões. A análise evidencia uma rede altamente centralizada, com os "super-hubs" (nós vermelhos) concentrados na região de São Paulo e em Brasília. A posição geográfica de Brasília destaca seu papel estratégico como principal conector do país. Em um segundo nível, nós amarelos e laranjas funcionam como hubs regionais, enquanto a maioria dos nós (azuis e pequenos) representa aeroportos periféricos dependentes desses centros. Fica claro, portanto, um modelo "hub-and-spoke" bem definido, que domina a distribuição do tráfego aéreo nacional.
+
+### 3.1. Closeness
+![Visualização do grafo com closeness](./imgs/closeness.png)
+**Figura 2 - Grafo de Closeness**
+
+A Figura 2 mapeia a Centralidade de Proximidade, que mede quão "perto" um aeroporto está de todos os outros em termos de número de escalas. Nós maiores e vermelhos são mais eficientes em alcançar toda a rede. Diferente da métrica de Grau, que concentra o poder em poucos hubs, a Proximidade mostra uma eficiência mais distribuída. Embora São Paulo e Brasília permaneçam como os pontos mais eficientes, capitais de outras regiões (como Manaus, Recife e Salvador) ganham grande destaque. Isso significa que, mesmo com menos rotas diretas, esses hubs regionais são portais estratégicos que oferecem acesso rápido e eficiente ao resto do país, sendo cruciais para a integração nacional.
+
