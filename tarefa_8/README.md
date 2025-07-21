@@ -8,7 +8,7 @@ by <br/>
 
 ## Vídeo de Apresentação
 
-<a href="" target="_blank">
+<a href="https://www.youtube.com/watch?v=B_NsclCr9vA" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" width="150"/>
 </a>
 
@@ -68,7 +68,7 @@ O grafo final, contendo os vértices, arestas ponderadas, coordenadas geográfic
 
 Por fim, a plataforma foi utilizada para gerar todas as visualizações gráficas apresentadas neste relatório. Foi aplicado o GeoLayout, para uma visualização geospacial. A aparência dos nós também foi selecionada para mapear metricas. O tamanho dos nós foi determinado pelo numero de rotas que o conecta com outros aeroportos e as cores remetem a cada analise de métrica especifica sempre tomando o azul para valores mais baixos, amarelo para valores intermediários e vermelho para os valores mais altos de cada metrica representada (Grau, K-Core, Centralidades), a fim de ilustrar visualmente os resultados da análise.
 
-## 3. Resultados e Analises
+## 3. Resultados e Análises
 
 Nesta seção, são apresentados os resultados obtidos a partir da aplicação da metodologia sobre a rede da malha aérea brasileira de 2024. Cada subseção a seguir é dedicada a uma faceta da análise, combinando uma visualização gráfica gerada no software Gephi com uma interpretação descritiva dos padrões e métricas revelados. O objetivo é traduzir os dados estruturais da rede em insights claros sobre a hierarquia, coesão e organização da aviação comercial no país.
 
