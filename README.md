@@ -14,3 +14,4 @@ Conteúdo
 5. [Tarefa 5](https://github.com/daniel-trindade/AED2/tree/main/tarefa_5) - Otimização Logística para Vigilância em Saúde: Uma Abordagem Comparativa de Algoritmos de Menor Caminho em Grafos
 6. [Tarefa 6](https://github.com/daniel-trindade/AED2/tree/main/tarefa_6) - Roteirização das Praias de Natal com Algoritmo de Kruskal
 7. [Tarefa 7](https://github.com/daniel-trindade/AED2/tree/main/tarefa_7) - Visualização e Avaliação de Métricas de Centralidade em Grafos Utilizando Gephi
+8. [Tarefa 8](https://github.com/daniel-trindade/AED2/tree/main/tarefa_8) - Análise Estrutural da Malha Aérea Brasileira em 2024
