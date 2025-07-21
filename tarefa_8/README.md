@@ -1,4 +1,4 @@
-# Análise Estrutural da Malha Aérea Brasileira em 2024: Um Estudo de Centralidade e K-Core
+# Análise Estrutural da Malha Aérea Brasileira em 2024
 
 by <br/>
 [Daniel Bruno Trindade da Silva](https://github.com/daniel-trindade) <br/>
