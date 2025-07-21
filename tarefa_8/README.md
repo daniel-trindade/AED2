@@ -95,7 +95,7 @@ A Figura 3 mapeia a Centralidade de Intermediação (Betweenness Centrality), um
 
 ### 3.4 Eigenvector
 
-![Visualização do grafo com eigenvector](./imgs/eigenvector.png)
+![Visualização do grafo com eigenvector](./imgs/Eigenvector.png)
 **Figura 4 - Grafo de Eigenvector**
 A Figura 4 apresenta a Centralidade de Autovetor (Eigenvector Centrality). Diferente do Grau, que conta apenas o número de conexões, esta métrica avalia a "qualidade" dessas conexões. Um aeroporto tem alta centralidade de autovetor se estiver conectado a outros aeroportos que também são muito bem conectados, revelando os verdadeiros centros de influência da rede. A análise confirma a dominância do eixo Sudeste-Brasília. Os aeroportos em vermelho e laranja (São Paulo, Rio de Janeiro, Campinas e Brasília) não apenas possuem muitas rotas, mas suas rotas se conectam primariamente entre si e com outros hubs regionais importantes. Isso cria um "clube de elite" que concentra o poder e a influência da malha aérea. Estar conectado a um desses aeroportos é mais significativo do que estar conectado a vários aeroportos periféricos. Portanto, a centralidade de autovetor destaca os nós que são estratégicos não apenas para distribuição, mas para acessar a porção mais influente da rede.
 
